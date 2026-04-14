@@ -7,320 +7,288 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-:root {
-  --bg: #f5f3ee;
-  --surface: #fffefb;
-  --surface2: #f0ede6;
-  --border: #ddd9d0;
-  --border2: #c8c3b8;
-  --text: #1a1916;
-  --text2: #6b6760;
-  --text3: #9e9b95;
-  --accent: #2d5a3d;
-  --accent2: #c8523a;
-  --accent3: #8b6914;
-  --accent4: #2a4a7a;
-  --drive: #e8f0e9;
-  --drive-t: #1e4228;
-  --ave: #e8f4e8;
-  --ave-t: #1a3d1a;
-  --bus: #fdf3e3;
-  --bus-t: #6b4500;
-  --fly: #fce8e3;
-  --fly-t: #7a1e0a;
-  --row-hover: #f7f5f0;
-  --shadow: 0 1px 3px rgba(0,0,0,0.06);
+:root{
+  --bg:#f5f3ee;--surface:#fffefb;--surface2:#f0ede6;--border:#ddd9d0;--border2:#c8c3b8;
+  --text:#1a1916;--text2:#6b6760;--text3:#9e9b95;
+  --accent:#2d5a3d;--accent2:#c8523a;--accent4:#2a4a7a;
+  --drive:#e8f0e9;--drive-t:#1e4228;--ave:#e8f4e8;--ave-t:#1a3d1a;
+  --bus:#fdf3e3;--bus-t:#6b4500;--fly:#fce8e3;--fly-t:#7a1e0a;
+  --laj:#f3eaf8;--laj-t:#5a1a7a;
+  --shadow:0 1px 3px rgba(0,0,0,0.06);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.5;min-height:100vh}
-
-/* HEADER */
-header{background:var(--surface);border-bottom:1px solid var(--border);padding:2rem 2rem 1.5rem;position:sticky;top:0;z-index:100;box-shadow:var(--shadow)}
-.header-inner{max-width:1400px;margin:0 auto}
-.header-top{display:flex;align-items:baseline;gap:1rem;margin-bottom:0.25rem;flex-wrap:wrap}
-h1{font-family:'Instrument Serif',serif;font-size:26px;font-weight:400;color:var(--text);letter-spacing:-0.02em}
-.header-sub{font-size:12px;color:var(--text3);font-family:'DM Mono',monospace;text-transform:uppercase;letter-spacing:0.08em}
-.controls-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:1rem;align-items:center}
-.tab-group{display:flex;gap:0;border:1px solid var(--border2);border-radius:6px;overflow:hidden}
-.tab{padding:7px 18px;font-size:12px;font-family:'DM Mono',monospace;letter-spacing:0.05em;background:transparent;color:var(--text2);border:none;cursor:pointer;transition:all 0.15s;text-transform:uppercase;border-right:1px solid var(--border2)}
+header{background:var(--surface);border-bottom:1px solid var(--border);padding:1.25rem 2rem 0.9rem;position:sticky;top:0;z-index:100;box-shadow:var(--shadow)}
+.hi{max-width:1600px;margin:0 auto}
+.ht{display:flex;align-items:baseline;gap:1rem;margin-bottom:0.6rem;flex-wrap:wrap}
+h1{font-family:'Instrument Serif',serif;font-size:23px;font-weight:400;letter-spacing:-0.02em}
+.hs{font-size:11px;color:var(--text3);font-family:'DM Mono',monospace;text-transform:uppercase;letter-spacing:0.08em}
+.cr{display:flex;flex-wrap:wrap;gap:7px;align-items:center}
+.tg{display:flex;border:1px solid var(--border2);border-radius:6px;overflow:hidden;flex-shrink:0}
+.tab{padding:5px 14px;font-size:11px;font-family:'DM Mono',monospace;letter-spacing:0.05em;background:transparent;color:var(--text2);border:none;cursor:pointer;transition:all 0.12s;text-transform:uppercase;border-right:1px solid var(--border2)}
 .tab:last-child{border-right:none}
 .tab.active{background:var(--text);color:#fff}
 .tab:not(.active):hover{background:var(--surface2)}
-input[type=text]{height:34px;padding:0 12px;border:1px solid var(--border2);border-radius:6px;font-size:13px;font-family:'DM Sans',sans-serif;background:var(--surface);color:var(--text);outline:none;width:180px}
+.sg{display:flex;align-items:center;gap:3px;border:1px solid var(--border2);border-radius:6px;padding:2px 6px;background:var(--surface);flex-shrink:0}
+.sl{font-size:10px;font-family:'DM Mono',monospace;color:var(--text3);text-transform:uppercase;letter-spacing:0.06em;white-space:nowrap;padding-right:4px}
+.sb{padding:3px 9px;font-size:10px;font-family:'DM Mono',monospace;background:transparent;color:var(--text2);border:none;cursor:pointer;border-radius:4px;transition:all 0.12s;white-space:nowrap}
+.sb:hover{background:var(--surface2)}
+.sb.active{background:var(--text);color:#fff}
+.sb.sc.active{background:#1e4228;color:#fff}
+.sb.sa.active{background:#1a3d1a;color:#fff}
+.sb.sb2.active{background:#6b4500;color:#fff}
+.sb.sf.active{background:#7a1e0a;color:#fff}
+input[type=text]{height:31px;padding:0 10px;border:1px solid var(--border2);border-radius:6px;font-size:12px;font-family:'DM Sans',sans-serif;background:var(--surface);color:var(--text);outline:none;width:150px}
 input[type=text]:focus{border-color:var(--accent)}
-select{height:34px;padding:0 10px;border:1px solid var(--border2);border-radius:6px;font-size:13px;font-family:'DM Sans',sans-serif;background:var(--surface);color:var(--text);outline:none;cursor:pointer}
-select:focus{border-color:var(--accent)}
-.count-badge{font-family:'DM Mono',monospace;font-size:11px;color:var(--text3);margin-left:auto;letter-spacing:0.05em}
-
-/* LEGEND */
-.legend{max-width:1400px;margin:0 auto;padding:0.75rem 2rem;display:flex;gap:16px;flex-wrap:wrap;align-items:center;border-bottom:1px solid var(--border)}
-.legend-item{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--text2);font-family:'DM Mono',monospace}
-.legend-dot{width:10px;height:10px;border-radius:2px}
-
-/* MAIN */
-main{max-width:1400px;margin:0 auto;padding:1.5rem 2rem}
-
-/* TABLE */
-.table-wrap{overflow-x:auto;background:var(--surface);border:1px solid var(--border);border-radius:8px;box-shadow:var(--shadow)}
-table{width:100%;border-collapse:collapse;min-width:900px}
-thead th{padding:10px 14px;font-size:10px;font-family:'DM Mono',monospace;letter-spacing:0.08em;text-transform:uppercase;color:var(--text3);font-weight:500;border-bottom:1px solid var(--border);white-space:nowrap;background:var(--surface2);position:sticky;top:0}
-thead th:first-child{border-radius:8px 0 0 0}
-thead th:last-child{border-radius:0 8px 0 0}
+select{height:31px;padding:0 8px;border:1px solid var(--border2);border-radius:6px;font-size:12px;font-family:'DM Sans',sans-serif;background:var(--surface);color:var(--text);outline:none;cursor:pointer}
+.cb{font-family:'DM Mono',monospace;font-size:11px;color:var(--text3);margin-left:auto;letter-spacing:0.05em;white-space:nowrap}
+.si{font-size:10px;color:var(--text2);font-family:'DM Mono',monospace;padding:0.3rem 2rem;border-bottom:1px solid var(--border);background:var(--surface);max-width:100%}
+.si span{color:var(--accent);font-weight:500}
+.legend{max-width:1600px;margin:0 auto;padding:0.45rem 2rem;display:flex;gap:14px;flex-wrap:wrap;align-items:center;border-bottom:1px solid var(--border);font-size:11px;color:var(--text2);font-family:'DM Mono',monospace}
+.ld{width:8px;height:8px;border-radius:2px;display:inline-block;margin-right:3px;vertical-align:middle}
+main{max-width:1600px;margin:0 auto;padding:1rem 2rem}
+.tw{overflow-x:auto;background:var(--surface);border:1px solid var(--border);border-radius:8px;box-shadow:var(--shadow)}
+table{width:100%;border-collapse:collapse;min-width:1150px}
+thead th{padding:8px 11px;font-size:10px;font-family:'DM Mono',monospace;letter-spacing:0.07em;text-transform:uppercase;color:var(--text3);font-weight:500;border-bottom:1px solid var(--border);white-space:nowrap;background:var(--surface2)}
+thead th:first-child{border-radius:8px 0 0 0}thead th:last-child{border-radius:0 8px 0 0}
+th.sorted{color:var(--accent)!important;background:#e8f0e9!important}
 tbody tr{border-bottom:1px solid var(--border);transition:background 0.1s}
 tbody tr:last-child{border-bottom:none}
-tbody tr:hover{background:var(--row-hover)}
-td{padding:10px 14px;vertical-align:middle}
-.rank-cell{font-family:'DM Mono',monospace;font-size:11px;color:var(--text3);width:36px;text-align:center}
-.rank-top{color:var(--accent);font-weight:500}
-.city-cell .city-name{font-size:14px;font-weight:500;color:var(--text)}
-.city-cell .city-prov{font-size:11px;color:var(--text3);font-family:'DM Mono',monospace}
-.region-badge{display:inline-block;padding:2px 8px;border-radius:3px;font-size:10px;font-family:'DM Mono',monospace;letter-spacing:0.04em;background:var(--surface2);color:var(--text2);border:1px solid var(--border)}
-.badge{display:inline-flex;align-items:center;gap:4px;padding:3px 9px;border-radius:4px;font-size:11px;font-family:'DM Mono',monospace;white-space:nowrap}
-.b-car{background:var(--drive);color:var(--drive-t);border:1px solid #b8d9ba}
-.b-ave{background:var(--ave);color:var(--ave-t);border:1px solid #a8d4a8}
-.b-bus{background:var(--bus);color:var(--bus-t);border:1px solid #e8cc9a}
-.b-fly{background:var(--fly);color:var(--fly-t);border:1px solid #e8b8aa}
+tbody tr:hover{background:#f7f5f0}
+td{padding:7px 11px;vertical-align:middle}
+.rk{font-family:'DM Mono',monospace;font-size:11px;color:var(--text3);width:30px;text-align:center}
+.rt{color:var(--accent);font-weight:500}
+.cn{font-size:13px;font-weight:500;color:var(--text)}
+.cp{font-size:10px;color:var(--text3);font-family:'DM Mono',monospace}
+.rb{display:inline-block;padding:2px 7px;border-radius:3px;font-size:10px;font-family:'DM Mono',monospace;background:var(--surface2);color:var(--text2);border:1px solid var(--border)}
+.badge{display:inline-flex;align-items:center;padding:2px 8px;border-radius:4px;font-size:11px;font-family:'DM Mono',monospace;white-space:nowrap}
+.bc{background:var(--drive);color:var(--drive-t);border:1px solid #b8d9ba}
+.ba{background:var(--ave);color:var(--ave-t);border:1px solid #a8d4a8}
+.bb{background:var(--bus);color:var(--bus-t);border:1px solid #e8cc9a}
+.bf{background:var(--fly);color:var(--fly-t);border:1px solid #e8b8aa}
+.badge.hi2{font-weight:500;outline:2px solid currentColor;outline-offset:1px}
 .none{color:var(--text3);font-size:12px}
-.num-cell{text-align:center;font-family:'DM Mono',monospace;font-size:13px;font-weight:500}
-.juz-num{color:var(--accent4)}
-.plz-num{color:var(--accent2)}
-.conn-cell{font-size:11px;color:var(--text2);max-width:240px;line-height:1.4}
-.best-badge{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent);margin-right:4px;vertical-align:middle}
-
-/* EMPTY */
-.empty-row td{text-align:center;padding:3rem;color:var(--text3);font-size:13px}
-
-/* FOOTER */
-footer{max-width:1400px;margin:0 auto;padding:1.5rem 2rem;border-top:1px solid var(--border);margin-top:2rem;font-size:11px;color:var(--text3);font-family:'DM Mono',monospace;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
-
-@media(max-width:700px){
-  header{padding:1rem}
-  main{padding:1rem}
-  h1{font-size:20px}
-  .count-badge{margin-left:0}
-}
+.nc{text-align:center;font-family:'DM Mono',monospace;font-size:13px;font-weight:500}
+.nj{color:var(--accent4)}.nl{color:var(--laj-t)}.np{color:var(--accent2)}
+.cc{font-size:11px;color:var(--text2);max-width:210px;line-height:1.4}
+.er td{text-align:center;padding:3rem;color:var(--text3);font-size:13px}
+footer{max-width:1600px;margin:0 auto;padding:1.25rem 2rem;border-top:1px solid var(--border);margin-top:2rem;font-size:11px;color:var(--text3);font-family:'DM Mono',monospace;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media(max-width:700px){header,main{padding-left:1rem;padding-right:1rem}h1{font-size:18px}.cb{margin-left:0}}
 </style>
 </head>
 <body>
-
 <header>
-  <div class="header-inner">
-    <div class="header-top">
-      <h1>Plazas LAJ</h1>
-      <span class="header-sub">47ª Promoción · Letrados de la Administración de Justicia</span>
-    </div>
-    <div class="controls-row">
-      <div class="tab-group">
-        <button class="tab active" onclick="setTab('sev',this)">Sevilla</button>
-        <button class="tab" onclick="setTab('gra',this)">Granada</button>
-        <button class="tab" onclick="setTab('prat',this)">El Prat</button>
-      </div>
-      <input type="text" id="search" placeholder="Buscar ciudad..." oninput="render()">
-      <select id="filter-region" onchange="render()">
-        <option value="">Todas las regiones</option>
-      </select>
-      <select id="filter-transport" onchange="render()">
-        <option value="">Todos los medios</option>
-        <option value="car">Coche</option>
-        <option value="ave">AVE / Tren</option>
-        <option value="bus">Bus</option>
-        <option value="fly">Avión</option>
-      </select>
-      <span class="count-badge" id="count"></span>
-    </div>
+<div class="hi">
+  <div class="ht">
+    <h1>Plazas LAJ</h1>
+    <span class="hs">47ª Promoción · Letrados de la Administración de Justicia</span>
   </div>
-</header>
-
-<div class="legend">
-  <span class="legend-item"><span class="legend-dot" style="background:#b8d9ba"></span>Coche</span>
-  <span class="legend-item"><span class="legend-dot" style="background:#a8d4a8"></span>AVE / Tren</span>
-  <span class="legend-item"><span class="legend-dot" style="background:#e8cc9a"></span>Bus</span>
-  <span class="legend-item"><span class="legend-dot" style="background:#e8b8aa"></span>Avión</span>
-  <span class="legend-item" style="margin-left:auto"><span style="color:#2a4a7a;font-size:13px;font-weight:500">Nº</span> = juzgados en la plaza &nbsp;|&nbsp; <span style="color:#c8523a;font-size:13px;font-weight:500">Nº</span> = plazas ofertadas</span>
+  <div class="cr">
+    <div class="tg">
+      <button class="tab active" onclick="setTab('sev',this)">Sevilla</button>
+      <button class="tab" onclick="setTab('gra',this)">Granada</button>
+      <button class="tab" onclick="setTab('prat',this)">El Prat</button>
+    </div>
+    <input type="text" id="search" placeholder="Buscar ciudad..." oninput="render()">
+    <select id="fr" onchange="render()"><option value="">Todas las regiones</option></select>
+    <div class="sg">
+      <span class="sl">Ordenar</span>
+      <button class="sb sc" onclick="setSort('car',this)">Coche</button>
+      <button class="sb sa" onclick="setSort('ave',this)">AVE/Tren</button>
+      <button class="sb sb2" onclick="setSort('bus',this)">Bus</button>
+      <button class="sb sf" onclick="setSort('fly',this)">Avión</button>
+      <button class="sb active" onclick="setSort('best',this)">Mejor</button>
+    </div>
+    <span class="cb" id="count"></span>
+  </div>
 </div>
-
+</header>
+<div class="si" id="si" style="display:none">Ordenando por: <span id="slt"></span> (de menos a más tiempo)</div>
+<div class="legend">
+  <span><span class="ld" style="background:#b8d9ba"></span>Coche</span>
+  <span><span class="ld" style="background:#a8d4a8"></span>AVE/Tren</span>
+  <span><span class="ld" style="background:#e8cc9a"></span>Bus</span>
+  <span><span class="ld" style="background:#e8b8aa"></span>Avión</span>
+  <span style="margin-left:auto;font-size:10px">
+    <span style="color:var(--accent4);font-weight:500">Juzgados</span> = total órganos &nbsp;
+    <span style="color:var(--laj-t);font-weight:500">LAJ totales</span> = plazas LAJ existentes &nbsp;
+    <span style="color:var(--accent2);font-weight:500">Ofertadas</span> = en este concurso
+  </span>
+</div>
 <main>
-  <div class="table-wrap">
-    <table>
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Ciudad</th>
-          <th>Región</th>
-          <th>Coche</th>
-          <th>AVE / Tren</th>
-          <th>Bus</th>
-          <th>Avión</th>
-          <th title="Juzgados totales en la plaza">Juzgados</th>
-          <th title="Plazas ofertadas en este listado">Ofertadas</th>
-          <th>Conexiones</th>
-        </tr>
-      </thead>
-      <tbody id="tbody">
-      </tbody>
-    </table>
-  </div>
+<div class="tw">
+<table>
+  <thead id="thead">
+    <tr>
+      <th>#</th><th>Ciudad</th><th>Región</th>
+      <th id="thc">Coche</th><th id="tha">AVE / Tren</th><th id="thb">Bus</th><th id="thf">Avión</th>
+      <th title="Total órganos judiciales en la plaza">Juzgados</th>
+      <th title="Plazas LAJ actualmente existentes" style="color:var(--laj-t)">LAJ totales</th>
+      <th title="Plazas ofertadas en este concurso">Ofertadas</th>
+      <th>Conexiones</th>
+    </tr>
+  </thead>
+  <tbody id="tbody"></tbody>
+</table>
+</div>
 </main>
-
 <footer>
-  <span>Datos: Listado oficial 47ª Promoción LAJ · Ministerio de Justicia</span>
-  <span>Tiempos orientativos en condiciones normales de tráfico</span>
+  <span>Datos: Listado oficial 47ª Promoción LAJ · Ministerio de Justicia · CGPJ · mjusticia.gob.es</span>
+  <span>Tiempos orientativos en condiciones normales de tráfico y horarios habituales</span>
 </footer>
 
 <script>
-const plazas = [
-  {ciudad:"Cazalla de la Sierra",prov:"Sevilla",region:"Andalucía",plazas:1,juzgados:1,conn:"A-432. Transporte limitado. Bus desde Sevilla",sev:{car:"1h 10min",ave:null,bus:"1h 45min",fly:null},gra:{car:"3h",ave:null,bus:"4h",fly:null},prat:{car:"8h 30min",ave:null,bus:"11h",fly:"2h"}},
-  {ciudad:"Fregenal de la Sierra",prov:"Badajoz",region:"Extremadura",plazas:1,juzgados:1,conn:"N-435. Sin tren. Bus escaso desde Sevilla/Badajoz",sev:{car:"1h 30min",ave:null,bus:"2h 30min",fly:null},gra:{car:"3h",ave:null,bus:"4h 30min",fly:null},prat:{car:"9h",ave:null,bus:"12h",fly:"2h 30min"}},
-  {ciudad:"Barbate",prov:"Cádiz",region:"Andalucía",plazas:1,juzgados:1,conn:"CA-221. Acceso solo por carretera. Bus desde Cádiz",sev:{car:"1h 45min",ave:null,bus:"2h 30min",fly:null},gra:{car:"2h 30min",ave:null,bus:"3h 30min",fly:null},prat:{car:"10h",ave:null,bus:"12h",fly:"2h 15min"}},
-  {ciudad:"Zafra",prov:"Badajoz",region:"Extremadura",plazas:1,juzgados:2,conn:"A-66. Bus desde Sevilla/Badajoz. Sin tren directo",sev:{car:"1h 45min",ave:null,bus:"2h",fly:null},gra:{car:"3h 30min",ave:null,bus:"4h 30min",fly:null},prat:{car:"8h 30min",ave:null,bus:"11h",fly:"2h 20min"}},
-  {ciudad:"La Línea de la Concepción",prov:"Cádiz",region:"Andalucía",plazas:1,juzgados:2,conn:"A-7/AP-7. Bus directo desde Sevilla y Málaga",sev:{car:"2h",ave:null,bus:"2h 30min",fly:null},gra:{car:"2h 30min",ave:null,bus:"3h",fly:null},prat:{car:"9h 30min",ave:null,bus:"11h",fly:"2h 10min"}},
-  {ciudad:"Ayamonte",prov:"Huelva",region:"Andalucía",plazas:1,juzgados:2,conn:"A-49. Bus directo desde Sevilla y Huelva",sev:{car:"1h 30min",ave:null,bus:"2h",fly:null},gra:{car:"3h 30min",ave:null,bus:"4h 30min",fly:null},prat:{car:"10h",ave:null,bus:"12h",fly:"2h 15min"}},
-  {ciudad:"Villacarrillo",prov:"Jaén",region:"Andalucía",plazas:1,juzgados:2,conn:"Autovía A-32. Sin tren ni bus directo desde capitales",sev:{car:"2h 30min",ave:null,bus:"3h 30min",fly:null},gra:{car:"2h 10min",ave:null,bus:"3h",fly:null},prat:{car:"6h 20min",ave:null,bus:"8h",fly:"2h 30min"}},
-  {ciudad:"Navalmoral de la Mata",prov:"Cáceres",region:"Extremadura",plazas:1,juzgados:2,conn:"A-5. Tren (Madrid-Lisboa). Bus desde Madrid/Cáceres",sev:{car:"3h 30min",ave:null,bus:"5h",fly:null},gra:{car:"4h",ave:null,bus:"5h 30min",fly:null},prat:{car:"6h",ave:null,bus:"8h",fly:"2h 10min"}},
-  {ciudad:"Herrera del Duque",prov:"Badajoz",region:"Extremadura",plazas:1,juzgados:1,conn:"EX-116. Sin tren. Bus escaso",sev:{car:"3h",ave:null,bus:"4h",fly:null},gra:{car:"4h",ave:null,bus:"5h 30min",fly:null},prat:{car:"6h 30min",ave:null,bus:"9h",fly:"2h 20min"}},
-  {ciudad:"Almadén",prov:"Ciudad Real",region:"Castilla-La Mancha",plazas:1,juzgados:1,conn:"N-502. Zona minera. Bus escaso",sev:{car:"3h 30min",ave:null,bus:"5h",fly:null},gra:{car:"3h",ave:null,bus:"4h 30min",fly:null},prat:{car:"6h",ave:null,bus:"8h",fly:"2h 10min"}},
-  {ciudad:"Valdepeñas",prov:"Ciudad Real",region:"Castilla-La Mancha",plazas:1,juzgados:3,conn:"A-4/AP-4. AVE (parada Puertollano). Bus Madrid/Sevilla",sev:{car:"3h 30min",ave:"2h 30min",bus:"4h",fly:null},gra:{car:"3h",ave:null,bus:"4h",fly:null},prat:{car:"5h 30min",ave:null,bus:"7h",fly:"2h"}},
-  {ciudad:"Tomelloso",prov:"Ciudad Real",region:"Castilla-La Mancha",plazas:1,juzgados:2,conn:"CM-310/N-310. Bus desde Ciudad Real/Albacete",sev:{car:"4h 30min",ave:null,bus:"5h 30min",fly:null},gra:{car:"3h 30min",ave:null,bus:"4h 30min",fly:null},prat:{car:"5h",ave:null,bus:"6h 30min",fly:"2h"}},
-  {ciudad:"San Clemente",prov:"Cuenca",region:"Castilla-La Mancha",plazas:1,juzgados:1,conn:"N-310/CM-3106. Bus escaso. Sin tren",sev:{car:"5h",ave:null,bus:"6h 30min",fly:null},gra:{car:"4h",ave:null,bus:"5h",fly:null},prat:{car:"4h 30min",ave:null,bus:"6h",fly:"2h"}},
-  {ciudad:"Verín",prov:"Ourense",region:"Galicia",plazas:1,juzgados:2,conn:"A-52. Bus desde Orense/Vigo. Sin tren",sev:{car:"6h",ave:null,bus:"8h 30min",fly:"2h 20min"},gra:{car:"6h 30min",ave:null,bus:"9h",fly:"2h 20min"},prat:{car:"9h",ave:null,bus:"12h",fly:"2h 40min"}},
-  {ciudad:"Miranda de Ebro",prov:"Burgos",region:"Castilla y León",plazas:1,juzgados:3,conn:"A-1/AP-1. Tren (Madrid-País Vasco). Buenas conexiones",sev:{car:"6h",ave:null,bus:"8h",fly:"2h 20min"},gra:{car:"6h 30min",ave:null,bus:"9h",fly:"2h 20min"},prat:{car:"4h",ave:null,bus:"5h 30min",fly:null}},
-  {ciudad:"Almazán",prov:"Soria",region:"Castilla y León",plazas:2,juzgados:1,conn:"N-111/A-15. Bus escaso. Sin tren",sev:{car:"6h",ave:null,bus:"8h",fly:"2h 20min"},gra:{car:"6h 30min",ave:null,bus:"9h",fly:"2h 20min"},prat:{car:"3h 30min",ave:null,bus:"5h",fly:"2h"}},
-  {ciudad:"Aranda de Duero",prov:"Burgos",region:"Castilla y León",plazas:2,juzgados:3,conn:"A-1. Bus directo Madrid-Burgos. Sin AVE",sev:{car:"5h 30min",ave:null,bus:"7h",fly:"2h 20min"},gra:{car:"6h",ave:null,bus:"8h",fly:"2h 20min"},prat:{car:"4h 30min",ave:null,bus:"6h",fly:"2h"}},
-  {ciudad:"Cervera de Pisuerga",prov:"Palencia",region:"Castilla y León",plazas:1,juzgados:1,conn:"CL-626. Zona montaña. Sin tren. Bus escaso",sev:{car:"6h",ave:null,bus:"8h 30min",fly:"2h 30min"},gra:{car:"6h 30min",ave:null,bus:"9h",fly:"2h 30min"},prat:{car:"5h",ave:null,bus:"7h",fly:"2h"}},
-  {ciudad:"Villarcayo",prov:"Burgos",region:"Castilla y León",plazas:2,juzgados:2,conn:"BU-523/N-232. Bus escaso desde Burgos",sev:{car:"6h 30min",ave:null,bus:"9h",fly:"2h 20min"},gra:{car:"7h",ave:null,bus:"10h",fly:"2h 20min"},prat:{car:"4h 30min",ave:null,bus:"6h",fly:"2h"}},
-  {ciudad:"Vinaròs",prov:"Castellón",region:"Com. Valenciana",plazas:1,juzgados:2,conn:"AP-7/N-340. Tren (línea Valencia-Barcelona). Buenas conexiones",sev:{car:"7h",ave:null,bus:"9h",fly:"2h"},gra:{car:"7h 30min",ave:null,bus:"10h",fly:"2h"},prat:{car:"2h 20min",ave:null,bus:"2h 45min",fly:null}},
-  {ciudad:"Calahorra",prov:"La Rioja",region:"La Rioja",plazas:2,juzgados:3,conn:"AP-68/N-232. Bus desde Logroño. Sin tren directo",sev:{car:"6h",ave:null,bus:"8h",fly:"2h 20min"},gra:{car:"6h 30min",ave:null,bus:"9h",fly:"2h 20min"},prat:{car:"3h",ave:null,bus:"4h",fly:null}},
-  {ciudad:"Esplugues de Llobregat",prov:"Barcelona",region:"Cataluña",plazas:1,juzgados:2,conn:"Ronda de Dalt. Metro L5/Bus. Excelentes conexiones BCN",sev:{car:"9h",ave:"4h 15min",bus:"11h",fly:"1h 50min"},gra:{car:"9h 30min",ave:"4h 45min",bus:"12h",fly:"1h 55min"},prat:{car:"15min",ave:null,bus:"20min",fly:null}},
-  {ciudad:"Cornellà de Llobregat",prov:"Barcelona",region:"Cataluña",plazas:1,juzgados:3,conn:"B-10/A-2. Metro L5 y L9. Excelentes conexiones BCN",sev:{car:"9h",ave:"4h 15min",bus:"11h",fly:"1h 50min"},gra:{car:"9h 30min",ave:"4h 45min",bus:"12h",fly:"1h 55min"},prat:{car:"15min",ave:null,bus:"20min",fly:null}},
-  {ciudad:"Sant Boi de Llobregat",prov:"Barcelona",region:"Cataluña",plazas:3,juzgados:4,conn:"C-31/B-10. Metro L1 y FGC. Excelentes conexiones BCN",sev:{car:"9h",ave:"4h 15min",bus:"11h",fly:"1h 50min"},gra:{car:"9h 30min",ave:"4h 45min",bus:"12h",fly:"1h 55min"},prat:{car:"20min",ave:null,bus:"30min",fly:null}},
-  {ciudad:"Martorell",prov:"Barcelona",region:"Cataluña",plazas:2,juzgados:2,conn:"A-2. Tren R4 FGC. Buenas conexiones BCN",sev:{car:"9h",ave:null,bus:"11h",fly:"1h 55min"},gra:{car:"9h 30min",ave:null,bus:"12h",fly:"2h"},prat:{car:"25min",ave:null,bus:"40min",fly:null}},
-  {ciudad:"Rubí",prov:"Barcelona",region:"Cataluña",plazas:1,juzgados:2,conn:"B-30/A-2. FGC desde Barcelona. Buenas conexiones",sev:{car:"9h",ave:null,bus:"11h",fly:"1h 55min"},gra:{car:"9h 30min",ave:null,bus:"12h",fly:"2h"},prat:{car:"30min",ave:null,bus:"45min",fly:null}},
-  {ciudad:"Terrassa",prov:"Barcelona",region:"Cataluña",plazas:1,juzgados:5,conn:"A-18/C-58. FGC línea S1/S2. Excelentes conexiones BCN",sev:{car:"9h",ave:null,bus:"11h",fly:"1h 55min"},gra:{car:"9h 30min",ave:null,bus:"12h",fly:"2h"},prat:{car:"30min",ave:null,bus:"45min",fly:null}},
-  {ciudad:"Vendrell, El",prov:"Tarragona",region:"Cataluña",plazas:1,juzgados:2,conn:"AP-7/A-2. Tren R4/R13. Buenas conexiones",sev:{car:"8h 30min",ave:"4h",bus:"11h",fly:"2h"},gra:{car:"9h",ave:"4h 30min",bus:"12h",fly:"2h"},prat:{car:"45min",ave:"40min",bus:"1h",fly:null}},
-  {ciudad:"Vilafranca del Penedès",prov:"Barcelona",region:"Cataluña",plazas:3,juzgados:3,conn:"AP-7/A-7. Tren R4 desde Barcelona",sev:{car:"9h",ave:"4h 15min",bus:"11h",fly:"1h 55min"},gra:{car:"9h 30min",ave:"4h 45min",bus:"12h",fly:"2h"},prat:{car:"35min",ave:null,bus:"50min",fly:null}},
-  {ciudad:"Igualada",prov:"Barcelona",region:"Cataluña",plazas:2,juzgados:3,conn:"A-2/AP-2. Bus desde Barcelona. Sin tren",sev:{car:"9h",ave:null,bus:"11h",fly:"1h 55min"},gra:{car:"9h 30min",ave:null,bus:"12h",fly:"2h"},prat:{car:"55min",ave:null,bus:"1h 15min",fly:null}},
-  {ciudad:"Reus",prov:"Tarragona",region:"Cataluña",plazas:1,juzgados:3,conn:"A-7/AP-7. Tren R14. Aeropuerto Reus. Buenas conexiones",sev:{car:"8h",ave:"3h 45min",bus:"10h",fly:"1h 45min"},gra:{car:"8h 30min",ave:"4h 15min",bus:"11h",fly:"1h 50min"},prat:{car:"1h",ave:"1h",bus:"1h 15min",fly:null}},
-  {ciudad:"Valls",prov:"Tarragona",region:"Cataluña",plazas:2,juzgados:2,conn:"A-2/AP-2. Sin tren directo. Bus desde Tarragona",sev:{car:"8h",ave:"3h 45min",bus:"10h 30min",fly:"2h"},gra:{car:"8h 30min",ave:"4h 15min",bus:"11h",fly:"2h"},prat:{car:"1h",ave:null,bus:"1h 20min",fly:null}},
-  {ciudad:"Manresa",prov:"Barcelona",region:"Cataluña",plazas:2,juzgados:4,conn:"C-55. Tren R5/R50 FGC. Buenas conexiones",sev:{car:"9h 30min",ave:null,bus:"12h",fly:"2h"},gra:{car:"10h",ave:null,bus:"13h",fly:"2h"},prat:{car:"1h 10min",ave:null,bus:"1h 30min",fly:null}},
-  {ciudad:"Cervera",prov:"Lleida",region:"Cataluña",plazas:1,juzgados:1,conn:"A-2. Sin tren. Bus desde Lleida/Barcelona",sev:{car:"8h 30min",ave:null,bus:"11h",fly:"2h"},gra:{car:"9h",ave:null,bus:"12h",fly:"2h"},prat:{car:"1h 20min",ave:null,bus:"1h 40min",fly:null}},
-  {ciudad:"Vic",prov:"Barcelona",region:"Cataluña",plazas:2,juzgados:3,conn:"C-17. Tren R3 desde Barcelona. Buenas conexiones",sev:{car:"9h 30min",ave:null,bus:"12h",fly:"2h"},gra:{car:"10h",ave:null,bus:"13h",fly:"2h"},prat:{car:"1h 20min",ave:null,bus:"1h 30min",fly:null}},
-  {ciudad:"Blanes",prov:"Girona",region:"Cataluña",plazas:2,juzgados:2,conn:"C-32/GI-600. Tren R1 desde Barcelona",sev:{car:"10h",ave:null,bus:"12h",fly:"2h"},gra:{car:"10h 30min",ave:null,bus:"13h",fly:"2h"},prat:{car:"1h 20min",ave:null,bus:"1h 30min",fly:null}},
-  {ciudad:"Berga",prov:"Barcelona",region:"Cataluña",plazas:2,juzgados:2,conn:"C-16. Bus desde Barcelona. Sin tren",sev:{car:"9h 30min",ave:null,bus:"12h",fly:"2h"},gra:{car:"10h",ave:null,bus:"13h",fly:"2h"},prat:{car:"1h 30min",ave:null,bus:"2h",fly:null}},
-  {ciudad:"Figueres",prov:"Girona",region:"Cataluña",plazas:7,juzgados:8,conn:"AP-7/N-II. AVE/AVant BCN-Figueres. Nudo de comunicaciones",sev:{car:"10h",ave:"4h 30min",bus:"12h",fly:"2h"},gra:{car:"10h 30min",ave:"5h",bus:"13h",fly:"2h"},prat:{car:"1h 30min",ave:"1h",bus:"2h",fly:null}},
-  {ciudad:"Arenys de Mar",prov:"Barcelona",region:"Cataluña",plazas:1,juzgados:1,conn:"N-II/C-32. Tren R1 desde Barcelona",sev:{car:"9h 30min",ave:null,bus:"12h",fly:"2h"},gra:{car:"10h",ave:null,bus:"13h",fly:"2h"},prat:{car:"50min",ave:null,bus:"55min",fly:null}},
-  {ciudad:"Falset",prov:"Tarragona",region:"Cataluña",plazas:1,juzgados:1,conn:"N-420/C-12. Sin tren. Bus desde Reus/Tarragona",sev:{car:"8h 30min",ave:null,bus:"11h",fly:"2h"},gra:{car:"9h",ave:null,bus:"12h",fly:"2h"},prat:{car:"1h 40min",ave:null,bus:"2h 30min",fly:null}},
-  {ciudad:"Santa Coloma de Farners",prov:"Girona",region:"Cataluña",plazas:3,juzgados:2,conn:"C-25. Bus desde Girona y Barcelona",sev:{car:"10h",ave:null,bus:"13h",fly:"2h"},gra:{car:"10h 30min",ave:null,bus:"14h",fly:"2h"},prat:{car:"1h 20min",ave:null,bus:"1h 40min",fly:null}},
-  {ciudad:"Gandesa",prov:"Tarragona",region:"Cataluña",plazas:1,juzgados:1,conn:"N-420. Sin tren. Bus escaso desde Tortosa",sev:{car:"8h 30min",ave:null,bus:"11h",fly:"2h"},gra:{car:"9h",ave:null,bus:"12h",fly:"2h"},prat:{car:"2h 10min",ave:null,bus:"3h",fly:null}},
-  {ciudad:"Amposta",prov:"Tarragona",region:"Cataluña",plazas:2,juzgados:2,conn:"AP-7/N-340. Bus desde Tortosa",sev:{car:"7h 30min",ave:null,bus:"10h",fly:"2h"},gra:{car:"8h",ave:null,bus:"11h",fly:"2h"},prat:{car:"2h",ave:null,bus:"2h 30min",fly:null}},
-  {ciudad:"Tortosa",prov:"Tarragona",region:"Cataluña",plazas:1,juzgados:4,conn:"AP-7/N-340. Tren R15. Buenas conexiones",sev:{car:"7h 30min",ave:null,bus:"10h",fly:"2h"},gra:{car:"8h",ave:null,bus:"11h",fly:"2h"},prat:{car:"2h",ave:null,bus:"2h 30min",fly:null}},
-  {ciudad:"Bisbal d'Empordà, La",prov:"Girona",region:"Cataluña",plazas:3,juzgados:2,conn:"C-66. Bus desde Girona",sev:{car:"10h 30min",ave:null,bus:"13h",fly:"2h"},gra:{car:"11h",ave:null,bus:"14h",fly:"2h"},prat:{car:"1h 45min",ave:null,bus:"2h",fly:null}},
-  {ciudad:"Olot",prov:"Girona",region:"Cataluña",plazas:1,juzgados:2,conn:"C-37/C-63. Sin tren. Bus desde Girona y Barcelona",sev:{car:"10h 30min",ave:null,bus:"13h",fly:"2h 10min"},gra:{car:"11h",ave:null,bus:"14h",fly:"2h 10min"},prat:{car:"2h",ave:null,bus:"2h 30min",fly:null}},
-  {ciudad:"Ripoll",prov:"Girona",region:"Cataluña",plazas:1,juzgados:2,conn:"N-152. Tren R3 desde Barcelona",sev:{car:"10h 30min",ave:null,bus:"13h",fly:"2h"},gra:{car:"11h",ave:null,bus:"14h",fly:"2h"},prat:{car:"1h 50min",ave:null,bus:"2h",fly:null}},
-  {ciudad:"Balaguer",prov:"Lleida",region:"Cataluña",plazas:1,juzgados:2,conn:"N-II/C-13. Bus desde Lleida",sev:{car:"8h 30min",ave:null,bus:"11h",fly:"2h"},gra:{car:"9h",ave:null,bus:"12h",fly:"2h"},prat:{car:"1h 45min",ave:null,bus:"2h 15min",fly:null}},
-  {ciudad:"Seu d'Urgell, La",prov:"Lleida",region:"Cataluña",plazas:3,juzgados:2,conn:"N-260/C-14. Sin tren. Bus desde Barcelona/Lleida",sev:{car:"9h 30min",ave:null,bus:"13h",fly:"2h"},gra:{car:"10h",ave:null,bus:"14h",fly:"2h"},prat:{car:"2h 30min",ave:null,bus:"3h",fly:null}},
-  {ciudad:"Vielha e Mijaran",prov:"Lleida",region:"Cataluña",plazas:1,juzgados:1,conn:"N-230 (túnel Viella). Sin tren. Bus desde Lleida",sev:{car:"10h",ave:null,bus:"13h",fly:"2h 20min"},gra:{car:"10h 30min",ave:null,bus:"14h",fly:"2h 20min"},prat:{car:"3h",ave:null,bus:"4h",fly:null}},
-  {ciudad:"Fraga",prov:"Huesca",region:"Aragón",plazas:1,juzgados:1,conn:"A-2. Bus desde Zaragoza y Lérida",sev:{car:"7h 30min",ave:null,bus:"10h",fly:"2h 30min"},gra:{car:"8h",ave:null,bus:"11h",fly:"2h 30min"},prat:{car:"1h 20min",ave:null,bus:"1h 30min",fly:null}},
-  {ciudad:"Daroca",prov:"Zaragoza",region:"Aragón",plazas:1,juzgados:1,conn:"A-23. Bus desde Zaragoza. Sin tren directo",sev:{car:"7h",ave:null,bus:"9h 30min",fly:"2h 20min"},gra:{car:"7h 30min",ave:null,bus:"10h",fly:"2h 20min"},prat:{car:"2h 50min",ave:null,bus:"3h 30min",fly:null}},
-  {ciudad:"Boltaña",prov:"Huesca",region:"Aragón",plazas:1,juzgados:1,conn:"A-138. Zona Pirineo. Sin tren. Bus escaso",sev:{car:"8h 30min",ave:null,bus:"12h",fly:"2h 30min"},gra:{car:"9h",ave:null,bus:"13h",fly:"2h 30min"},prat:{car:"3h 30min",ave:null,bus:"5h",fly:null}},
-  {ciudad:"Eivissa — JPI nº1",prov:"Baleares",region:"Islas Baleares",plazas:1,juzgados:5,conn:"Aeropuerto Ibiza. Ferry desde Denia/Valencia",sev:{car:null,ave:null,bus:null,fly:"2h"},gra:{car:null,ave:null,bus:null,fly:"2h 10min"},prat:{car:null,ave:null,bus:null,fly:"1h"}},
-  {ciudad:"Eivissa — Violencia Mujer",prov:"Baleares",region:"Islas Baleares",plazas:1,juzgados:5,conn:"Aeropuerto Ibiza. Ferry desde Denia/Valencia",sev:{car:null,ave:null,bus:null,fly:"2h"},gra:{car:null,ave:null,bus:null,fly:"2h 10min"},prat:{car:null,ave:null,bus:null,fly:"1h"}},
-  {ciudad:"Eivissa — JPI 1ª Inst. nº5",prov:"Baleares",region:"Islas Baleares",plazas:1,juzgados:5,conn:"Aeropuerto Ibiza. Vuelos directos",sev:{car:null,ave:null,bus:null,fly:"2h"},gra:{car:null,ave:null,bus:null,fly:"2h 10min"},prat:{car:null,ave:null,bus:null,fly:"1h"}},
-  {ciudad:"Eivissa — Penal nº2",prov:"Baleares",region:"Islas Baleares",plazas:1,juzgados:5,conn:"Aeropuerto Ibiza. Vuelos directos",sev:{car:null,ave:null,bus:null,fly:"2h"},gra:{car:null,ave:null,bus:null,fly:"2h 10min"},prat:{car:null,ave:null,bus:null,fly:"1h"}},
-  {ciudad:"Maó",prov:"Baleares",region:"Islas Baleares",plazas:1,juzgados:3,conn:"Aeropuerto Menorca. Ferry desde Barcelona",sev:{car:null,ave:null,bus:null,fly:"2h 10min"},gra:{car:null,ave:null,bus:null,fly:"2h 20min"},prat:{car:null,ave:null,bus:null,fly:"1h"}},
-  {ciudad:"Pobra de Trives, A",prov:"Ourense",region:"Galicia",plazas:1,juzgados:1,conn:"N-120/OU-903. Sin tren. Bus escaso desde Orense",sev:{car:"6h 30min",ave:null,bus:"9h",fly:"2h 30min"},gra:{car:"7h",ave:null,bus:"10h",fly:"2h 30min"},prat:{car:"9h",ave:null,bus:"12h",fly:"2h 40min"}},
-  {ciudad:"Barco de Valdeorras, O",prov:"Ourense",region:"Galicia",plazas:1,juzgados:2,conn:"N-120/A-76. Sin tren. Bus desde Orense",sev:{car:"6h 30min",ave:null,bus:"9h",fly:"2h 30min"},gra:{car:"7h",ave:null,bus:"10h",fly:"2h 30min"},prat:{car:"8h 30min",ave:null,bus:"11h",fly:"2h 40min"}},
-  {ciudad:"Negreira",prov:"A Coruña",region:"Galicia",plazas:1,juzgados:1,conn:"AC-453. Sin tren. Bus escaso desde Santiago",sev:{car:"7h 30min",ave:null,bus:"10h",fly:"2h 30min"},gra:{car:"8h",ave:null,bus:"11h",fly:"2h 30min"},prat:{car:"10h",ave:null,bus:"13h",fly:"2h 50min"}},
-  {ciudad:"Viveiro",prov:"Lugo",region:"Galicia",plazas:1,juzgados:1,conn:"LU-540/N-642. Sin tren. Bus desde Lugo",sev:{car:"8h",ave:null,bus:"11h",fly:"2h 30min"},gra:{car:"8h 30min",ave:null,bus:"12h",fly:"2h 30min"},prat:{car:"10h 30min",ave:null,bus:"13h",fly:"2h 50min"}},
-  {ciudad:"Mondoñedo",prov:"Lugo",region:"Galicia",plazas:2,juzgados:2,conn:"N-634. Sin tren. Bus desde Lugo",sev:{car:"8h",ave:null,bus:"11h",fly:"2h 30min"},gra:{car:"8h 30min",ave:null,bus:"12h",fly:"2h 30min"},prat:{car:"10h 30min",ave:null,bus:"13h",fly:"2h 50min"}},
-  {ciudad:"Ortigueira",prov:"A Coruña",region:"Galicia",plazas:1,juzgados:1,conn:"AC-100. Sin tren. Bus desde A Coruña",sev:{car:"8h",ave:null,bus:"11h",fly:"2h 40min"},gra:{car:"8h 30min",ave:null,bus:"12h",fly:"2h 40min"},prat:{car:"10h 30min",ave:null,bus:"13h",fly:"2h 50min"}},
-  {ciudad:"Fonsagrada, A",prov:"Lugo",region:"Galicia",plazas:1,juzgados:1,conn:"LU-722. Zona montaña. Sin tren ni bus directo",sev:{car:"7h 30min",ave:null,bus:"11h",fly:"2h 30min"},gra:{car:"8h",ave:null,bus:"12h",fly:"2h 30min"},prat:{car:"9h 30min",ave:null,bus:"13h",fly:"2h 50min"}},
-  {ciudad:"Azpeitia",prov:"Guipúzcoa",region:"País Vasco",plazas:1,juzgados:2,conn:"N-634. Bus desde San Sebastián/Bilbao",sev:{car:"7h",ave:null,bus:"9h",fly:"2h 30min"},gra:{car:"7h 30min",ave:null,bus:"10h",fly:"2h 30min"},prat:{car:"5h 30min",ave:null,bus:"7h",fly:"1h 30min"}},
-  {ciudad:"Cangas de Onís",prov:"Asturias",region:"Asturias",plazas:1,juzgados:2,conn:"AS-117/N-625. Bus desde Oviedo. Sin tren",sev:{car:"7h 30min",ave:null,bus:"10h",fly:"2h 30min"},gra:{car:"8h",ave:null,bus:"11h",fly:"2h 30min"},prat:{car:"7h",ave:null,bus:"9h 30min",fly:"1h 30min"}},
-  {ciudad:"Cangas del Narcea",prov:"Asturias",region:"Asturias",plazas:1,juzgados:1,conn:"AS-15. Zona montaña. Sin tren. Bus desde Oviedo",sev:{car:"7h 30min",ave:null,bus:"10h",fly:"2h 30min"},gra:{car:"8h",ave:null,bus:"11h",fly:"2h 30min"},prat:{car:"7h 30min",ave:null,bus:"10h",fly:"1h 30min"}},
-  {ciudad:"Güímar",prov:"Sta. Cruz Tfe.",region:"Canarias",plazas:1,juzgados:1,conn:"TF-28. Bus desde Sta. Cruz. Aeropuerto Tenerife Sur",sev:{car:null,ave:null,bus:null,fly:"2h 30min"},gra:{car:null,ave:null,bus:null,fly:"2h 50min"},prat:{car:null,ave:null,bus:null,fly:"2h 20min"}},
-  {ciudad:"Granadilla de Abona",prov:"Sta. Cruz Tfe.",region:"Canarias",plazas:2,juzgados:1,conn:"TF-1. Bus desde Sta. Cruz. Cerca aeropuerto Tenerife Sur",sev:{car:null,ave:null,bus:null,fly:"2h 30min"},gra:{car:null,ave:null,bus:null,fly:"2h 50min"},prat:{car:null,ave:null,bus:null,fly:"2h 20min"}},
-  {ciudad:"Icod de los Vinos",prov:"Sta. Cruz Tfe.",region:"Canarias",plazas:2,juzgados:1,conn:"TF-5. Bus desde Sta. Cruz. Aeropuerto Tenerife Norte",sev:{car:null,ave:null,bus:null,fly:"2h 40min"},gra:{car:null,ave:null,bus:null,fly:"3h"},prat:{car:null,ave:null,bus:null,fly:"2h 30min"}},
-  {ciudad:"Llanos de Aridane, Los",prov:"Sta. Cruz Tfe.",region:"Canarias",plazas:2,juzgados:2,conn:"LP-1. Aeropuerto La Palma. Vuelos vía Madrid",sev:{car:null,ave:null,bus:null,fly:"3h"},gra:{car:null,ave:null,bus:null,fly:"3h 20min"},prat:{car:null,ave:null,bus:null,fly:"3h"}},
-  {ciudad:"Santa Cruz de La Palma",prov:"Sta. Cruz Tfe.",region:"Canarias",plazas:2,juzgados:3,conn:"Aeropuerto La Palma. Vuelos desde Madrid/Barcelona",sev:{car:null,ave:null,bus:null,fly:"3h"},gra:{car:null,ave:null,bus:null,fly:"3h 20min"},prat:{car:null,ave:null,bus:null,fly:"3h"}},
-  {ciudad:"San Sebastián de La Gomera",prov:"Sta. Cruz Tfe.",region:"Canarias",plazas:1,juzgados:1,conn:"Aeropuerto La Gomera (limitado) o ferry desde Tenerife",sev:{car:null,ave:null,bus:null,fly:"3h"},gra:{car:null,ave:null,bus:null,fly:"3h 30min"},prat:{car:null,ave:null,bus:null,fly:"3h"}}
+const data=[
+  {c:"Cazalla de la Sierra",p:"Sevilla",r:"Andalucía",of:1,j:1,l:1,cn:"A-432. Bus desde Sevilla. Transporte muy limitado",sev:{car:"1h 10min",ave:null,bus:"1h 45min",fly:null},gra:{car:"3h",ave:null,bus:"4h",fly:null},prat:{car:"8h 30min",ave:null,bus:"11h",fly:"2h"}},
+  {c:"Fregenal de la Sierra",p:"Badajoz",r:"Extremadura",of:1,j:1,l:1,cn:"N-435. Bus escaso desde Sevilla/Badajoz. Sin tren",sev:{car:"1h 30min",ave:null,bus:"2h 30min",fly:null},gra:{car:"3h",ave:null,bus:"4h 30min",fly:null},prat:{car:"9h",ave:null,bus:"12h",fly:"2h 30min"}},
+  {c:"Barbate",p:"Cádiz",r:"Andalucía",of:1,j:2,l:2,cn:"CA-221. Solo carretera. Bus desde Cádiz",sev:{car:"1h 45min",ave:null,bus:"2h 30min",fly:null},gra:{car:"2h 30min",ave:null,bus:"3h 30min",fly:null},prat:{car:"10h",ave:null,bus:"12h",fly:"2h 15min"}},
+  {c:"Zafra",p:"Badajoz",r:"Extremadura",of:1,j:2,l:2,cn:"A-66. Bus desde Sevilla/Badajoz. Sin AVE",sev:{car:"1h 45min",ave:null,bus:"2h",fly:null},gra:{car:"3h 30min",ave:null,bus:"4h 30min",fly:null},prat:{car:"8h 30min",ave:null,bus:"11h",fly:"2h 20min"}},
+  {c:"Ayamonte",p:"Huelva",r:"Andalucía",of:1,j:7,l:7,cn:"A-49. Bus directo Sevilla y Huelva",sev:{car:"1h 30min",ave:null,bus:"2h",fly:null},gra:{car:"3h 30min",ave:null,bus:"4h 30min",fly:null},prat:{car:"10h",ave:null,bus:"12h",fly:"2h 15min"}},
+  {c:"La Línea de la Concepción",p:"Cádiz",r:"Andalucía",of:1,j:5,l:5,cn:"A-7/AP-7. Bus directo Sevilla y Málaga",sev:{car:"2h",ave:null,bus:"2h 30min",fly:null},gra:{car:"2h 30min",ave:null,bus:"3h",fly:null},prat:{car:"9h 30min",ave:null,bus:"11h",fly:"2h 10min"}},
+  {c:"Villacarrillo",p:"Jaén",r:"Andalucía",of:1,j:2,l:2,cn:"A-32. Sin tren ni bus directo desde capitales",sev:{car:"2h 30min",ave:null,bus:"3h 30min",fly:null},gra:{car:"2h 10min",ave:null,bus:"3h",fly:null},prat:{car:"6h 20min",ave:null,bus:"8h",fly:"2h 30min"}},
+  {c:"Navalmoral de la Mata",p:"Cáceres",r:"Extremadura",of:1,j:2,l:2,cn:"A-5. Tren Madrid-Lisboa. Bus desde Cáceres",sev:{car:"3h 30min",ave:null,bus:"5h",fly:null},gra:{car:"4h",ave:null,bus:"5h 30min",fly:null},prat:{car:"6h",ave:null,bus:"8h",fly:"2h 10min"}},
+  {c:"Herrera del Duque",p:"Badajoz",r:"Extremadura",of:1,j:1,l:1,cn:"EX-116. Sin tren. Bus escaso",sev:{car:"3h",ave:null,bus:"4h",fly:null},gra:{car:"4h",ave:null,bus:"5h 30min",fly:null},prat:{car:"6h 30min",ave:null,bus:"9h",fly:"2h 20min"}},
+  {c:"Almadén",p:"Ciudad Real",r:"Castilla-La Mancha",of:1,j:1,l:1,cn:"N-502. Zona minera. Bus escaso",sev:{car:"3h 30min",ave:null,bus:"5h",fly:null},gra:{car:"3h",ave:null,bus:"4h 30min",fly:null},prat:{car:"6h",ave:null,bus:"8h",fly:"2h 10min"}},
+  {c:"Valdepeñas",p:"Ciudad Real",r:"Castilla-La Mancha",of:1,j:2,l:2,cn:"A-4/AP-4. AVE parada Puertollano. Bus Madrid/Sevilla",sev:{car:"3h 30min",ave:"2h 30min",bus:"4h",fly:null},gra:{car:"3h",ave:null,bus:"4h",fly:null},prat:{car:"5h 30min",ave:null,bus:"7h",fly:"2h"}},
+  {c:"Tomelloso",p:"Ciudad Real",r:"Castilla-La Mancha",of:1,j:3,l:3,cn:"CM-310/N-310. Bus desde Ciudad Real/Albacete",sev:{car:"4h 30min",ave:null,bus:"5h 30min",fly:null},gra:{car:"3h 30min",ave:null,bus:"4h 30min",fly:null},prat:{car:"5h",ave:null,bus:"6h 30min",fly:"2h"}},
+  {c:"San Clemente",p:"Cuenca",r:"Castilla-La Mancha",of:1,j:1,l:1,cn:"N-310/CM-3106. Bus escaso. Sin tren",sev:{car:"5h",ave:null,bus:"6h 30min",fly:null},gra:{car:"4h",ave:null,bus:"5h",fly:null},prat:{car:"4h 30min",ave:null,bus:"6h",fly:"2h"}},
+  {c:"Almazán",p:"Soria",r:"Castilla y León",of:2,j:1,l:1,cn:"N-111/A-15. Bus escaso. Sin tren directo",sev:{car:"6h",ave:null,bus:"8h",fly:"2h 20min"},gra:{car:"6h 30min",ave:null,bus:"9h",fly:"2h 20min"},prat:{car:"3h 30min",ave:null,bus:"5h",fly:"2h"}},
+  {c:"Aranda de Duero",p:"Burgos",r:"Castilla y León",of:2,j:2,l:2,cn:"A-1. Bus directo Madrid-Burgos. Sin AVE",sev:{car:"5h 30min",ave:null,bus:"7h",fly:"2h 20min"},gra:{car:"6h",ave:null,bus:"8h",fly:"2h 20min"},prat:{car:"4h 30min",ave:null,bus:"6h",fly:"2h"}},
+  {c:"Miranda de Ebro",p:"Burgos",r:"Castilla y León",of:1,j:3,l:3,cn:"A-1/AP-1. Tren Madrid-País Vasco. Buenas conexiones",sev:{car:"6h",ave:null,bus:"8h",fly:"2h 20min"},gra:{car:"6h 30min",ave:null,bus:"9h",fly:"2h 20min"},prat:{car:"4h",ave:null,bus:"5h 30min",fly:null}},
+  {c:"Villarcayo",p:"Burgos",r:"Castilla y León",of:2,j:2,l:2,cn:"BU-523/N-232. Bus escaso desde Burgos",sev:{car:"6h 30min",ave:null,bus:"9h",fly:"2h 20min"},gra:{car:"7h",ave:null,bus:"10h",fly:"2h 20min"},prat:{car:"4h 30min",ave:null,bus:"6h",fly:"2h"}},
+  {c:"Cervera de Pisuerga",p:"Palencia",r:"Castilla y León",of:1,j:1,l:1,cn:"CL-626. Zona montaña. Sin tren. Bus escaso",sev:{car:"6h",ave:null,bus:"8h 30min",fly:"2h 30min"},gra:{car:"6h 30min",ave:null,bus:"9h",fly:"2h 30min"},prat:{car:"5h",ave:null,bus:"7h",fly:"2h"}},
+  {c:"Vinaròs",p:"Castellón",r:"Com. Valenciana",of:1,j:2,l:2,cn:"AP-7/N-340. Tren Valencia-Barcelona",sev:{car:"7h",ave:null,bus:"9h",fly:"2h"},gra:{car:"7h 30min",ave:null,bus:"10h",fly:"2h"},prat:{car:"2h 20min",ave:null,bus:"2h 45min",fly:null}},
+  {c:"Calahorra",p:"La Rioja",r:"La Rioja",of:2,j:3,l:3,cn:"AP-68/N-232. Bus desde Logroño. Sin AVE",sev:{car:"6h",ave:null,bus:"8h",fly:"2h 20min"},gra:{car:"6h 30min",ave:null,bus:"9h",fly:"2h 20min"},prat:{car:"3h",ave:null,bus:"4h",fly:null}},
+  {c:"Fraga",p:"Huesca",r:"Aragón",of:1,j:2,l:2,cn:"A-2. Bus desde Zaragoza y Lérida",sev:{car:"7h 30min",ave:null,bus:"10h",fly:"2h 30min"},gra:{car:"8h",ave:null,bus:"11h",fly:"2h 30min"},prat:{car:"1h 20min",ave:null,bus:"1h 30min",fly:null}},
+  {c:"Daroca",p:"Zaragoza",r:"Aragón",of:1,j:1,l:1,cn:"A-23. Bus desde Zaragoza. Sin tren directo",sev:{car:"7h",ave:null,bus:"9h 30min",fly:"2h 20min"},gra:{car:"7h 30min",ave:null,bus:"10h",fly:"2h 20min"},prat:{car:"2h 50min",ave:null,bus:"3h 30min",fly:null}},
+  {c:"Boltaña",p:"Huesca",r:"Aragón",of:1,j:1,l:1,cn:"A-138. Zona Pirineo. Sin tren. Bus escaso",sev:{car:"8h 30min",ave:null,bus:"12h",fly:"2h 30min"},gra:{car:"9h",ave:null,bus:"13h",fly:"2h 30min"},prat:{car:"3h 30min",ave:null,bus:"5h",fly:null}},
+  {c:"Esplugues de Llobregat",p:"Barcelona",r:"Cataluña",of:1,j:2,l:2,cn:"Metro L5/Bus. Excelentes conexiones BCN",sev:{car:"9h",ave:"4h 15min",bus:"11h",fly:"1h 50min"},gra:{car:"9h 30min",ave:"4h 45min",bus:"12h",fly:"1h 55min"},prat:{car:"15min",ave:null,bus:"20min",fly:null}},
+  {c:"Cornellà de Llobregat",p:"Barcelona",r:"Cataluña",of:1,j:3,l:3,cn:"Metro L5 y L9. Excelentes conexiones BCN",sev:{car:"9h",ave:"4h 15min",bus:"11h",fly:"1h 50min"},gra:{car:"9h 30min",ave:"4h 45min",bus:"12h",fly:"1h 55min"},prat:{car:"15min",ave:null,bus:"20min",fly:null}},
+  {c:"Sant Boi de Llobregat",p:"Barcelona",r:"Cataluña",of:3,j:4,l:4,cn:"C-31/B-10. Metro L1 y FGC. Excelentes conexiones BCN",sev:{car:"9h",ave:"4h 15min",bus:"11h",fly:"1h 50min"},gra:{car:"9h 30min",ave:"4h 45min",bus:"12h",fly:"1h 55min"},prat:{car:"20min",ave:null,bus:"30min",fly:null}},
+  {c:"Martorell",p:"Barcelona",r:"Cataluña",of:2,j:2,l:2,cn:"A-2. Tren R4 FGC. Buenas conexiones BCN",sev:{car:"9h",ave:null,bus:"11h",fly:"1h 55min"},gra:{car:"9h 30min",ave:null,bus:"12h",fly:"2h"},prat:{car:"25min",ave:null,bus:"40min",fly:null}},
+  {c:"Rubí",p:"Barcelona",r:"Cataluña",of:1,j:2,l:2,cn:"B-30/A-2. FGC desde Barcelona",sev:{car:"9h",ave:null,bus:"11h",fly:"1h 55min"},gra:{car:"9h 30min",ave:null,bus:"12h",fly:"2h"},prat:{car:"30min",ave:null,bus:"45min",fly:null}},
+  {c:"Terrassa",p:"Barcelona",r:"Cataluña",of:1,j:5,l:5,cn:"A-18/C-58. FGC S1/S2. Excelentes conexiones BCN",sev:{car:"9h",ave:null,bus:"11h",fly:"1h 55min"},gra:{car:"9h 30min",ave:null,bus:"12h",fly:"2h"},prat:{car:"30min",ave:null,bus:"45min",fly:null}},
+  {c:"Vilafranca del Penedès",p:"Barcelona",r:"Cataluña",of:3,j:3,l:3,cn:"AP-7/A-7. Tren R4 desde Barcelona",sev:{car:"9h",ave:"4h 15min",bus:"11h",fly:"1h 55min"},gra:{car:"9h 30min",ave:"4h 45min",bus:"12h",fly:"2h"},prat:{car:"35min",ave:null,bus:"50min",fly:null}},
+  {c:"Igualada",p:"Barcelona",r:"Cataluña",of:2,j:3,l:3,cn:"A-2/AP-2. Bus desde Barcelona. Sin tren",sev:{car:"9h",ave:null,bus:"11h",fly:"1h 55min"},gra:{car:"9h 30min",ave:null,bus:"12h",fly:"2h"},prat:{car:"55min",ave:null,bus:"1h 15min",fly:null}},
+  {c:"Arenys de Mar",p:"Barcelona",r:"Cataluña",of:1,j:1,l:1,cn:"N-II/C-32. Tren R1 desde Barcelona",sev:{car:"9h 30min",ave:null,bus:"12h",fly:"2h"},gra:{car:"10h",ave:null,bus:"13h",fly:"2h"},prat:{car:"50min",ave:null,bus:"55min",fly:null}},
+  {c:"Manresa",p:"Barcelona",r:"Cataluña",of:2,j:4,l:4,cn:"C-55. Tren R5/R50 FGC. Buenas conexiones",sev:{car:"9h 30min",ave:null,bus:"12h",fly:"2h"},gra:{car:"10h",ave:null,bus:"13h",fly:"2h"},prat:{car:"1h 10min",ave:null,bus:"1h 30min",fly:null}},
+  {c:"Berga",p:"Barcelona",r:"Cataluña",of:2,j:2,l:2,cn:"C-16. Bus desde Barcelona. Sin tren",sev:{car:"9h 30min",ave:null,bus:"12h",fly:"2h"},gra:{car:"10h",ave:null,bus:"13h",fly:"2h"},prat:{car:"1h 30min",ave:null,bus:"2h",fly:null}},
+  {c:"Vic",p:"Barcelona",r:"Cataluña",of:2,j:3,l:3,cn:"C-17. Tren R3 desde Barcelona",sev:{car:"9h 30min",ave:null,bus:"12h",fly:"2h"},gra:{car:"10h",ave:null,bus:"13h",fly:"2h"},prat:{car:"1h 20min",ave:null,bus:"1h 30min",fly:null}},
+  {c:"Vendrell, El",p:"Tarragona",r:"Cataluña",of:1,j:2,l:2,cn:"AP-7/A-2. Tren R4/R13. Buenas conexiones",sev:{car:"8h 30min",ave:"4h",bus:"11h",fly:"2h"},gra:{car:"9h",ave:"4h 30min",bus:"12h",fly:"2h"},prat:{car:"45min",ave:"40min",bus:"1h",fly:null}},
+  {c:"Reus",p:"Tarragona",r:"Cataluña",of:1,j:3,l:3,cn:"A-7/AP-7. Tren R14. Aeropuerto Reus propio",sev:{car:"8h",ave:"3h 45min",bus:"10h",fly:"1h 45min"},gra:{car:"8h 30min",ave:"4h 15min",bus:"11h",fly:"1h 50min"},prat:{car:"1h",ave:"1h",bus:"1h 15min",fly:null}},
+  {c:"Valls",p:"Tarragona",r:"Cataluña",of:2,j:2,l:2,cn:"A-2/AP-2. Bus desde Tarragona. Sin tren directo",sev:{car:"8h",ave:"3h 45min",bus:"10h 30min",fly:"2h"},gra:{car:"8h 30min",ave:"4h 15min",bus:"11h",fly:"2h"},prat:{car:"1h",ave:null,bus:"1h 20min",fly:null}},
+  {c:"Falset",p:"Tarragona",r:"Cataluña",of:1,j:1,l:1,cn:"N-420/C-12. Bus desde Reus/Tarragona",sev:{car:"8h 30min",ave:null,bus:"11h",fly:"2h"},gra:{car:"9h",ave:null,bus:"12h",fly:"2h"},prat:{car:"1h 40min",ave:null,bus:"2h 30min",fly:null}},
+  {c:"Gandesa",p:"Tarragona",r:"Cataluña",of:1,j:1,l:1,cn:"N-420. Sin tren. Bus escaso desde Tortosa",sev:{car:"8h 30min",ave:null,bus:"11h",fly:"2h"},gra:{car:"9h",ave:null,bus:"12h",fly:"2h"},prat:{car:"2h 10min",ave:null,bus:"3h",fly:null}},
+  {c:"Amposta",p:"Tarragona",r:"Cataluña",of:2,j:2,l:2,cn:"AP-7/N-340. Bus desde Tortosa",sev:{car:"7h 30min",ave:null,bus:"10h",fly:"2h"},gra:{car:"8h",ave:null,bus:"11h",fly:"2h"},prat:{car:"2h",ave:null,bus:"2h 30min",fly:null}},
+  {c:"Tortosa",p:"Tarragona",r:"Cataluña",of:1,j:4,l:4,cn:"AP-7/N-340. Tren R15. Buenas conexiones",sev:{car:"7h 30min",ave:null,bus:"10h",fly:"2h"},gra:{car:"8h",ave:null,bus:"11h",fly:"2h"},prat:{car:"2h",ave:null,bus:"2h 30min",fly:null}},
+  {c:"Figueres",p:"Girona",r:"Cataluña",of:7,j:8,l:8,cn:"AP-7/N-II. AVE/AVant BCN-Figueres. Gran nudo",sev:{car:"10h",ave:"4h 30min",bus:"12h",fly:"2h"},gra:{car:"10h 30min",ave:"5h",bus:"13h",fly:"2h"},prat:{car:"1h 30min",ave:"1h",bus:"2h",fly:null}},
+  {c:"Blanes",p:"Girona",r:"Cataluña",of:2,j:2,l:2,cn:"C-32/GI-600. Tren R1 desde Barcelona",sev:{car:"10h",ave:null,bus:"12h",fly:"2h"},gra:{car:"10h 30min",ave:null,bus:"13h",fly:"2h"},prat:{car:"1h 20min",ave:null,bus:"1h 30min",fly:null}},
+  {c:"Santa Coloma de Farners",p:"Girona",r:"Cataluña",of:3,j:2,l:2,cn:"C-25. Bus desde Girona y Barcelona",sev:{car:"10h",ave:null,bus:"13h",fly:"2h"},gra:{car:"10h 30min",ave:null,bus:"14h",fly:"2h"},prat:{car:"1h 20min",ave:null,bus:"1h 40min",fly:null}},
+  {c:"Ripoll",p:"Girona",r:"Cataluña",of:1,j:2,l:2,cn:"N-152. Tren R3 desde Barcelona",sev:{car:"10h 30min",ave:null,bus:"13h",fly:"2h"},gra:{car:"11h",ave:null,bus:"14h",fly:"2h"},prat:{car:"1h 50min",ave:null,bus:"2h",fly:null}},
+  {c:"Bisbal d'Empordà, La",p:"Girona",r:"Cataluña",of:3,j:2,l:2,cn:"C-66. Bus desde Girona",sev:{car:"10h 30min",ave:null,bus:"13h",fly:"2h"},gra:{car:"11h",ave:null,bus:"14h",fly:"2h"},prat:{car:"1h 45min",ave:null,bus:"2h",fly:null}},
+  {c:"Olot",p:"Girona",r:"Cataluña",of:1,j:2,l:2,cn:"C-37/C-63. Sin tren. Bus desde Girona/Barcelona",sev:{car:"10h 30min",ave:null,bus:"13h",fly:"2h 10min"},gra:{car:"11h",ave:null,bus:"14h",fly:"2h 10min"},prat:{car:"2h",ave:null,bus:"2h 30min",fly:null}},
+  {c:"Cervera",p:"Lleida",r:"Cataluña",of:1,j:1,l:1,cn:"A-2. Sin tren. Bus desde Lleida/Barcelona",sev:{car:"8h 30min",ave:null,bus:"11h",fly:"2h"},gra:{car:"9h",ave:null,bus:"12h",fly:"2h"},prat:{car:"1h 20min",ave:null,bus:"1h 40min",fly:null}},
+  {c:"Balaguer",p:"Lleida",r:"Cataluña",of:1,j:3,l:3,cn:"N-II/C-13. Bus desde Lleida",sev:{car:"8h 30min",ave:null,bus:"11h",fly:"2h"},gra:{car:"9h",ave:null,bus:"12h",fly:"2h"},prat:{car:"1h 45min",ave:null,bus:"2h 15min",fly:null}},
+  {c:"Seu d'Urgell, La",p:"Lleida",r:"Cataluña",of:3,j:2,l:2,cn:"N-260/C-14. Sin tren. Bus desde Barcelona/Lleida",sev:{car:"9h 30min",ave:null,bus:"13h",fly:"2h"},gra:{car:"10h",ave:null,bus:"14h",fly:"2h"},prat:{car:"2h 30min",ave:null,bus:"3h",fly:null}},
+  {c:"Vielha e Mijaran",p:"Lleida",r:"Cataluña",of:1,j:1,l:1,cn:"N-230 (túnel Viella). Sin tren. Bus desde Lleida",sev:{car:"10h",ave:null,bus:"13h",fly:"2h 20min"},gra:{car:"10h 30min",ave:null,bus:"14h",fly:"2h 20min"},prat:{car:"3h",ave:null,bus:"4h",fly:null}},
+  {c:"Eivissa (4 plazas)",p:"Baleares",r:"Islas Baleares",of:4,j:16,l:12,cn:"Aeropuerto Ibiza. Ferry Dénia/Valencia. Vuelos directos",sev:{car:null,ave:null,bus:null,fly:"2h"},gra:{car:null,ave:null,bus:null,fly:"2h 10min"},prat:{car:null,ave:null,bus:null,fly:"1h"}},
+  {c:"Maó",p:"Baleares",r:"Islas Baleares",of:1,j:4,l:4,cn:"Aeropuerto Menorca. Ferry desde Barcelona",sev:{car:null,ave:null,bus:null,fly:"2h 10min"},gra:{car:null,ave:null,bus:null,fly:"2h 20min"},prat:{car:null,ave:null,bus:null,fly:"1h"}},
+  {c:"Verín",p:"Ourense",r:"Galicia",of:1,j:2,l:2,cn:"A-52. Bus desde Orense/Vigo. Sin tren",sev:{car:"6h",ave:null,bus:"8h 30min",fly:"2h 20min"},gra:{car:"6h 30min",ave:null,bus:"9h",fly:"2h 20min"},prat:{car:"9h",ave:null,bus:"12h",fly:"2h 40min"}},
+  {c:"Pobra de Trives, A",p:"Ourense",r:"Galicia",of:1,j:2,l:2,cn:"N-120/OU-903. Sin tren. Bus escaso desde Orense",sev:{car:"6h 30min",ave:null,bus:"9h",fly:"2h 30min"},gra:{car:"7h",ave:null,bus:"10h",fly:"2h 30min"},prat:{car:"9h",ave:null,bus:"12h",fly:"2h 40min"}},
+  {c:"Barco de Valdeorras, O",p:"Ourense",r:"Galicia",of:1,j:2,l:2,cn:"N-120/A-76. Sin tren. Bus desde Orense",sev:{car:"6h 30min",ave:null,bus:"9h",fly:"2h 30min"},gra:{car:"7h",ave:null,bus:"10h",fly:"2h 30min"},prat:{car:"8h 30min",ave:null,bus:"11h",fly:"2h 40min"}},
+  {c:"Fonsagrada, A",p:"Lugo",r:"Galicia",of:1,j:1,l:1,cn:"LU-722. Zona montaña. Sin tren ni bus directo",sev:{car:"7h 30min",ave:null,bus:"11h",fly:"2h 30min"},gra:{car:"8h",ave:null,bus:"12h",fly:"2h 30min"},prat:{car:"9h 30min",ave:null,bus:"13h",fly:"2h 50min"}},
+  {c:"Negreira",p:"A Coruña",r:"Galicia",of:1,j:1,l:1,cn:"AC-453. Sin tren. Bus escaso desde Santiago",sev:{car:"7h 30min",ave:null,bus:"10h",fly:"2h 30min"},gra:{car:"8h",ave:null,bus:"11h",fly:"2h 30min"},prat:{car:"10h",ave:null,bus:"13h",fly:"2h 50min"}},
+  {c:"Viveiro",p:"Lugo",r:"Galicia",of:1,j:2,l:2,cn:"LU-540/N-642. Sin tren. Bus desde Lugo",sev:{car:"8h",ave:null,bus:"11h",fly:"2h 30min"},gra:{car:"8h 30min",ave:null,bus:"12h",fly:"2h 30min"},prat:{car:"10h 30min",ave:null,bus:"13h",fly:"2h 50min"}},
+  {c:"Mondoñedo",p:"Lugo",r:"Galicia",of:2,j:2,l:2,cn:"N-634. Sin tren. Bus desde Lugo",sev:{car:"8h",ave:null,bus:"11h",fly:"2h 30min"},gra:{car:"8h 30min",ave:null,bus:"12h",fly:"2h 30min"},prat:{car:"10h 30min",ave:null,bus:"13h",fly:"2h 50min"}},
+  {c:"Ortigueira",p:"A Coruña",r:"Galicia",of:1,j:1,l:1,cn:"AC-100. Sin tren. Bus desde A Coruña",sev:{car:"8h",ave:null,bus:"11h",fly:"2h 40min"},gra:{car:"8h 30min",ave:null,bus:"12h",fly:"2h 40min"},prat:{car:"10h 30min",ave:null,bus:"13h",fly:"2h 50min"}},
+  {c:"Azpeitia",p:"Guipúzcoa",r:"País Vasco",of:1,j:2,l:2,cn:"N-634. Bus desde San Sebastián/Bilbao",sev:{car:"7h",ave:null,bus:"9h",fly:"2h 30min"},gra:{car:"7h 30min",ave:null,bus:"10h",fly:"2h 30min"},prat:{car:"5h 30min",ave:null,bus:"7h",fly:"1h 30min"}},
+  {c:"Cangas de Onís",p:"Asturias",r:"Asturias",of:1,j:1,l:1,cn:"AS-117/N-625. Bus desde Oviedo. Sin tren",sev:{car:"7h 30min",ave:null,bus:"10h",fly:"2h 30min"},gra:{car:"8h",ave:null,bus:"11h",fly:"2h 30min"},prat:{car:"7h",ave:null,bus:"9h 30min",fly:"1h 30min"}},
+  {c:"Cangas del Narcea",p:"Asturias",r:"Asturias",of:1,j:1,l:1,cn:"AS-15. Zona montaña. Sin tren. Bus desde Oviedo",sev:{car:"7h 30min",ave:null,bus:"10h",fly:"2h 30min"},gra:{car:"8h",ave:null,bus:"11h",fly:"2h 30min"},prat:{car:"7h 30min",ave:null,bus:"10h",fly:"1h 30min"}},
+  {c:"Güímar",p:"Sta. Cruz Tfe.",r:"Canarias",of:1,j:1,l:1,cn:"TF-28. Bus desde Sta. Cruz. Aeropuerto Tenerife Sur",sev:{car:null,ave:null,bus:null,fly:"2h 30min"},gra:{car:null,ave:null,bus:null,fly:"2h 50min"},prat:{car:null,ave:null,bus:null,fly:"2h 20min"}},
+  {c:"Granadilla de Abona",p:"Sta. Cruz Tfe.",r:"Canarias",of:2,j:1,l:1,cn:"TF-1. Bus desde Sta. Cruz. Cerca aeropuerto Sur",sev:{car:null,ave:null,bus:null,fly:"2h 30min"},gra:{car:null,ave:null,bus:null,fly:"2h 50min"},prat:{car:null,ave:null,bus:null,fly:"2h 20min"}},
+  {c:"Icod de los Vinos",p:"Sta. Cruz Tfe.",r:"Canarias",of:2,j:1,l:1,cn:"TF-5. Bus desde Sta. Cruz. Aeropuerto Tenerife Norte",sev:{car:null,ave:null,bus:null,fly:"2h 40min"},gra:{car:null,ave:null,bus:null,fly:"3h"},prat:{car:null,ave:null,bus:null,fly:"2h 30min"}},
+  {c:"Llanos de Aridane, Los",p:"Sta. Cruz Tfe.",r:"Canarias",of:2,j:2,l:2,cn:"LP-1. Aeropuerto La Palma. Vuelos vía Madrid",sev:{car:null,ave:null,bus:null,fly:"3h"},gra:{car:null,ave:null,bus:null,fly:"3h 20min"},prat:{car:null,ave:null,bus:null,fly:"3h"}},
+  {c:"Santa Cruz de La Palma",p:"Sta. Cruz Tfe.",r:"Canarias",of:2,j:3,l:3,cn:"Aeropuerto La Palma. Vuelos desde Madrid/Barcelona",sev:{car:null,ave:null,bus:null,fly:"3h"},gra:{car:null,ave:null,bus:null,fly:"3h 20min"},prat:{car:null,ave:null,bus:null,fly:"3h"}},
+  {c:"San Sebastián de La Gomera",p:"Sta. Cruz Tfe.",r:"Canarias",of:1,j:1,l:1,cn:"Aeropuerto La Gomera o ferry desde Tenerife",sev:{car:null,ave:null,bus:null,fly:"3h"},gra:{car:null,ave:null,bus:null,fly:"3h 30min"},prat:{car:null,ave:null,bus:null,fly:"3h"}}
 ];
 
-function timeToMins(t){
-  if(!t) return 99999;
-  const m = t.match(/(\d+)h(?:\s*(\d+)min)?/);
-  if(!m) return 99999;
+function toMins(t){
+  if(!t)return 99999;
+  const m=t.match(/(\d+)h(?:\s*(\d+)min)?/);
+  if(!m)return 99999;
   return parseInt(m[1])*60+(m[2]?parseInt(m[2]):0);
 }
-
-function bestTime(p, origin){
-  const o = p[origin];
-  return Math.min(timeToMins(o.car),timeToMins(o.ave),timeToMins(o.bus),timeToMins(o.fly));
+function best(d,tab){
+  const o=d[tab];
+  return Math.min(toMins(o.car),toMins(o.ave),toMins(o.bus),toMins(o.fly));
 }
 
-let currentTab = 'sev';
+let tab='sev',sort='best';
 
-function setTab(t, btn){
-  currentTab = t;
+function setTab(t,btn){
+  tab=t;
   document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
   render();
 }
-
+function setSort(s,btn){
+  sort=s;
+  document.querySelectorAll('.sb').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  const ths={car:'thc',ave:'tha',bus:'thb',fly:'thf'};
+  ['thc','tha','thb','thf'].forEach(id=>{
+    const el=document.getElementById(id);
+    if(el)el.classList.remove('sorted');
+  });
+  if(ths[s]){const el=document.getElementById(ths[s]);if(el)el.classList.add('sorted');}
+  const si=document.getElementById('si');
+  const labels={car:'Coche',ave:'AVE / Tren',bus:'Bus',fly:'Avión',best:'Mejor medio disponible'};
+  if(s==='best'){si.style.display='none';}
+  else{si.style.display='block';document.getElementById('slt').textContent=labels[s];}
+  render();
+}
 function buildRegions(){
-  const sel = document.getElementById('filter-region');
-  const regions = [...new Set(plazas.map(p=>p.region))].sort();
-  regions.forEach(r=>{
-    const o = document.createElement('option');
-    o.value=r; o.textContent=r;
-    sel.appendChild(o);
+  const sel=document.getElementById('fr');
+  [...new Set(data.map(d=>d.r))].sort().forEach(r=>{
+    const o=document.createElement('option');o.value=r;o.textContent=r;sel.appendChild(o);
   });
 }
-
-function badgeHtml(cls, label, val){
-  if(!val) return '<span class="none">—</span>';
-  return `<span class="badge ${cls}">${val}</span>`;
+function badge(cls,val,hi){
+  if(!val)return'<span class="none">—</span>';
+  return`<span class="badge ${cls}${hi?' hi2':''}">${val}</span>`;
 }
-
 function render(){
-  const search = document.getElementById('search').value.toLowerCase();
-  const region = document.getElementById('filter-region').value;
-  const transport = document.getElementById('filter-transport').value;
-
-  let data = plazas.filter(p=>{
-    if(search && !p.ciudad.toLowerCase().includes(search) && !p.prov.toLowerCase().includes(search)) return false;
-    if(region && p.region!==region) return false;
-    if(transport && !p[currentTab][transport]) return false;
+  const q=document.getElementById('search').value.toLowerCase();
+  const reg=document.getElementById('fr').value;
+  let rows=data.filter(d=>{
+    if(q&&!d.c.toLowerCase().includes(q)&&!d.p.toLowerCase().includes(q))return false;
+    if(reg&&d.r!==reg)return false;
     return true;
   });
-
-  data.sort((a,b)=>bestTime(a,currentTab)-bestTime(b,currentTab));
-  document.getElementById('count').textContent = data.length + ' plazas';
-
-  const tbody = document.getElementById('tbody');
-  if(!data.length){
-    tbody.innerHTML = '<tr class="empty-row"><td colspan="10">No se encontraron plazas con esos filtros</td></tr>';
-    return;
-  }
-
-  tbody.innerHTML = data.map((p,i)=>{
-    const o = p[currentTab];
-    const rankClass = i<3?'rank-top':'';
-    return `<tr>
-      <td class="rank-cell ${rankClass}">${i+1}</td>
-      <td class="city-cell"><div class="city-name">${p.ciudad}</div><div class="city-prov">${p.prov}</div></td>
-      <td><span class="region-badge">${p.region}</span></td>
-      <td>${badgeHtml('b-car','coche',o.car)}</td>
-      <td>${badgeHtml('b-ave','ave',o.ave)}</td>
-      <td>${badgeHtml('b-bus','bus',o.bus)}</td>
-      <td>${badgeHtml('b-fly','fly',o.fly)}</td>
-      <td class="num-cell juz-num">${p.juzgados}</td>
-      <td class="num-cell plz-num">${p.plazas}</td>
-      <td class="conn-cell">${p.conn}</td>
+  rows.sort((a,b)=>{
+    if(sort==='best')return best(a,tab)-best(b,tab);
+    const oa=a[tab],ob=b[tab];
+    return toMins(oa[sort])-toMins(ob[sort]);
+  });
+  document.getElementById('count').textContent=rows.length+' plazas';
+  const sc=sort;
+  document.getElementById('tbody').innerHTML=rows.map((d,i)=>{
+    const o=d[tab];
+    return`<tr>
+      <td class="rk ${i<3?'rt':''}">${i+1}</td>
+      <td><div class="cn">${d.c}</div><div class="cp">${d.p}</div></td>
+      <td><span class="rb">${d.r}</span></td>
+      <td>${badge('bc',o.car,sc==='car')}</td>
+      <td>${badge('ba',o.ave,sc==='ave')}</td>
+      <td>${badge('bb',o.bus,sc==='bus')}</td>
+      <td>${badge('bf',o.fly,sc==='fly')}</td>
+      <td class="nc nj">${d.j}</td>
+      <td class="nc nl">${d.l}</td>
+      <td class="nc np">${d.of}</td>
+      <td class="cc">${d.cn}</td>
     </tr>`;
   }).join('');
 }
-
 buildRegions();
 render();
 </script>
