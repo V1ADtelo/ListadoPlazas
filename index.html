@@ -3,293 +3,649 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Plazas LAJ — 47ª Promoción</title>
+<title>Plazas LAJ · 47ª Promoción</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#f5f3ee;--surface:#fffefb;--surface2:#f0ede6;--border:#ddd9d0;--border2:#c8c3b8;
-  --text:#1a1916;--text2:#6b6760;--text3:#9e9b95;
-  --accent:#2d5a3d;--accent2:#c8523a;--accent4:#2a4a7a;
-  --drive:#e8f0e9;--drive-t:#1e4228;--ave:#e8f4e8;--ave-t:#1a3d1a;
-  --bus:#fdf3e3;--bus-t:#6b4500;--fly:#fce8e3;--fly-t:#7a1e0a;
-  --laj:#f3eaf8;--laj-t:#5a1a7a;
-  --shadow:0 1px 3px rgba(0,0,0,0.06);
+:root {
+  --ink: #1a1a1a;
+  --ink-soft: #3a3a3a;
+  --ink-mute: #6b6b6b;
+  --paper: #f4f1ea;
+  --paper-warm: #ebe6da;
+  --paper-deep: #e0d9c8;
+  --rule: #c9c0a8;
+  --rule-soft: #d8d1bd;
+  --accent: #a8321e;
+  --accent-soft: #c44a30;
+  --accent-bg: rgba(168, 50, 30, 0.08);
+  --gold: #8a6d2c;
+  --gold-bg: rgba(138, 109, 44, 0.1);
+  --green: #4a7340;
+  --green-bg: rgba(74, 115, 64, 0.12);
 }
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.5;min-height:100vh}
-header{background:var(--surface);border-bottom:1px solid var(--border);padding:1.25rem 2rem 0.9rem;position:sticky;top:0;z-index:100;box-shadow:var(--shadow)}
-.hi{max-width:1600px;margin:0 auto}
-.ht{display:flex;align-items:baseline;gap:1rem;margin-bottom:0.6rem;flex-wrap:wrap}
-h1{font-family:'Instrument Serif',serif;font-size:23px;font-weight:400;letter-spacing:-0.02em}
-.hs{font-size:11px;color:var(--text3);font-family:'DM Mono',monospace;text-transform:uppercase;letter-spacing:0.08em}
-.cr{display:flex;flex-wrap:wrap;gap:7px;align-items:center}
-.tg{display:flex;border:1px solid var(--border2);border-radius:6px;overflow:hidden;flex-shrink:0}
-.tab{padding:5px 14px;font-size:11px;font-family:'DM Mono',monospace;letter-spacing:0.05em;background:transparent;color:var(--text2);border:none;cursor:pointer;transition:all 0.12s;text-transform:uppercase;border-right:1px solid var(--border2)}
-.tab:last-child{border-right:none}
-.tab.active{background:var(--text);color:#fff}
-.tab:not(.active):hover{background:var(--surface2)}
-.sg{display:flex;align-items:center;gap:3px;border:1px solid var(--border2);border-radius:6px;padding:2px 6px;background:var(--surface);flex-shrink:0}
-.sl{font-size:10px;font-family:'DM Mono',monospace;color:var(--text3);text-transform:uppercase;letter-spacing:0.06em;white-space:nowrap;padding-right:4px}
-.sb{padding:3px 9px;font-size:10px;font-family:'DM Mono',monospace;background:transparent;color:var(--text2);border:none;cursor:pointer;border-radius:4px;transition:all 0.12s;white-space:nowrap}
-.sb:hover{background:var(--surface2)}
-.sb.active{background:var(--text);color:#fff}
-.sb.sc.active{background:#1e4228;color:#fff}
-.sb.sa.active{background:#1a3d1a;color:#fff}
-.sb.sb2.active{background:#6b4500;color:#fff}
-.sb.sf.active{background:#7a1e0a;color:#fff}
-input[type=text]{height:31px;padding:0 10px;border:1px solid var(--border2);border-radius:6px;font-size:12px;font-family:'DM Sans',sans-serif;background:var(--surface);color:var(--text);outline:none;width:150px}
-input[type=text]:focus{border-color:var(--accent)}
-select{height:31px;padding:0 8px;border:1px solid var(--border2);border-radius:6px;font-size:12px;font-family:'DM Sans',sans-serif;background:var(--surface);color:var(--text);outline:none;cursor:pointer}
-.cb{font-family:'DM Mono',monospace;font-size:11px;color:var(--text3);margin-left:auto;letter-spacing:0.05em;white-space:nowrap}
-.si{font-size:10px;color:var(--text2);font-family:'DM Mono',monospace;padding:0.3rem 2rem;border-bottom:1px solid var(--border);background:var(--surface);max-width:100%}
-.si span{color:var(--accent);font-weight:500}
-.legend{max-width:1600px;margin:0 auto;padding:0.45rem 2rem;display:flex;gap:14px;flex-wrap:wrap;align-items:center;border-bottom:1px solid var(--border);font-size:11px;color:var(--text2);font-family:'DM Mono',monospace}
-.ld{width:8px;height:8px;border-radius:2px;display:inline-block;margin-right:3px;vertical-align:middle}
-main{max-width:1600px;margin:0 auto;padding:1rem 2rem}
-.tw{overflow-x:auto;background:var(--surface);border:1px solid var(--border);border-radius:8px;box-shadow:var(--shadow)}
-table{width:100%;border-collapse:collapse;min-width:1150px}
-thead th{padding:8px 11px;font-size:10px;font-family:'DM Mono',monospace;letter-spacing:0.07em;text-transform:uppercase;color:var(--text3);font-weight:500;border-bottom:1px solid var(--border);white-space:nowrap;background:var(--surface2)}
-thead th:first-child{border-radius:8px 0 0 0}thead th:last-child{border-radius:0 8px 0 0}
-th.sorted{color:var(--accent)!important;background:#e8f0e9!important}
-tbody tr{border-bottom:1px solid var(--border);transition:background 0.1s}
-tbody tr:last-child{border-bottom:none}
-tbody tr:hover{background:#f7f5f0}
-td{padding:7px 11px;vertical-align:middle}
-.rk{font-family:'DM Mono',monospace;font-size:11px;color:var(--text3);width:30px;text-align:center}
-.rt{color:var(--accent);font-weight:500}
-.cn{font-size:13px;font-weight:500;color:var(--text)}
-.cp{font-size:10px;color:var(--text3);font-family:'DM Mono',monospace}
-.rb{display:inline-block;padding:2px 7px;border-radius:3px;font-size:10px;font-family:'DM Mono',monospace;background:var(--surface2);color:var(--text2);border:1px solid var(--border)}
-.badge{display:inline-flex;align-items:center;padding:2px 8px;border-radius:4px;font-size:11px;font-family:'DM Mono',monospace;white-space:nowrap}
-.bc{background:var(--drive);color:var(--drive-t);border:1px solid #b8d9ba}
-.ba{background:var(--ave);color:var(--ave-t);border:1px solid #a8d4a8}
-.bb{background:var(--bus);color:var(--bus-t);border:1px solid #e8cc9a}
-.bf{background:var(--fly);color:var(--fly-t);border:1px solid #e8b8aa}
-.badge.hi2{font-weight:500;outline:2px solid currentColor;outline-offset:1px}
-.none{color:var(--text3);font-size:12px}
-.nc{text-align:center;font-family:'DM Mono',monospace;font-size:13px;font-weight:500}
-.nj{color:var(--accent4)}.nl{color:var(--laj-t)}.np{color:var(--accent2)}
-.cc{font-size:11px;color:var(--text2);max-width:210px;line-height:1.4}
-.er td{text-align:center;padding:3rem;color:var(--text3);font-size:13px}
-footer{max-width:1600px;margin:0 auto;padding:1.25rem 2rem;border-top:1px solid var(--border);margin-top:2rem;font-size:11px;color:var(--text3);font-family:'DM Mono',monospace;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
-@media(max-width:700px){header,main{padding-left:1rem;padding-right:1rem}h1{font-size:18px}.cb{margin-left:0}}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter Tight', sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 1.5;
+  min-height: 100vh;
+  background-image:
+    radial-gradient(circle at 20% 0%, rgba(168, 50, 30, 0.04) 0%, transparent 40%),
+    radial-gradient(circle at 80% 100%, rgba(138, 109, 44, 0.05) 0%, transparent 40%);
+}
+.container { max-width: 1480px; margin: 0 auto; padding: 32px 40px 80px; }
+
+/* HEADER */
+header { border-bottom: 1px solid var(--ink); padding-bottom: 28px; margin-bottom: 32px; }
+.eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--accent); font-weight: 500; margin-bottom: 18px;
+  display: flex; align-items: center; gap: 10px;
+}
+.eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--accent); }
+.title-row { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: end; }
+h1 { font-family: 'Fraunces', serif; font-weight: 300; font-size: clamp(48px, 7vw, 92px); line-height: 0.92; letter-spacing: -0.03em; }
+h1 em { font-style: italic; font-weight: 400; color: var(--accent); }
+.title-meta { text-align: right; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--ink-mute); line-height: 1.6; }
+.title-meta strong { display: block; font-family: 'Fraunces', serif; font-size: 56px; font-weight: 300; color: var(--ink); line-height: 1; margin-bottom: 4px; letter-spacing: -0.02em; }
+.subtitle { font-family: 'Fraunces', serif; font-style: italic; font-size: 18px; color: var(--ink-soft); margin-top: 16px; }
+
+/* RANKING TABS */
+.ranking-tabs { display: flex; gap: 0; margin-bottom: 24px; border-bottom: 2px solid var(--ink); }
+.ranking-tab {
+  flex: 1; padding: 18px 22px; background: transparent; border: none;
+  border-right: 1px solid var(--rule); cursor: pointer;
+  font-family: 'Inter Tight', sans-serif; text-align: left;
+  transition: background .15s; position: relative; color: var(--ink);
+}
+.ranking-tab:last-child { border-right: none; }
+.ranking-tab:hover { background: var(--paper-warm); }
+.ranking-tab.active { background: var(--ink); color: var(--paper); }
+.ranking-tab .tab-label {
+  font-family: 'JetBrains Mono', monospace; font-size: 10px;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--accent); font-weight: 500; margin-bottom: 4px;
+}
+.ranking-tab.active .tab-label { color: var(--accent-soft); }
+.ranking-tab .tab-title { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 400; line-height: 1.1; }
+.ranking-tab .tab-desc { font-size: 12px; color: var(--ink-mute); margin-top: 4px; }
+.ranking-tab.active .tab-desc { color: var(--paper-warm); opacity: 0.7; }
+
+/* CONTROLS */
+.controls-row {
+  display: grid; grid-template-columns: 2fr 3fr; gap: 20px; margin-bottom: 28px;
+}
+.controls, .sliders {
+  padding: 20px 24px; background: var(--paper-warm);
+  border: 1px solid var(--rule-soft); border-radius: 2px;
+}
+.controls-title, .sliders-title {
+  font-family: 'JetBrains Mono', monospace; font-size: 10px;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-mute);
+  font-weight: 500; margin-bottom: 14px;
+}
+.controls { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-content: start; }
+.controls .field-q { grid-column: 1 / 3; }
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ink-mute); font-weight: 500; }
+.field input[type="text"], .field select {
+  padding: 9px 12px; border: 1px solid var(--rule); border-radius: 2px;
+  background: var(--paper); font-family: 'Inter Tight', sans-serif;
+  font-size: 14px; color: var(--ink); width: 100%;
+  transition: border-color .15s, box-shadow .15s;
+}
+.field input[type="text"]:focus, .field select:focus {
+  outline: none; border-color: var(--ink); box-shadow: 0 0 0 3px rgba(26, 26, 26, 0.06);
+}
+.sliders { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 28px; }
+.slider-field { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 8px 12px; }
+.slider-field label { font-size: 13px; color: var(--ink-soft); font-weight: 500; }
+.slider-field .value { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--accent); font-weight: 500; min-width: 40px; text-align: right; }
+.slider-field input[type=range] { grid-column: 1 / 3; width: 100%; accent-color: var(--accent); height: 4px; }
+
+/* TOOLBAR */
+.toolbar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 18px; padding: 0 4px; }
+.summary { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--ink-mute); letter-spacing: 0.04em; }
+.summary strong { color: var(--ink); font-weight: 500; }
+.summary .accent { color: var(--accent); }
+.toolbar-actions { display: flex; gap: 8px; align-items: center; }
+.btn {
+  font-family: 'JetBrains Mono', monospace; font-size: 11px;
+  letter-spacing: 0.1em; text-transform: uppercase; padding: 8px 14px;
+  border: 1px solid var(--rule); background: transparent; color: var(--ink);
+  cursor: pointer; border-radius: 2px; transition: all .15s; font-weight: 500;
+}
+.btn:hover { border-color: var(--ink); background: var(--ink); color: var(--paper); }
+.btn.btn-toggle.active { border-color: var(--accent); background: var(--accent); color: var(--paper); }
+
+/* TABLA */
+.table-wrap { border-top: 2px solid var(--ink); border-bottom: 1px solid var(--ink); overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-feature-settings: "tnum" 1; }
+thead th {
+  text-align: left; font-family: 'JetBrains Mono', monospace; font-size: 10px;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-mute);
+  font-weight: 500; padding: 14px 10px 12px; border-bottom: 1px solid var(--rule);
+  background: var(--paper); cursor: pointer; user-select: none; white-space: nowrap;
+  position: sticky; top: 0; z-index: 2;
+}
+thead th:hover { color: var(--ink); }
+thead th .sort-arrow { display: inline-block; width: 8px; margin-left: 4px; color: var(--accent); opacity: 0; }
+thead th.sorted .sort-arrow { opacity: 1; }
+tbody tr { border-bottom: 1px solid var(--rule-soft); transition: background .15s; }
+tbody tr:hover { background: var(--paper-warm); }
+tbody tr.fav { background: linear-gradient(90deg, rgba(168, 50, 30, 0.05) 0%, transparent 30%); }
+tbody tr.fav:hover { background: linear-gradient(90deg, rgba(168, 50, 30, 0.09) 0%, var(--paper-warm) 30%); }
+td { padding: 12px 10px; vertical-align: middle; }
+
+td.col-rank {
+  font-family: 'Fraunces', serif; font-size: 22px; font-weight: 400;
+  color: var(--ink); width: 56px; text-align: center; letter-spacing: -0.02em;
+}
+td.col-rank.top { color: var(--accent); font-weight: 600; }
+td.col-rank .rank-sub { display: block; font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--ink-mute); margin-top: 2px; letter-spacing: 0.06em; }
+
+td.col-fav { width: 32px; text-align: center; }
+.fav-btn { background: none; border: none; cursor: pointer; font-size: 18px; line-height: 1; color: var(--rule); padding: 0; transition: color .15s, transform .15s; }
+.fav-btn:hover { color: var(--accent-soft); transform: scale(1.15); }
+.fav-btn.active { color: var(--accent); }
+
+td.col-poblacion {
+  font-family: 'Fraunces', serif; font-size: 17px; font-weight: 400;
+  letter-spacing: -0.01em; color: var(--ink); min-width: 180px; line-height: 1.2;
+}
+td.col-poblacion .pob-sub { display: block; font-family: 'Inter Tight', sans-serif; font-size: 12px; color: var(--ink-mute); margin-top: 2px; font-style: normal; }
+
+td.col-ccaa { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-mute); white-space: nowrap; }
+
+td.col-pos { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ink-mute); }
+
+.tag {
+  display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 10px;
+  letter-spacing: 0.06em; padding: 3px 8px; border: 1px solid var(--rule);
+  border-radius: 2px; color: var(--ink-soft); background: var(--paper); white-space: nowrap;
+}
+.tag.tag-direccion { border-color: var(--accent); color: var(--accent); background: var(--accent-bg); }
+.tag.tag-ejecucion { border-color: var(--gold); color: var(--gold); background: var(--gold-bg); }
+.tag.tag-aj2 { border-color: var(--green); color: var(--green); background: var(--green-bg); font-weight: 500; }
+
+td.col-tiempo { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--ink); white-space: nowrap; min-width: 130px; }
+td.col-tiempo .t-main { font-weight: 500; font-size: 14px; }
+td.col-tiempo .t-method { display: inline-block; margin-right: 6px; font-size: 11px; }
+td.col-tiempo .t-detail { display: block; font-size: 10px; color: var(--ink-mute); margin-top: 3px; letter-spacing: 0.04em; }
+
+td.col-tamano { white-space: nowrap; font-size: 12px; }
+.size-badge { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 10px; padding: 2px 6px; border-radius: 2px; background: var(--paper-deep); color: var(--ink-soft); letter-spacing: 0.04em; font-weight: 500; }
+.size-badge.size-XXL, .size-badge.size-XL { background: var(--green-bg); color: var(--green); }
+.size-badge.size-L { background: rgba(74, 115, 64, 0.06); color: var(--green); }
+.size-badge.size-XS { background: var(--accent-bg); color: var(--accent); }
+.size-badge.size-S { background: rgba(168, 50, 30, 0.04); color: var(--accent); }
+
+td.col-laj, td.col-oferta { text-align: center; width: 50px; }
+.laj-num, .oferta-num {
+  display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 13px;
+  font-weight: 500; min-width: 22px; padding: 2px 6px; border-radius: 2px;
+}
+.laj-num.laj-big { background: var(--green-bg); color: var(--green); font-weight: 600; }
+.laj-num.laj-mid { background: rgba(74, 115, 64, 0.06); color: var(--green); }
+.laj-num.laj-low { background: var(--accent-bg); color: var(--accent); }
+.oferta-num { background: var(--gold-bg); color: var(--gold); font-weight: 500; }
+.dash { color: var(--rule); font-family: 'JetBrains Mono', monospace; font-size: 12px; }
+
+td.col-conex {
+  font-size: 11px; color: var(--ink-mute); max-width: 200px;
+  font-family: 'Inter Tight', sans-serif; line-height: 1.4;
+}
+.conex-text { display: block; }
+
+td.col-score { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--ink-soft); text-align: right; width: 64px; }
+td.col-score .score-bar { display: inline-block; height: 4px; background: var(--rule-soft); border-radius: 1px; vertical-align: middle; margin-right: 6px; width: 32px; position: relative; }
+td.col-score .score-bar::after { content: ''; position: absolute; left: 0; top: 0; height: 100%; background: var(--accent); border-radius: 1px; width: var(--score-pct, 0%); }
+
+.empty { text-align: center; padding: 80px 20px; color: var(--ink-mute); font-family: 'Fraunces', serif; font-style: italic; font-size: 18px; }
+
+footer { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--rule); font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ink-mute); letter-spacing: 0.04em; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+footer .accent { color: var(--accent); }
+
+@media (max-width: 1100px) {
+  .controls-row { grid-template-columns: 1fr; }
+  .sliders { grid-template-columns: 1fr 1fr; }
+  td.col-conex, th.col-conex-h { display: none; }
+}
+@media (max-width: 760px) {
+  .container { padding: 24px 18px 60px; }
+  .controls { grid-template-columns: 1fr; }
+  .controls .field-q { grid-column: 1; }
+  .sliders { grid-template-columns: 1fr; }
+  .ranking-tabs { flex-direction: column; }
+  .ranking-tab { border-right: none; border-bottom: 1px solid var(--rule); }
+  .title-row { grid-template-columns: 1fr; }
+  .title-meta { text-align: left; }
+  td.col-laj, th.col-laj-h, td.col-oferta, th.col-oferta-h, td.col-pos, th.col-pos-h, td.col-ccaa, th.col-ccaa-h, td.col-score, th.col-score-h { display: none; }
+  h1 { font-size: 56px; }
+}
+.fade-in { animation: fadeIn .3s ease-out; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 </style>
 </head>
 <body>
+<div class="container">
+
 <header>
-<div class="hi">
-  <div class="ht">
-    <h1>Plazas LAJ</h1>
-    <span class="hs">47ª Promoción · Letrados de la Administración de Justicia</span>
-  </div>
-  <div class="cr">
-    <div class="tg">
-      <button class="tab active" onclick="setTab('sev',this)">Sevilla</button>
-      <button class="tab" onclick="setTab('gra',this)">Granada</button>
-      <button class="tab" onclick="setTab('prat',this)">El Prat</button>
+  <div class="eyebrow">Listado oficial · Concurso de traslados</div>
+  <div class="title-row">
+    <div>
+      <h1>Plazas <em>LAJ</em></h1>
+      <div class="subtitle">Letrados de la Administración de Justicia · 47ª Promoción</div>
     </div>
-    <input type="text" id="search" placeholder="Buscar ciudad..." oninput="render()">
-    <select id="fr" onchange="render()"><option value="">Todas las regiones</option></select>
-    <div class="sg">
-      <span class="sl">Ordenar</span>
-      <button class="sb sc" onclick="setSort('car',this)">Coche</button>
-      <button class="sb sa" onclick="setSort('ave',this)">AVE/Tren</button>
-      <button class="sb sb2" onclick="setSort('bus',this)">Bus</button>
-      <button class="sb sf" onclick="setSort('fly',this)">Avión</button>
-      <button class="sb active" onclick="setSort('best',this)">Mejor</button>
+    <div class="title-meta">
+      <strong>103</strong>
+      plazas en concurso<br>
+      tres rankings ponderados
     </div>
-    <span class="cb" id="count"></span>
   </div>
-</div>
 </header>
-<div class="si" id="si" style="display:none">Ordenando por: <span id="slt"></span> (de menos a más tiempo)</div>
-<div class="legend">
-  <span><span class="ld" style="background:#b8d9ba"></span>Coche</span>
-  <span><span class="ld" style="background:#a8d4a8"></span>AVE/Tren</span>
-  <span><span class="ld" style="background:#e8cc9a"></span>Bus</span>
-  <span><span class="ld" style="background:#e8b8aa"></span>Avión</span>
-  <span style="margin-left:auto;font-size:10px">
-    <span style="color:var(--accent4);font-weight:500">Juzgados</span> = total órganos &nbsp;
-    <span style="color:var(--laj-t);font-weight:500">LAJ totales</span> = plazas LAJ existentes &nbsp;
-    <span style="color:var(--accent2);font-weight:500">Ofertadas</span> = en este concurso
-  </span>
+
+<div class="ranking-tabs" role="tablist">
+  <button class="ranking-tab active" data-mode="combo">
+    <div class="tab-label">Ranking principal</div>
+    <div class="tab-title">Combinado</div>
+    <div class="tab-desc">Mejor acceso a Granada o Sevilla</div>
+  </button>
+  <button class="ranking-tab" data-mode="grx">
+    <div class="tab-label">Solo destino</div>
+    <div class="tab-title">Granada</div>
+    <div class="tab-desc">Tiempo a casa, todo coche o coche+avión</div>
+  </button>
+  <button class="ranking-tab" data-mode="svq">
+    <div class="tab-label">Solo destino</div>
+    <div class="tab-title">Sevilla</div>
+    <div class="tab-desc">Tiempo a Sevilla, todo coche o coche+avión</div>
+  </button>
 </div>
-<main>
-<div class="tw">
-<table>
-  <thead id="thead">
-    <tr>
-      <th>#</th><th>Ciudad</th><th>Región</th>
-      <th id="thc">Coche</th><th id="tha">AVE / Tren</th><th id="thb">Bus</th><th id="thf">Avión</th>
-      <th title="Total órganos judiciales en la plaza">Juzgados</th>
-      <th title="Plazas LAJ actualmente existentes" style="color:var(--laj-t)">LAJ totales</th>
-      <th title="Plazas ofertadas en este concurso">Ofertadas</th>
-      <th>Conexiones</th>
-    </tr>
-  </thead>
-  <tbody id="tbody"></tbody>
-</table>
+
+<div class="controls-row">
+  <div class="controls">
+    <div class="controls-title">Filtros</div>
+    <div class="field field-q">
+      <label class="field-label" for="q">Buscar</label>
+      <input type="text" id="q" placeholder="Población, provincia, CCAA…" autocomplete="off">
+    </div>
+    <div class="field">
+      <label class="field-label" for="ccaa">Comunidad</label>
+      <select id="ccaa"><option value="">Todas</option></select>
+    </div>
+    <div class="field">
+      <label class="field-label" for="prov">Provincia</label>
+      <select id="prov"><option value="">Todas</option></select>
+    </div>
+  </div>
+
+  <div class="sliders">
+    <div class="sliders-title">Pesos del ranking <span style="float:right;font-weight:400;text-transform:none;letter-spacing:.02em">arrastra para ajustar</span></div>
+    <div class="slider-field">
+      <label for="w-tiempo">Cercanía (tiempo a casa)</label>
+      <span class="value" id="v-tiempo">60</span>
+      <input type="range" id="w-tiempo" min="0" max="100" value="60">
+    </div>
+    <div class="slider-field">
+      <label for="w-laj">Más LAJ en plantilla (menos guardias)</label>
+      <span class="value" id="v-laj">25</span>
+      <input type="range" id="w-laj" min="0" max="60" value="25">
+    </div>
+    <div class="slider-field">
+      <label for="w-cat">Categoría AJ 2 sobre AJ 3</label>
+      <span class="value" id="v-cat">15</span>
+      <input type="range" id="w-cat" min="0" max="40" value="15">
+    </div>
+    <div class="slider-field">
+      <label for="w-dir">Plazas de Dirección</label>
+      <span class="value" id="v-dir">0</span>
+      <input type="range" id="w-dir" min="-15" max="15" value="0">
+    </div>
+  </div>
 </div>
-</main>
+
+<div class="toolbar">
+  <div class="summary">
+    Mostrando <strong id="shown">0</strong> de <strong id="total">0</strong>
+    <span id="ranking-label"></span>
+    <span id="fav-summary"></span>
+  </div>
+  <div class="toolbar-actions">
+    <button class="btn btn-toggle" id="only-fav">★ Solo marcadas</button>
+    <button class="btn" id="reset">Limpiar</button>
+  </div>
+</div>
+
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th data-sort="rank" class="sorted">#<span class="sort-arrow">▾</span></th>
+        <th></th>
+        <th data-sort="poblacion">Población <span class="sort-arrow">▾</span></th>
+        <th data-sort="ccaa" class="col-ccaa-h">CCAA <span class="sort-arrow">▾</span></th>
+        <th data-sort="puesto">Puesto <span class="sort-arrow">▾</span></th>
+        <th data-sort="categoria">Cat. <span class="sort-arrow">▾</span></th>
+        <th data-sort="t_grx">→ Granada <span class="sort-arrow">▾</span></th>
+        <th data-sort="t_svq">→ Sevilla <span class="sort-arrow">▾</span></th>
+        <th data-sort="l_total" title="Letrados de la Administración de Justicia totales en el partido. Más LAJ = menos guardias para cada uno." class="col-laj-h" style="text-align:center">LAJ <span class="sort-arrow">▾</span></th>
+        <th data-sort="ofertadas" title="Plazas ofertadas en este concurso de traslados" class="col-oferta-h" style="text-align:center">Of. <span class="sort-arrow">▾</span></th>
+        <th class="col-conex-h">Conexiones</th>
+        <th data-sort="posicion" class="col-pos-h">Pos. <span class="sort-arrow">▾</span></th>
+        <th data-sort="score" class="col-score-h" style="text-align:right">Score <span class="sort-arrow">▾</span></th>
+      </tr>
+    </thead>
+    <tbody id="tbody"></tbody>
+  </table>
+</div>
+
 <footer>
-  <span>Datos: Listado oficial 47ª Promoción LAJ · Ministerio de Justicia · CGPJ · mjusticia.gob.es</span>
-  <span>Tiempos orientativos en condiciones normales de tráfico y horarios habituales</span>
+  <div>Datos: Listado oficial 47ª Promoción LAJ · Tiempos calibrados ±10% vs Google Maps</div>
+  <div>Selección personal y pesos guardados <span class="accent">localmente</span> en este navegador</div>
 </footer>
 
+</div>
+
 <script>
-const data=[
-  {c:"Cazalla de la Sierra",p:"Sevilla",r:"Andalucía",of:1,j:1,l:1,cn:"A-432. Bus desde Sevilla. Transporte muy limitado",sev:{car:"1h 10min",ave:null,bus:"1h 45min",fly:null},gra:{car:"3h",ave:null,bus:"4h",fly:null},prat:{car:"8h 30min",ave:null,bus:"11h",fly:"2h"}},
-  {c:"Fregenal de la Sierra",p:"Badajoz",r:"Extremadura",of:1,j:1,l:1,cn:"N-435. Bus escaso desde Sevilla/Badajoz. Sin tren",sev:{car:"1h 30min",ave:null,bus:"2h 30min",fly:null},gra:{car:"3h",ave:null,bus:"4h 30min",fly:null},prat:{car:"9h",ave:null,bus:"12h",fly:"2h 30min"}},
-  {c:"Barbate",p:"Cádiz",r:"Andalucía",of:1,j:2,l:2,cn:"CA-221. Solo carretera. Bus desde Cádiz",sev:{car:"1h 45min",ave:null,bus:"2h 30min",fly:null},gra:{car:"2h 30min",ave:null,bus:"3h 30min",fly:null},prat:{car:"10h",ave:null,bus:"12h",fly:"2h 15min"}},
-  {c:"Zafra",p:"Badajoz",r:"Extremadura",of:1,j:2,l:2,cn:"A-66. Bus desde Sevilla/Badajoz. Sin AVE",sev:{car:"1h 45min",ave:null,bus:"2h",fly:null},gra:{car:"3h 30min",ave:null,bus:"4h 30min",fly:null},prat:{car:"8h 30min",ave:null,bus:"11h",fly:"2h 20min"}},
-  {c:"Ayamonte",p:"Huelva",r:"Andalucía",of:1,j:7,l:7,cn:"A-49. Bus directo Sevilla y Huelva",sev:{car:"1h 30min",ave:null,bus:"2h",fly:null},gra:{car:"3h 30min",ave:null,bus:"4h 30min",fly:null},prat:{car:"10h",ave:null,bus:"12h",fly:"2h 15min"}},
-  {c:"La Línea de la Concepción",p:"Cádiz",r:"Andalucía",of:1,j:5,l:5,cn:"A-7/AP-7. Bus directo Sevilla y Málaga",sev:{car:"2h",ave:null,bus:"2h 30min",fly:null},gra:{car:"2h 30min",ave:null,bus:"3h",fly:null},prat:{car:"9h 30min",ave:null,bus:"11h",fly:"2h 10min"}},
-  {c:"Villacarrillo",p:"Jaén",r:"Andalucía",of:1,j:2,l:2,cn:"A-32. Sin tren ni bus directo desde capitales",sev:{car:"2h 30min",ave:null,bus:"3h 30min",fly:null},gra:{car:"2h 10min",ave:null,bus:"3h",fly:null},prat:{car:"6h 20min",ave:null,bus:"8h",fly:"2h 30min"}},
-  {c:"Navalmoral de la Mata",p:"Cáceres",r:"Extremadura",of:1,j:2,l:2,cn:"A-5. Tren Madrid-Lisboa. Bus desde Cáceres",sev:{car:"3h 30min",ave:null,bus:"5h",fly:null},gra:{car:"4h",ave:null,bus:"5h 30min",fly:null},prat:{car:"6h",ave:null,bus:"8h",fly:"2h 10min"}},
-  {c:"Herrera del Duque",p:"Badajoz",r:"Extremadura",of:1,j:1,l:1,cn:"EX-116. Sin tren. Bus escaso",sev:{car:"3h",ave:null,bus:"4h",fly:null},gra:{car:"4h",ave:null,bus:"5h 30min",fly:null},prat:{car:"6h 30min",ave:null,bus:"9h",fly:"2h 20min"}},
-  {c:"Almadén",p:"Ciudad Real",r:"Castilla-La Mancha",of:1,j:1,l:1,cn:"N-502. Zona minera. Bus escaso",sev:{car:"3h 30min",ave:null,bus:"5h",fly:null},gra:{car:"3h",ave:null,bus:"4h 30min",fly:null},prat:{car:"6h",ave:null,bus:"8h",fly:"2h 10min"}},
-  {c:"Valdepeñas",p:"Ciudad Real",r:"Castilla-La Mancha",of:1,j:2,l:2,cn:"A-4/AP-4. AVE parada Puertollano. Bus Madrid/Sevilla",sev:{car:"3h 30min",ave:"2h 30min",bus:"4h",fly:null},gra:{car:"3h",ave:null,bus:"4h",fly:null},prat:{car:"5h 30min",ave:null,bus:"7h",fly:"2h"}},
-  {c:"Tomelloso",p:"Ciudad Real",r:"Castilla-La Mancha",of:1,j:3,l:3,cn:"CM-310/N-310. Bus desde Ciudad Real/Albacete",sev:{car:"4h 30min",ave:null,bus:"5h 30min",fly:null},gra:{car:"3h 30min",ave:null,bus:"4h 30min",fly:null},prat:{car:"5h",ave:null,bus:"6h 30min",fly:"2h"}},
-  {c:"San Clemente",p:"Cuenca",r:"Castilla-La Mancha",of:1,j:1,l:1,cn:"N-310/CM-3106. Bus escaso. Sin tren",sev:{car:"5h",ave:null,bus:"6h 30min",fly:null},gra:{car:"4h",ave:null,bus:"5h",fly:null},prat:{car:"4h 30min",ave:null,bus:"6h",fly:"2h"}},
-  {c:"Almazán",p:"Soria",r:"Castilla y León",of:2,j:1,l:1,cn:"N-111/A-15. Bus escaso. Sin tren directo",sev:{car:"6h",ave:null,bus:"8h",fly:"2h 20min"},gra:{car:"6h 30min",ave:null,bus:"9h",fly:"2h 20min"},prat:{car:"3h 30min",ave:null,bus:"5h",fly:"2h"}},
-  {c:"Aranda de Duero",p:"Burgos",r:"Castilla y León",of:2,j:2,l:2,cn:"A-1. Bus directo Madrid-Burgos. Sin AVE",sev:{car:"5h 30min",ave:null,bus:"7h",fly:"2h 20min"},gra:{car:"6h",ave:null,bus:"8h",fly:"2h 20min"},prat:{car:"4h 30min",ave:null,bus:"6h",fly:"2h"}},
-  {c:"Miranda de Ebro",p:"Burgos",r:"Castilla y León",of:1,j:3,l:3,cn:"A-1/AP-1. Tren Madrid-País Vasco. Buenas conexiones",sev:{car:"6h",ave:null,bus:"8h",fly:"2h 20min"},gra:{car:"6h 30min",ave:null,bus:"9h",fly:"2h 20min"},prat:{car:"4h",ave:null,bus:"5h 30min",fly:null}},
-  {c:"Villarcayo",p:"Burgos",r:"Castilla y León",of:2,j:2,l:2,cn:"BU-523/N-232. Bus escaso desde Burgos",sev:{car:"6h 30min",ave:null,bus:"9h",fly:"2h 20min"},gra:{car:"7h",ave:null,bus:"10h",fly:"2h 20min"},prat:{car:"4h 30min",ave:null,bus:"6h",fly:"2h"}},
-  {c:"Cervera de Pisuerga",p:"Palencia",r:"Castilla y León",of:1,j:1,l:1,cn:"CL-626. Zona montaña. Sin tren. Bus escaso",sev:{car:"6h",ave:null,bus:"8h 30min",fly:"2h 30min"},gra:{car:"6h 30min",ave:null,bus:"9h",fly:"2h 30min"},prat:{car:"5h",ave:null,bus:"7h",fly:"2h"}},
-  {c:"Vinaròs",p:"Castellón",r:"Com. Valenciana",of:1,j:2,l:2,cn:"AP-7/N-340. Tren Valencia-Barcelona",sev:{car:"7h",ave:null,bus:"9h",fly:"2h"},gra:{car:"7h 30min",ave:null,bus:"10h",fly:"2h"},prat:{car:"2h 20min",ave:null,bus:"2h 45min",fly:null}},
-  {c:"Calahorra",p:"La Rioja",r:"La Rioja",of:2,j:3,l:3,cn:"AP-68/N-232. Bus desde Logroño. Sin AVE",sev:{car:"6h",ave:null,bus:"8h",fly:"2h 20min"},gra:{car:"6h 30min",ave:null,bus:"9h",fly:"2h 20min"},prat:{car:"3h",ave:null,bus:"4h",fly:null}},
-  {c:"Fraga",p:"Huesca",r:"Aragón",of:1,j:2,l:2,cn:"A-2. Bus desde Zaragoza y Lérida",sev:{car:"7h 30min",ave:null,bus:"10h",fly:"2h 30min"},gra:{car:"8h",ave:null,bus:"11h",fly:"2h 30min"},prat:{car:"1h 20min",ave:null,bus:"1h 30min",fly:null}},
-  {c:"Daroca",p:"Zaragoza",r:"Aragón",of:1,j:1,l:1,cn:"A-23. Bus desde Zaragoza. Sin tren directo",sev:{car:"7h",ave:null,bus:"9h 30min",fly:"2h 20min"},gra:{car:"7h 30min",ave:null,bus:"10h",fly:"2h 20min"},prat:{car:"2h 50min",ave:null,bus:"3h 30min",fly:null}},
-  {c:"Boltaña",p:"Huesca",r:"Aragón",of:1,j:1,l:1,cn:"A-138. Zona Pirineo. Sin tren. Bus escaso",sev:{car:"8h 30min",ave:null,bus:"12h",fly:"2h 30min"},gra:{car:"9h",ave:null,bus:"13h",fly:"2h 30min"},prat:{car:"3h 30min",ave:null,bus:"5h",fly:null}},
-  {c:"Esplugues de Llobregat",p:"Barcelona",r:"Cataluña",of:1,j:2,l:2,cn:"Metro L5/Bus. Excelentes conexiones BCN",sev:{car:"9h",ave:"4h 15min",bus:"11h",fly:"1h 50min"},gra:{car:"9h 30min",ave:"4h 45min",bus:"12h",fly:"1h 55min"},prat:{car:"15min",ave:null,bus:"20min",fly:null}},
-  {c:"Cornellà de Llobregat",p:"Barcelona",r:"Cataluña",of:1,j:3,l:3,cn:"Metro L5 y L9. Excelentes conexiones BCN",sev:{car:"9h",ave:"4h 15min",bus:"11h",fly:"1h 50min"},gra:{car:"9h 30min",ave:"4h 45min",bus:"12h",fly:"1h 55min"},prat:{car:"15min",ave:null,bus:"20min",fly:null}},
-  {c:"Sant Boi de Llobregat",p:"Barcelona",r:"Cataluña",of:3,j:4,l:4,cn:"C-31/B-10. Metro L1 y FGC. Excelentes conexiones BCN",sev:{car:"9h",ave:"4h 15min",bus:"11h",fly:"1h 50min"},gra:{car:"9h 30min",ave:"4h 45min",bus:"12h",fly:"1h 55min"},prat:{car:"20min",ave:null,bus:"30min",fly:null}},
-  {c:"Martorell",p:"Barcelona",r:"Cataluña",of:2,j:2,l:2,cn:"A-2. Tren R4 FGC. Buenas conexiones BCN",sev:{car:"9h",ave:null,bus:"11h",fly:"1h 55min"},gra:{car:"9h 30min",ave:null,bus:"12h",fly:"2h"},prat:{car:"25min",ave:null,bus:"40min",fly:null}},
-  {c:"Rubí",p:"Barcelona",r:"Cataluña",of:1,j:2,l:2,cn:"B-30/A-2. FGC desde Barcelona",sev:{car:"9h",ave:null,bus:"11h",fly:"1h 55min"},gra:{car:"9h 30min",ave:null,bus:"12h",fly:"2h"},prat:{car:"30min",ave:null,bus:"45min",fly:null}},
-  {c:"Terrassa",p:"Barcelona",r:"Cataluña",of:1,j:5,l:5,cn:"A-18/C-58. FGC S1/S2. Excelentes conexiones BCN",sev:{car:"9h",ave:null,bus:"11h",fly:"1h 55min"},gra:{car:"9h 30min",ave:null,bus:"12h",fly:"2h"},prat:{car:"30min",ave:null,bus:"45min",fly:null}},
-  {c:"Vilafranca del Penedès",p:"Barcelona",r:"Cataluña",of:3,j:3,l:3,cn:"AP-7/A-7. Tren R4 desde Barcelona",sev:{car:"9h",ave:"4h 15min",bus:"11h",fly:"1h 55min"},gra:{car:"9h 30min",ave:"4h 45min",bus:"12h",fly:"2h"},prat:{car:"35min",ave:null,bus:"50min",fly:null}},
-  {c:"Igualada",p:"Barcelona",r:"Cataluña",of:2,j:3,l:3,cn:"A-2/AP-2. Bus desde Barcelona. Sin tren",sev:{car:"9h",ave:null,bus:"11h",fly:"1h 55min"},gra:{car:"9h 30min",ave:null,bus:"12h",fly:"2h"},prat:{car:"55min",ave:null,bus:"1h 15min",fly:null}},
-  {c:"Arenys de Mar",p:"Barcelona",r:"Cataluña",of:1,j:1,l:1,cn:"N-II/C-32. Tren R1 desde Barcelona",sev:{car:"9h 30min",ave:null,bus:"12h",fly:"2h"},gra:{car:"10h",ave:null,bus:"13h",fly:"2h"},prat:{car:"50min",ave:null,bus:"55min",fly:null}},
-  {c:"Manresa",p:"Barcelona",r:"Cataluña",of:2,j:4,l:4,cn:"C-55. Tren R5/R50 FGC. Buenas conexiones",sev:{car:"9h 30min",ave:null,bus:"12h",fly:"2h"},gra:{car:"10h",ave:null,bus:"13h",fly:"2h"},prat:{car:"1h 10min",ave:null,bus:"1h 30min",fly:null}},
-  {c:"Berga",p:"Barcelona",r:"Cataluña",of:2,j:2,l:2,cn:"C-16. Bus desde Barcelona. Sin tren",sev:{car:"9h 30min",ave:null,bus:"12h",fly:"2h"},gra:{car:"10h",ave:null,bus:"13h",fly:"2h"},prat:{car:"1h 30min",ave:null,bus:"2h",fly:null}},
-  {c:"Vic",p:"Barcelona",r:"Cataluña",of:2,j:3,l:3,cn:"C-17. Tren R3 desde Barcelona",sev:{car:"9h 30min",ave:null,bus:"12h",fly:"2h"},gra:{car:"10h",ave:null,bus:"13h",fly:"2h"},prat:{car:"1h 20min",ave:null,bus:"1h 30min",fly:null}},
-  {c:"Vendrell, El",p:"Tarragona",r:"Cataluña",of:1,j:2,l:2,cn:"AP-7/A-2. Tren R4/R13. Buenas conexiones",sev:{car:"8h 30min",ave:"4h",bus:"11h",fly:"2h"},gra:{car:"9h",ave:"4h 30min",bus:"12h",fly:"2h"},prat:{car:"45min",ave:"40min",bus:"1h",fly:null}},
-  {c:"Reus",p:"Tarragona",r:"Cataluña",of:1,j:3,l:3,cn:"A-7/AP-7. Tren R14. Aeropuerto Reus propio",sev:{car:"8h",ave:"3h 45min",bus:"10h",fly:"1h 45min"},gra:{car:"8h 30min",ave:"4h 15min",bus:"11h",fly:"1h 50min"},prat:{car:"1h",ave:"1h",bus:"1h 15min",fly:null}},
-  {c:"Valls",p:"Tarragona",r:"Cataluña",of:2,j:2,l:2,cn:"A-2/AP-2. Bus desde Tarragona. Sin tren directo",sev:{car:"8h",ave:"3h 45min",bus:"10h 30min",fly:"2h"},gra:{car:"8h 30min",ave:"4h 15min",bus:"11h",fly:"2h"},prat:{car:"1h",ave:null,bus:"1h 20min",fly:null}},
-  {c:"Falset",p:"Tarragona",r:"Cataluña",of:1,j:1,l:1,cn:"N-420/C-12. Bus desde Reus/Tarragona",sev:{car:"8h 30min",ave:null,bus:"11h",fly:"2h"},gra:{car:"9h",ave:null,bus:"12h",fly:"2h"},prat:{car:"1h 40min",ave:null,bus:"2h 30min",fly:null}},
-  {c:"Gandesa",p:"Tarragona",r:"Cataluña",of:1,j:1,l:1,cn:"N-420. Sin tren. Bus escaso desde Tortosa",sev:{car:"8h 30min",ave:null,bus:"11h",fly:"2h"},gra:{car:"9h",ave:null,bus:"12h",fly:"2h"},prat:{car:"2h 10min",ave:null,bus:"3h",fly:null}},
-  {c:"Amposta",p:"Tarragona",r:"Cataluña",of:2,j:2,l:2,cn:"AP-7/N-340. Bus desde Tortosa",sev:{car:"7h 30min",ave:null,bus:"10h",fly:"2h"},gra:{car:"8h",ave:null,bus:"11h",fly:"2h"},prat:{car:"2h",ave:null,bus:"2h 30min",fly:null}},
-  {c:"Tortosa",p:"Tarragona",r:"Cataluña",of:1,j:4,l:4,cn:"AP-7/N-340. Tren R15. Buenas conexiones",sev:{car:"7h 30min",ave:null,bus:"10h",fly:"2h"},gra:{car:"8h",ave:null,bus:"11h",fly:"2h"},prat:{car:"2h",ave:null,bus:"2h 30min",fly:null}},
-  {c:"Figueres",p:"Girona",r:"Cataluña",of:7,j:8,l:8,cn:"AP-7/N-II. AVE/AVant BCN-Figueres. Gran nudo",sev:{car:"10h",ave:"4h 30min",bus:"12h",fly:"2h"},gra:{car:"10h 30min",ave:"5h",bus:"13h",fly:"2h"},prat:{car:"1h 30min",ave:"1h",bus:"2h",fly:null}},
-  {c:"Blanes",p:"Girona",r:"Cataluña",of:2,j:2,l:2,cn:"C-32/GI-600. Tren R1 desde Barcelona",sev:{car:"10h",ave:null,bus:"12h",fly:"2h"},gra:{car:"10h 30min",ave:null,bus:"13h",fly:"2h"},prat:{car:"1h 20min",ave:null,bus:"1h 30min",fly:null}},
-  {c:"Santa Coloma de Farners",p:"Girona",r:"Cataluña",of:3,j:2,l:2,cn:"C-25. Bus desde Girona y Barcelona",sev:{car:"10h",ave:null,bus:"13h",fly:"2h"},gra:{car:"10h 30min",ave:null,bus:"14h",fly:"2h"},prat:{car:"1h 20min",ave:null,bus:"1h 40min",fly:null}},
-  {c:"Ripoll",p:"Girona",r:"Cataluña",of:1,j:2,l:2,cn:"N-152. Tren R3 desde Barcelona",sev:{car:"10h 30min",ave:null,bus:"13h",fly:"2h"},gra:{car:"11h",ave:null,bus:"14h",fly:"2h"},prat:{car:"1h 50min",ave:null,bus:"2h",fly:null}},
-  {c:"Bisbal d'Empordà, La",p:"Girona",r:"Cataluña",of:3,j:2,l:2,cn:"C-66. Bus desde Girona",sev:{car:"10h 30min",ave:null,bus:"13h",fly:"2h"},gra:{car:"11h",ave:null,bus:"14h",fly:"2h"},prat:{car:"1h 45min",ave:null,bus:"2h",fly:null}},
-  {c:"Olot",p:"Girona",r:"Cataluña",of:1,j:2,l:2,cn:"C-37/C-63. Sin tren. Bus desde Girona/Barcelona",sev:{car:"10h 30min",ave:null,bus:"13h",fly:"2h 10min"},gra:{car:"11h",ave:null,bus:"14h",fly:"2h 10min"},prat:{car:"2h",ave:null,bus:"2h 30min",fly:null}},
-  {c:"Cervera",p:"Lleida",r:"Cataluña",of:1,j:1,l:1,cn:"A-2. Sin tren. Bus desde Lleida/Barcelona",sev:{car:"8h 30min",ave:null,bus:"11h",fly:"2h"},gra:{car:"9h",ave:null,bus:"12h",fly:"2h"},prat:{car:"1h 20min",ave:null,bus:"1h 40min",fly:null}},
-  {c:"Balaguer",p:"Lleida",r:"Cataluña",of:1,j:3,l:3,cn:"N-II/C-13. Bus desde Lleida",sev:{car:"8h 30min",ave:null,bus:"11h",fly:"2h"},gra:{car:"9h",ave:null,bus:"12h",fly:"2h"},prat:{car:"1h 45min",ave:null,bus:"2h 15min",fly:null}},
-  {c:"Seu d'Urgell, La",p:"Lleida",r:"Cataluña",of:3,j:2,l:2,cn:"N-260/C-14. Sin tren. Bus desde Barcelona/Lleida",sev:{car:"9h 30min",ave:null,bus:"13h",fly:"2h"},gra:{car:"10h",ave:null,bus:"14h",fly:"2h"},prat:{car:"2h 30min",ave:null,bus:"3h",fly:null}},
-  {c:"Vielha e Mijaran",p:"Lleida",r:"Cataluña",of:1,j:1,l:1,cn:"N-230 (túnel Viella). Sin tren. Bus desde Lleida",sev:{car:"10h",ave:null,bus:"13h",fly:"2h 20min"},gra:{car:"10h 30min",ave:null,bus:"14h",fly:"2h 20min"},prat:{car:"3h",ave:null,bus:"4h",fly:null}},
-  {c:"Eivissa (4 plazas)",p:"Baleares",r:"Islas Baleares",of:4,j:16,l:12,cn:"Aeropuerto Ibiza. Ferry Dénia/Valencia. Vuelos directos",sev:{car:null,ave:null,bus:null,fly:"2h"},gra:{car:null,ave:null,bus:null,fly:"2h 10min"},prat:{car:null,ave:null,bus:null,fly:"1h"}},
-  {c:"Maó",p:"Baleares",r:"Islas Baleares",of:1,j:4,l:4,cn:"Aeropuerto Menorca. Ferry desde Barcelona",sev:{car:null,ave:null,bus:null,fly:"2h 10min"},gra:{car:null,ave:null,bus:null,fly:"2h 20min"},prat:{car:null,ave:null,bus:null,fly:"1h"}},
-  {c:"Verín",p:"Ourense",r:"Galicia",of:1,j:2,l:2,cn:"A-52. Bus desde Orense/Vigo. Sin tren",sev:{car:"6h",ave:null,bus:"8h 30min",fly:"2h 20min"},gra:{car:"6h 30min",ave:null,bus:"9h",fly:"2h 20min"},prat:{car:"9h",ave:null,bus:"12h",fly:"2h 40min"}},
-  {c:"Pobra de Trives, A",p:"Ourense",r:"Galicia",of:1,j:2,l:2,cn:"N-120/OU-903. Sin tren. Bus escaso desde Orense",sev:{car:"6h 30min",ave:null,bus:"9h",fly:"2h 30min"},gra:{car:"7h",ave:null,bus:"10h",fly:"2h 30min"},prat:{car:"9h",ave:null,bus:"12h",fly:"2h 40min"}},
-  {c:"Barco de Valdeorras, O",p:"Ourense",r:"Galicia",of:1,j:2,l:2,cn:"N-120/A-76. Sin tren. Bus desde Orense",sev:{car:"6h 30min",ave:null,bus:"9h",fly:"2h 30min"},gra:{car:"7h",ave:null,bus:"10h",fly:"2h 30min"},prat:{car:"8h 30min",ave:null,bus:"11h",fly:"2h 40min"}},
-  {c:"Fonsagrada, A",p:"Lugo",r:"Galicia",of:1,j:1,l:1,cn:"LU-722. Zona montaña. Sin tren ni bus directo",sev:{car:"7h 30min",ave:null,bus:"11h",fly:"2h 30min"},gra:{car:"8h",ave:null,bus:"12h",fly:"2h 30min"},prat:{car:"9h 30min",ave:null,bus:"13h",fly:"2h 50min"}},
-  {c:"Negreira",p:"A Coruña",r:"Galicia",of:1,j:1,l:1,cn:"AC-453. Sin tren. Bus escaso desde Santiago",sev:{car:"7h 30min",ave:null,bus:"10h",fly:"2h 30min"},gra:{car:"8h",ave:null,bus:"11h",fly:"2h 30min"},prat:{car:"10h",ave:null,bus:"13h",fly:"2h 50min"}},
-  {c:"Viveiro",p:"Lugo",r:"Galicia",of:1,j:2,l:2,cn:"LU-540/N-642. Sin tren. Bus desde Lugo",sev:{car:"8h",ave:null,bus:"11h",fly:"2h 30min"},gra:{car:"8h 30min",ave:null,bus:"12h",fly:"2h 30min"},prat:{car:"10h 30min",ave:null,bus:"13h",fly:"2h 50min"}},
-  {c:"Mondoñedo",p:"Lugo",r:"Galicia",of:2,j:2,l:2,cn:"N-634. Sin tren. Bus desde Lugo",sev:{car:"8h",ave:null,bus:"11h",fly:"2h 30min"},gra:{car:"8h 30min",ave:null,bus:"12h",fly:"2h 30min"},prat:{car:"10h 30min",ave:null,bus:"13h",fly:"2h 50min"}},
-  {c:"Ortigueira",p:"A Coruña",r:"Galicia",of:1,j:1,l:1,cn:"AC-100. Sin tren. Bus desde A Coruña",sev:{car:"8h",ave:null,bus:"11h",fly:"2h 40min"},gra:{car:"8h 30min",ave:null,bus:"12h",fly:"2h 40min"},prat:{car:"10h 30min",ave:null,bus:"13h",fly:"2h 50min"}},
-  {c:"Azpeitia",p:"Guipúzcoa",r:"País Vasco",of:1,j:2,l:2,cn:"N-634. Bus desde San Sebastián/Bilbao",sev:{car:"7h",ave:null,bus:"9h",fly:"2h 30min"},gra:{car:"7h 30min",ave:null,bus:"10h",fly:"2h 30min"},prat:{car:"5h 30min",ave:null,bus:"7h",fly:"1h 30min"}},
-  {c:"Cangas de Onís",p:"Asturias",r:"Asturias",of:1,j:1,l:1,cn:"AS-117/N-625. Bus desde Oviedo. Sin tren",sev:{car:"7h 30min",ave:null,bus:"10h",fly:"2h 30min"},gra:{car:"8h",ave:null,bus:"11h",fly:"2h 30min"},prat:{car:"7h",ave:null,bus:"9h 30min",fly:"1h 30min"}},
-  {c:"Cangas del Narcea",p:"Asturias",r:"Asturias",of:1,j:1,l:1,cn:"AS-15. Zona montaña. Sin tren. Bus desde Oviedo",sev:{car:"7h 30min",ave:null,bus:"10h",fly:"2h 30min"},gra:{car:"8h",ave:null,bus:"11h",fly:"2h 30min"},prat:{car:"7h 30min",ave:null,bus:"10h",fly:"1h 30min"}},
-  {c:"Güímar",p:"Sta. Cruz Tfe.",r:"Canarias",of:1,j:1,l:1,cn:"TF-28. Bus desde Sta. Cruz. Aeropuerto Tenerife Sur",sev:{car:null,ave:null,bus:null,fly:"2h 30min"},gra:{car:null,ave:null,bus:null,fly:"2h 50min"},prat:{car:null,ave:null,bus:null,fly:"2h 20min"}},
-  {c:"Granadilla de Abona",p:"Sta. Cruz Tfe.",r:"Canarias",of:2,j:1,l:1,cn:"TF-1. Bus desde Sta. Cruz. Cerca aeropuerto Sur",sev:{car:null,ave:null,bus:null,fly:"2h 30min"},gra:{car:null,ave:null,bus:null,fly:"2h 50min"},prat:{car:null,ave:null,bus:null,fly:"2h 20min"}},
-  {c:"Icod de los Vinos",p:"Sta. Cruz Tfe.",r:"Canarias",of:2,j:1,l:1,cn:"TF-5. Bus desde Sta. Cruz. Aeropuerto Tenerife Norte",sev:{car:null,ave:null,bus:null,fly:"2h 40min"},gra:{car:null,ave:null,bus:null,fly:"3h"},prat:{car:null,ave:null,bus:null,fly:"2h 30min"}},
-  {c:"Llanos de Aridane, Los",p:"Sta. Cruz Tfe.",r:"Canarias",of:2,j:2,l:2,cn:"LP-1. Aeropuerto La Palma. Vuelos vía Madrid",sev:{car:null,ave:null,bus:null,fly:"3h"},gra:{car:null,ave:null,bus:null,fly:"3h 20min"},prat:{car:null,ave:null,bus:null,fly:"3h"}},
-  {c:"Santa Cruz de La Palma",p:"Sta. Cruz Tfe.",r:"Canarias",of:2,j:3,l:3,cn:"Aeropuerto La Palma. Vuelos desde Madrid/Barcelona",sev:{car:null,ave:null,bus:null,fly:"3h"},gra:{car:null,ave:null,bus:null,fly:"3h 20min"},prat:{car:null,ave:null,bus:null,fly:"3h"}},
-  {c:"San Sebastián de La Gomera",p:"Sta. Cruz Tfe.",r:"Canarias",of:1,j:1,l:1,cn:"Aeropuerto La Gomera o ferry desde Tenerife",sev:{car:null,ave:null,bus:null,fly:"3h"},gra:{car:null,ave:null,bus:null,fly:"3h 30min"},prat:{car:null,ave:null,bus:null,fly:"3h"}}
-];
+const PLAZAS = [{"posicion":"50365561","puesto":"LAJ DIRECCIÓN - SCT TI","categoria":"Letrados AJ 3","poblacion":"San Sebastián de la Gomera","provincia":"Santa Cruz de Tenerife","ccaa":"Canarias","lat":28.0916,"lon":-17.1133,"t_grx":324,"t_svq":329,"m_grx":"avion","m_svq":"avion","ap_grx":"TFS","ap_svq":"TFS","coche_grx":null,"coche_svq":null,"poblacion_hab":8800,"j_total":1,"l_total":1,"conexiones":"Aeropuerto La Gomera o ferry desde Tenerife","ofertadas":1,"id":"50365561"},{"posicion":"50365837","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 3","poblacion":"Olot","provincia":"Girona","ccaa":"Cataluña","lat":42.1818,"lon":2.49,"t_grx":297,"t_svq":302,"m_grx":"avion","m_svq":"avion","ap_grx":"BCN","ap_svq":"BCN","coche_grx":635,"coche_svq":749,"poblacion_hab":36000,"j_total":2,"l_total":2,"conexiones":"C-37/C-63. Sin tren. Bus desde Girona/Barcelona","ofertadas":1,"id":"50365837"},{"posicion":"50365815","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 3","poblacion":"Vic","provincia":"Barcelona","ccaa":"Cataluña","lat":41.9301,"lon":2.2545,"t_grx":270,"t_svq":275,"m_grx":"avion","m_svq":"avion","ap_grx":"BCN","ap_svq":"BCN","coche_grx":607,"coche_svq":722,"poblacion_hab":49000,"j_total":3,"l_total":3,"conexiones":"C-17. Tren R3 desde Barcelona","ofertadas":3,"id":"50365815"},{"posicion":"50366658","puesto":"LAJ DIRECCIÓN - SCT TI","categoria":"Letrados AJ 3","poblacion":"A Pobra de Trives","provincia":"Ourense","ccaa":"Galicia","lat":42.3393,"lon":-7.2546,"t_grx":544,"t_svq":468,"m_grx":"coche","m_svq":"coche","ap_grx":null,"ap_svq":null,"coche_grx":544,"coche_svq":468,"poblacion_hab":2200,"j_total":2,"l_total":2,"conexiones":"N-120/OU-903. Sin tren. Bus escaso desde Orense","ofertadas":1,"id":"50366658"},{"posicion":"50365557","puesto":"LAJ DIRECCIÓN - SCT TI","categoria":"Letrados AJ 3","poblacion":"Los Llanos de Aridane","provincia":"Santa Cruz de Tenerife","ccaa":"Canarias","lat":28.6585,"lon":-17.9166,"t_grx":403,"t_svq":408,"m_grx":"avion","m_svq":"avion","ap_grx":"TFS","ap_svq":"TFS","coche_grx":null,"coche_svq":null,"poblacion_hab":20000,"j_total":2,"l_total":2,"conexiones":"LP-1. Aeropuerto La Palma. Vuelos vía Madrid","ofertadas":2,"id":"50365557"},{"posicion":"50399508","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 3","poblacion":"Santa Cruz de la Palma","provincia":"Santa Cruz de Tenerife","ccaa":"Canarias","lat":28.6835,"lon":-17.7642,"t_grx":394,"t_svq":399,"m_grx":"avion","m_svq":"avion","ap_grx":"TFS","ap_svq":"TFS","coche_grx":null,"coche_svq":null,"poblacion_hab":15000,"j_total":3,"l_total":3,"conexiones":"Aeropuerto La Palma. Vuelos desde Madrid/Barcelona","ofertadas":2,"id":"50399508"},{"posicion":"50365852","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 3","poblacion":"Cervera","provincia":"Lleida","ccaa":"Cataluña","lat":41.6699,"lon":1.2729,"t_grx":276,"t_svq":281,"m_grx":"avion","m_svq":"avion","ap_grx":"BCN","ap_svq":"BCN","coche_grx":543,"coche_svq":652,"poblacion_hab":9000,"j_total":1,"l_total":1,"conexiones":"A-2. Sin tren. Bus desde Lleida/Barcelona","ofertadas":1,"id":"50365852"},{"posicion":"50365730","puesto":"LAJ DIRECCIÓN - SCT TI","categoria":"Letrados AJ 3","poblacion":"Berga","provincia":"Barcelona","ccaa":"Cataluña","lat":42.1018,"lon":1.8444,"t_grx":286,"t_svq":291,"m_grx":"avion","m_svq":"avion","ap_grx":"BCN","ap_svq":"BCN","coche_grx":599,"coche_svq":708,"poblacion_hab":16500,"j_total":2,"l_total":2,"conexiones":"C-16. Bus desde Barcelona. Sin tren","ofertadas":2,"id":"50365730"},{"posicion":"50365567","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 3","poblacion":"Granadilla de Abona","provincia":"Santa Cruz de Tenerife","ccaa":"Canarias","lat":28.1198,"lon":-16.5772,"t_grx":287,"t_svq":292,"m_grx":"avion","m_svq":"avion","ap_grx":"TFS","ap_svq":"TFS","coche_grx":null,"coche_svq":null,"poblacion_hab":53000,"j_total":1,"l_total":1,"conexiones":"TF-1. Bus desde Sta. Cruz. Cerca aeropuerto Sur","ofertadas":2,"id":"50365567"},{"posicion":"50390257","puesto":"LAJ - SCEJ","categoria":"Letrados AJ 2","poblacion":"Eivissa","provincia":"Illes Balears","ccaa":"Islas Baleares","lat":38.9067,"lon":1.4206,"t_grx":317,"t_svq":322,"m_grx":"avion","m_svq":"avion","ap_grx":"PMI","ap_svq":"PMI","coche_grx":400,"coche_svq":557,"poblacion_hab":50000,"j_total":16,"l_total":12,"conexiones":"Aeropuerto Ibiza. Ferry Dénia/Valencia. Vuelos directos","ofertadas":2,"id":"50390257"},{"posicion":"50365840","puesto":"LAJ DIRECCIÓN - SCT TI","categoria":"Letrados AJ 3","poblacion":"Santa Coloma de Farners","provincia":"Girona","ccaa":"Cataluña","lat":41.8606,"lon":2.668,"t_grx":276,"t_svq":281,"m_grx":"avion","m_svq":"avion","ap_grx":"BCN","ap_svq":"BCN","coche_grx":623,"coche_svq":743,"poblacion_hab":13000,"j_total":2,"l_total":2,"conexiones":"C-25. Bus desde Girona y Barcelona","ofertadas":4,"id":"50365840"},{"posicion":"50365768","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 3","poblacion":"Igualada","provincia":"Barcelona","ccaa":"Cataluña","lat":41.5793,"lon":1.6175,"t_grx":252,"t_svq":257,"m_grx":"avion","m_svq":"avion","ap_grx":"BCN","ap_svq":"BCN","coche_grx":553,"coche_svq":668,"poblacion_hab":41000,"j_total":3,"l_total":3,"conexiones":"A-2/AP-2. Bus desde Barcelona. Sin tren","ofertadas":2,"id":"50365768"},{"posicion":"50365553","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 3","poblacion":"Icod de los Vinos","provincia":"Santa Cruz de Tenerife","ccaa":"Canarias","lat":28.368,"lon":-16.7126,"t_grx":312,"t_svq":317,"m_grx":"avion","m_svq":"avion","ap_grx":"TFN","ap_svq":"TFN","coche_grx":null,"coche_svq":null,"poblacion_hab":22500,"j_total":1,"l_total":1,"conexiones":"TF-5. Bus desde Sta. Cruz. Aeropuerto Tenerife Norte","ofertadas":2,"id":"50365553"},{"posicion":"50365848","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 3","poblacion":"Balaguer","provincia":"Lleida","ccaa":"Cataluña","lat":41.7903,"lon":0.8067,"t_grx":310,"t_svq":315,"m_grx":"avion","m_svq":"avion","ap_grx":"BCN","ap_svq":"BCN","coche_grx":531,"coche_svq":633,"poblacion_hab":17000,"j_total":3,"l_total":3,"conexiones":"N-II/C-13. Bus desde Lleida","ofertadas":1,"id":"50365848"},{"posicion":"50400072","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 2","poblacion":"Tortosa","provincia":"Tarragona","ccaa":"Cataluña","lat":40.8126,"lon":0.5215,"t_grx":328,"t_svq":333,"m_grx":"avion","m_svq":"avion","ap_grx":"BCN","ap_svq":"BCN","coche_grx":449,"coche_svq":565,"poblacion_hab":33000,"j_total":4,"l_total":4,"conexiones":"AP-7/N-340. Tren R15. Buenas conexiones","ofertadas":1,"id":"50400072"},{"posicion":"50365833","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 3","poblacion":"La Bisbal D'empordà","provincia":"Girona","ccaa":"Cataluña","lat":41.9601,"lon":3.0386,"t_grx":300,"t_svq":305,"m_grx":"avion","m_svq":"avion","ap_grx":"BCN","ap_svq":"BCN","coche_grx":649,"coche_svq":770,"poblacion_hab":11000,"j_total":2,"l_total":2,"conexiones":"C-66. Bus desde Girona","ofertadas":4,"id":"50365833"},{"posicion":"50365874","puesto":"LAJ DIRECCIÓN - SCT TI","categoria":"Letrados AJ 3","poblacion":"Valls","provincia":"Tarragona","ccaa":"Cataluña","lat":41.2865,"lon":1.2495,"t_grx":268,"t_svq":273,"m_grx":"avion","m_svq":"avion","ap_grx":"BCN","ap_svq":"BCN","coche_grx":516,"coche_svq":631,"poblacion_hab":25000,"j_total":2,"l_total":2,"conexiones":"A-2/AP-2. Bus desde Tarragona. Sin tren directo","ofertadas":3,"id":"50365874"},{"posicion":"50365830","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 3","poblacion":"Blanes","provincia":"Girona","ccaa":"Cataluña","lat":41.6748,"lon":2.7919,"t_grx":270,"t_svq":275,"m_grx":"avion","m_svq":"avion","ap_grx":"BCN","ap_svq":"BCN","coche_grx":618,"coche_svq":742,"poblacion_hab":38000,"j_total":2,"l_total":2,"conexiones":"C-32/GI-600. Tren R1 desde Barcelona","ofertadas":2,"id":"50365830"},{"posicion":"50399586","puesto":"LAJ - SCEJ","categoria":"Letrados AJ 2","poblacion":"Figueres","provincia":"Girona","ccaa":"Cataluña","lat":42.2683,"lon":2.9614,"t_grx":319,"t_svq":324,"m_grx":"avion","m_svq":"avion","ap_grx":"BCN","ap_svq":"BCN","coche_grx":664,"coche_svq":780,"poblacion_hab":47000,"j_total":8,"l_total":8,"conexiones":"AP-7/N-II. AVE/AVant BCN-Figueres. Gran nudo","ofertadas":5,"id":"50399586"},{"posicion":"50365841","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 3","poblacion":"Santa Coloma de Farners","provincia":"Girona","ccaa":"Cataluña","lat":41.8606,"lon":2.668,"t_grx":276,"t_svq":281,"m_grx":"avion","m_svq":"avion","ap_grx":"BCN","ap_svq":"BCN","coche_grx":623,"coche_svq":743,"poblacion_hab":13000,"j_total":2,"l_total":2,"conexiones":"C-25. Bus desde Girona y Barcelona","ofertadas":4,"id":"50365841"},{"posicion":"50365731","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 3","poblacion":"Berga","provincia":"Barcelona","ccaa":"Cataluña","lat":42.1018,"lon":1.8444,"t_grx":286,"t_svq":291,"m_grx":"avion","m_svq":"avion","ap_grx":"BCN","ap_svq":"BCN","coche_grx":599,"coche_svq":708,"poblacion_hab":16500,"j_total":2,"l_total":2,"conexiones":"C-16. Bus desde Barcelona. Sin tren","ofertadas":2,"id":"50365731"},{"posicion":"50365769","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 3","poblacion":"Igualada","provincia":"Barcelona","ccaa":"Cataluña","lat":41.5793,"lon":1.6175,"t_grx":252,"t_svq":257,"m_grx":"avion","m_svq":"avion","ap_grx":"BCN","ap_svq":"BCN","coche_grx":553,"coche_svq":668,"poblacion_hab":41000,"j_total":3,"l_total":3,"conexiones":"A-2/AP-2. Bus desde Barcelona. Sin tren","ofertadas":2,"id":"50365769"},{"posicion":"50365854","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 3","poblacion":"La Seu D'urgell","provincia":"Lleida","ccaa":"Cataluña","lat":42.3582,"lon":1.4596,"t_grx":317,"t_svq":322,"m_grx":"avion","m_svq":"avion","ap_grx":"BCN","ap_svq":"BCN","coche_grx":600,"coche_svq":701,"poblacion_hab":12000,"j_total":2,"l_total":2,"conexiones":"N-260/C-14. Sin tren. Bus desde Barcelona/Lleida","ofertadas":1,"id":"50365854"},{"posicion":"50365857","puesto":"LAJ DIRECCIÓN - SCT TI","categoria":"Letrados AJ 3","poblacion":"Vielha E Mijaran","provincia":"Lleida","ccaa":"Cataluña","lat":42.7027,"lon":0.7958,"t_grx":599,"t_svq":688,"m_grx":"coche","m_svq":"coche","ap_grx":null,"ap_svq":null,"coche_grx":599,"coche_svq":688,"poblacion_hab":5500,"j_total":1,"l_total":1,"conexiones":"N-230 (túnel Viella). Sin tren. Bus desde Lleida","ofertadas":1,"id":"50365857"},{"posicion":"50365558","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 3","poblacion":"Los Llanos de Aridane","provincia":"Santa Cruz de Tenerife","ccaa":"Canarias","lat":28.6585,"lon":-17.9166,"t_grx":403,"t_svq":408,"m_grx":"avion","m_svq":"avion","ap_grx":"TFS","ap_svq":"TFS","coche_grx":null,"coche_svq":null,"poblacion_hab":20000,"j_total":2,"l_total":2,"conexiones":"LP-1. Aeropuerto La Palma. Vuelos vía Madrid","ofertadas":2,"id":"50365558"},{"posicion":"50399585","puesto":"LAJ - SCEJ","categoria":"Letrados AJ 2","poblacion":"Figueres","provincia":"Girona","ccaa":"Cataluña","lat":42.2683,"lon":2.9614,"t_grx":319,"t_svq":324,"m_grx":"avion","m_svq":"avion","ap_grx":"BCN","ap_svq":"BCN","coche_grx":664,"coche_svq":780,"poblacion_hab":47000,"j_total":8,"l_total":8,"conexiones":"AP-7/N-II. AVE/AVant BCN-Figueres. Gran nudo","ofertadas":5,"id":"50399585"},{"posicion":"50365875","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 3","poblacion":"Valls","provincia":"Tarragona","ccaa":"Cataluña","lat":41.2865,"lon":1.2495,"t_grx":268,"t_svq":273,"m_grx":"avion","m_svq":"avion","ap_grx":"BCN","ap_svq":"BCN","coche_grx":516,"coche_svq":631,"poblacion_hab":25000,"j_total":2,"l_total":2,"conexiones":"A-2/AP-2. Bus desde Tarragona. Sin tren directo","ofertadas":3,"id":"50365875"},{"posicion":"50365842","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 3","poblacion":"Santa Coloma de Farners","provincia":"Girona","ccaa":"Cataluña","lat":41.8606,"lon":2.668,"t_grx":276,"t_svq":281,"m_grx":"avion","m_svq":"avion","ap_grx":"BCN","ap_svq":"BCN","coche_grx":623,"coche_svq":743,"poblacion_hab":13000,"j_total":2,"l_total":2,"conexiones":"C-25. Bus desde Girona y Barcelona","ofertadas":4,"id":"50365842"},{"posicion":"50367002","puesto":"LAJ DIRECCIÓN - SCT TI","categoria":"Letrados AJ 3","poblacion":"Azpeitia","provincia":"Guipúzcoa","ccaa":"País Vasco","lat":43.1839,"lon":-2.2664,"t_grx":255,"t_svq":255,"m_grx":"avion","m_svq":"avion","ap_grx":"BIO","ap_svq":"BIO","coche_grx":564,"coche_svq":598,"poblacion_hab":15000,"j_total":2,"l_total":2,"conexiones":"N-634. Bus desde San Sebastián/Bilbao","ofertadas":2,"id":"50367002"},{"posicion":"50365816","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 3","poblacion":"Vic","provincia":"Barcelona","ccaa":"Cataluña","lat":41.9301,"lon":2.2545,"t_grx":270,"t_svq":275,"m_grx":"avion","m_svq":"avion","ap_grx":"BCN","ap_svq":"BCN","coche_grx":607,"coche_svq":722,"poblacion_hab":49000,"j_total":3,"l_total":3,"conexiones":"C-17. Tren R3 desde Barcelona","ofertadas":3,"id":"50365816"},{"posicion":"50365834","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 3","poblacion":"La Bisbal D'empordà","provincia":"Girona","ccaa":"Cataluña","lat":41.9601,"lon":3.0386,"t_grx":300,"t_svq":305,"m_grx":"avion","m_svq":"avion","ap_grx":"BCN","ap_svq":"BCN","coche_grx":649,"coche_svq":770,"poblacion_hab":11000,"j_total":2,"l_total":2,"conexiones":"C-66. Bus desde Girona","ofertadas":4,"id":"50365834"},{"posicion":"50365846","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 3","poblacion":"Sant Feliu de Guíxols","provincia":"Girona","ccaa":"Cataluña","lat":41.7805,"lon":3.0294,"t_grx":289,"t_svq":294,"m_grx":"avion","m_svq":"avion","ap_grx":"BCN","ap_svq":"BCN","coche_grx":637,"coche_svq":761,"poblacion_hab":22000,"j_total":null,"l_total":null,"conexiones":null,"ofertadas":1,"id":"50365846"},{"posicion":"50365754","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 3","poblacion":"Esplugues de Llobregat","provincia":"Barcelona","ccaa":"Cataluña","lat":41.3766,"lon":2.0828,"t_grx":217,"t_svq":222,"m_grx":"avion","m_svq":"avion","ap_grx":"BCN","ap_svq":"BCN","coche_grx":563,"coche_svq":685,"poblacion_hab":47000,"j_total":2,"l_total":2,"conexiones":"Metro L5/Bus. Excelentes conexiones BCN","ofertadas":1,"id":"50365754"},{"posicion":"50366986","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 3","poblacion":"Durango","provincia":"Vizcaya","ccaa":"País Vasco","lat":43.1714,"lon":-2.6325,"t_grx":232,"t_svq":232,"m_grx":"avion","m_svq":"avion","ap_grx":"BIO","ap_svq":"BIO","coche_grx":560,"coche_svq":586,"poblacion_hab":31000,"j_total":null,"l_total":null,"conexiones":null,"ofertadas":1,"id":"50366986"},{"posicion":"50365876","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 3","poblacion":"Valls","provincia":"Tarragona","ccaa":"Cataluña","lat":41.2865,"lon":1.2495,"t_grx":268,"t_svq":273,"m_grx":"avion","m_svq":"avion","ap_grx":"BCN","ap_svq":"BCN","coche_grx":516,"coche_svq":631,"poblacion_hab":25000,"j_total":2,"l_total":2,"conexiones":"A-2/AP-2. Bus desde Tarragona. Sin tren directo","ofertadas":3,"id":"50365876"},{"posicion":"50365860","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 3","poblacion":"Amposta","provincia":"Tarragona","ccaa":"Cataluña","lat":40.71,"lon":0.5798,"t_grx":328,"t_svq":333,"m_grx":"avion","m_svq":"avion","ap_grx":"BCN","ap_svq":"BCN","coche_grx":445,"coche_svq":563,"poblacion_hab":21000,"j_total":2,"l_total":2,"conexiones":"AP-7/N-340. Bus desde Tortosa","ofertadas":2,"id":"50365860"},{"posicion":"50365835","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 3","poblacion":"La Bisbal D'empordà","provincia":"Girona","ccaa":"Cataluña","lat":41.9601,"lon":3.0386,"t_grx":300,"t_svq":305,"m_grx":"avion","m_svq":"avion","ap_grx":"BCN","ap_svq":"BCN","coche_grx":649,"coche_svq":770,"poblacion_hab":11000,"j_total":2,"l_total":2,"conexiones":"C-66. Bus desde Girona","ofertadas":4,"id":"50365835"},{"posicion":"50365861","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 3","poblacion":"Amposta","provincia":"Tarragona","ccaa":"Cataluña","lat":40.71,"lon":0.5798,"t_grx":328,"t_svq":333,"m_grx":"avion","m_svq":"avion","ap_grx":"BCN","ap_svq":"BCN","coche_grx":445,"coche_svq":563,"poblacion_hab":21000,"j_total":2,"l_total":2,"conexiones":"AP-7/N-340. Bus desde Tortosa","ofertadas":2,"id":"50365861"},{"posicion":"50365832","puesto":"LAJ DIRECCIÓN - SCT TI","categoria":"Letrados AJ 3","poblacion":"La Bisbal D'empordà","provincia":"Girona","ccaa":"Cataluña","lat":41.9601,"lon":3.0386,"t_grx":300,"t_svq":305,"m_grx":"avion","m_svq":"avion","ap_grx":"BCN","ap_svq":"BCN","coche_grx":649,"coche_svq":770,"poblacion_hab":11000,"j_total":2,"l_total":2,"conexiones":"C-66. Bus desde Girona","ofertadas":4,"id":"50365832"},{"posicion":"50365743","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 3","poblacion":"Cornellà de Llobregat","provincia":"Barcelona","ccaa":"Cataluña","lat":41.3536,"lon":2.076,"t_grx":215,"t_svq":220,"m_grx":"avion","m_svq":"avion","ap_grx":"BCN","ap_svq":"BCN","coche_grx":561,"coche_svq":684,"poblacion_hab":90000,"j_total":3,"l_total":3,"conexiones":"Metro L5 y L9. Excelentes conexiones BCN","ofertadas":1,"id":"50365743"},{"posicion":"50399577","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 2","poblacion":"Figueres","provincia":"Girona","ccaa":"Cataluña","lat":42.2683,"lon":2.9614,"t_grx":319,"t_svq":324,"m_grx":"avion","m_svq":"avion","ap_grx":"BCN","ap_svq":"BCN","coche_grx":664,"coche_svq":780,"poblacion_hab":47000,"j_total":8,"l_total":8,"conexiones":"AP-7/N-II. AVE/AVant BCN-Figueres. Gran nudo","ofertadas":5,"id":"50399577"},{"posicion":"50399509","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 3","poblacion":"Santa Cruz de la Palma","provincia":"Santa Cruz de Tenerife","ccaa":"Canarias","lat":28.6835,"lon":-17.7642,"t_grx":394,"t_svq":399,"m_grx":"avion","m_svq":"avion","ap_grx":"TFS","ap_svq":"TFS","coche_grx":null,"coche_svq":null,"poblacion_hab":15000,"j_total":3,"l_total":3,"conexiones":"Aeropuerto La Palma. Vuelos desde Madrid/Barcelona","ofertadas":2,"id":"50399509"},{"posicion":"50365793","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 3","poblacion":"Sant Boi de Llobregat","provincia":"Barcelona","ccaa":"Cataluña","lat":41.3437,"lon":2.0414,"t_grx":215,"t_svq":220,"m_grx":"avion","m_svq":"avion","ap_grx":"BCN","ap_svq":"BCN","coche_grx":559,"coche_svq":681,"poblacion_hab":84000,"j_total":4,"l_total":4,"conexiones":"C-31/B-10. Metro L1 y FGC. Excelentes conexiones BCN","ofertadas":3,"id":"50365793"},{"posicion":"50399578","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 2","poblacion":"Figueres","provincia":"Girona","ccaa":"Cataluña","lat":42.2683,"lon":2.9614,"t_grx":319,"t_svq":324,"m_grx":"avion","m_svq":"avion","ap_grx":"BCN","ap_svq":"BCN","coche_grx":664,"coche_svq":780,"poblacion_hab":47000,"j_total":8,"l_total":8,"conexiones":"AP-7/N-II. AVE/AVant BCN-Figueres. Gran nudo","ofertadas":5,"id":"50399578"},{"posicion":"50365794","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 3","poblacion":"Sant Boi de Llobregat","provincia":"Barcelona","ccaa":"Cataluña","lat":41.3437,"lon":2.0414,"t_grx":215,"t_svq":220,"m_grx":"avion","m_svq":"avion","ap_grx":"BCN","ap_svq":"BCN","coche_grx":559,"coche_svq":681,"poblacion_hab":84000,"j_total":4,"l_total":4,"conexiones":"C-31/B-10. Metro L1 y FGC. Excelentes conexiones BCN","ofertadas":3,"id":"50365794"},{"posicion":"50365795","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 3","poblacion":"Sant Boi de Llobregat","provincia":"Barcelona","ccaa":"Cataluña","lat":41.3437,"lon":2.0414,"t_grx":215,"t_svq":220,"m_grx":"avion","m_svq":"avion","ap_grx":"BCN","ap_svq":"BCN","coche_grx":559,"coche_svq":681,"poblacion_hab":84000,"j_total":4,"l_total":4,"conexiones":"C-31/B-10. Metro L1 y FGC. Excelentes conexiones BCN","ofertadas":3,"id":"50365795"},{"posicion":"50365821","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 3","poblacion":"Vilafranca del Penedès","provincia":"Barcelona","ccaa":"Cataluña","lat":41.3458,"lon":1.6993,"t_grx":237,"t_svq":242,"m_grx":"avion","m_svq":"avion","ap_grx":"BCN","ap_svq":"BCN","coche_grx":542,"coche_svq":661,"poblacion_hab":41000,"j_total":3,"l_total":3,"conexiones":"AP-7/A-7. Tren R4 desde Barcelona","ofertadas":2,"id":"50365821"},{"posicion":"50365822","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 3","poblacion":"Vilafranca del Penedès","provincia":"Barcelona","ccaa":"Cataluña","lat":41.3458,"lon":1.6993,"t_grx":237,"t_svq":242,"m_grx":"avion","m_svq":"avion","ap_grx":"BCN","ap_svq":"BCN","coche_grx":542,"coche_svq":661,"poblacion_hab":41000,"j_total":3,"l_total":3,"conexiones":"AP-7/A-7. Tren R4 desde Barcelona","ofertadas":2,"id":"50365822"},{"posicion":"50365829","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 3","poblacion":"Blanes","provincia":"Girona","ccaa":"Cataluña","lat":41.6748,"lon":2.7919,"t_grx":270,"t_svq":275,"m_grx":"avion","m_svq":"avion","ap_grx":"BCN","ap_svq":"BCN","coche_grx":618,"coche_svq":742,"poblacion_hab":38000,"j_total":2,"l_total":2,"conexiones":"C-32/GI-600. Tren R1 desde Barcelona","ofertadas":2,"id":"50365829"},{"posicion":"50365873","puesto":"LAJ DIRECCIÓN - SCT TI","categoria":"Letrados AJ 3","poblacion":"Gandesa","provincia":"Tarragona","ccaa":"Cataluña","lat":41.0533,"lon":0.4357,"t_grx":327,"t_svq":332,"m_grx":"avion","m_svq":"avion","ap_grx":"BCN","ap_svq":"BCN","coche_grx":462,"coche_svq":572,"poblacion_hab":3000,"j_total":1,"l_total":1,"conexiones":"N-420. Sin tren. Bus escaso desde Tortosa","ofertadas":1,"id":"50365873"},{"posicion":"50365552","puesto":"LAJ DIRECCIÓN - SCT TI","categoria":"Letrados AJ 3","poblacion":"Icod de los Vinos","provincia":"Santa Cruz de Tenerife","ccaa":"Canarias","lat":28.368,"lon":-16.7126,"t_grx":312,"t_svq":317,"m_grx":"avion","m_svq":"avion","ap_grx":"TFN","ap_svq":"TFN","coche_grx":null,"coche_svq":null,"poblacion_hab":22500,"j_total":1,"l_total":1,"conexiones":"TF-5. Bus desde Sta. Cruz. Aeropuerto Tenerife Norte","ofertadas":2,"id":"50365552"},{"posicion":"50390258","puesto":"LAJ - SCEJ","categoria":"Letrados AJ 2","poblacion":"Eivissa","provincia":"Illes Balears","ccaa":"Islas Baleares","lat":38.9067,"lon":1.4206,"t_grx":317,"t_svq":322,"m_grx":"avion","m_svq":"avion","ap_grx":"PMI","ap_svq":"PMI","coche_grx":400,"coche_svq":557,"poblacion_hab":50000,"j_total":16,"l_total":12,"conexiones":"Aeropuerto Ibiza. Ferry Dénia/Valencia. Vuelos directos","ofertadas":2,"id":"50390258"},{"posicion":"50365839","puesto":"LAJ DIRECCIÓN - SCT TI","categoria":"Letrados AJ 3","poblacion":"Ripoll","provincia":"Girona","ccaa":"Cataluña","lat":42.201,"lon":2.1907,"t_grx":294,"t_svq":299,"m_grx":"avion","m_svq":"avion","ap_grx":"BCN","ap_svq":"BCN","coche_grx":622,"coche_svq":733,"poblacion_hab":10500,"j_total":2,"l_total":2,"conexiones":"N-152. Tren R3 desde Barcelona","ofertadas":1,"id":"50365839"},{"posicion":"50365865","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 2","poblacion":"El Vendrell","provincia":"Tarragona","ccaa":"Cataluña","lat":41.2178,"lon":1.5354,"t_grx":249,"t_svq":254,"m_grx":"avion","m_svq":"avion","ap_grx":"BCN","ap_svq":"BCN","coche_grx":525,"coche_svq":645,"poblacion_hab":38000,"j_total":2,"l_total":2,"conexiones":"AP-7/A-2. Tren R4/R13. Buenas conexiones","ofertadas":1,"id":"50365865"},{"posicion":"50366640","puesto":"LAJ DIRECCIÓN - SCT TI","categoria":"Letrados AJ 3","poblacion":"Ortigueira","provincia":"A Coruña","ccaa":"Galicia","lat":43.684,"lon":-7.8516,"t_grx":673,"t_svq":598,"m_grx":"coche","m_svq":"coche","ap_grx":null,"ap_svq":null,"coche_grx":673,"coche_svq":598,"poblacion_hab":5400,"j_total":1,"l_total":1,"conexiones":"AC-100. Sin tren. Bus desde A Coruña","ofertadas":1,"id":"50366640"},{"posicion":"50363599","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 3","poblacion":"Villarcayo de Merindad de Castilla la Vieja","provincia":"Burgos","ccaa":"Castilla y León","lat":42.9398,"lon":-3.5746,"t_grx":266,"t_svq":266,"m_grx":"avion","m_svq":"avion","ap_grx":"BIO","ap_svq":"BIO","coche_grx":534,"coche_svq":542,"poblacion_hab":4400,"j_total":2,"l_total":2,"conexiones":"BU-523/N-232. Bus escaso desde Burgos","ofertadas":2,"id":"50363599"},{"posicion":"50365773","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 2","poblacion":"Martorell","provincia":"Barcelona","ccaa":"Cataluña","lat":41.4744,"lon":1.9302,"t_grx":230,"t_svq":235,"m_grx":"avion","m_svq":"avion","ap_grx":"BCN","ap_svq":"BCN","coche_grx":562,"coche_svq":681,"poblacion_hab":29000,"j_total":2,"l_total":2,"conexiones":"A-2. Tren R4 FGC. Buenas conexiones BCN","ofertadas":2,"id":"50365773"},{"posicion":"50365499","puesto":"LAJ DIRECCIÓN - SCT TI","categoria":"Letrados AJ 3","poblacion":"Cangas de Onís","provincia":"Asturias","ccaa":"Asturias","lat":43.3499,"lon":-5.1331,"t_grx":360,"t_svq":360,"m_grx":"avion","m_svq":"avion","ap_grx":"BIO","ap_svq":"BIO","coche_grx":582,"coche_svq":556,"poblacion_hab":6000,"j_total":1,"l_total":1,"conexiones":"AS-117/N-625. Bus desde Oviedo. Sin tren","ofertadas":1,"id":"50365499"},{"posicion":"50365231","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 3","poblacion":"Barbate","provincia":"Cádiz","ccaa":"Andalucía","lat":36.1908,"lon":-5.9229,"t_grx":195,"t_svq":111,"m_grx":"coche","m_svq":"coche","ap_grx":null,"ap_svq":null,"coche_grx":195,"coche_svq":111,"poblacion_hab":22000,"j_total":2,"l_total":2,"conexiones":"CA-221. Solo carretera. Bus desde Cádiz","ofertadas":1,"id":"50365231"},{"posicion":"50365364","puesto":"LAJ DIRECCIÓN - SCT TI","categoria":"Letrados AJ 3","poblacion":"Cazalla de la Sierra","provincia":"Sevilla","ccaa":"Andalucía","lat":37.9322,"lon":-5.757,"t_grx":173,"t_svq":53,"m_grx":"coche","m_svq":"coche","ap_grx":null,"ap_svq":null,"coche_grx":173,"coche_svq":53,"poblacion_hab":5000,"j_total":1,"l_total":1,"conexiones":"A-432. Bus desde Sevilla. Transporte muy limitado","ofertadas":1,"id":"50365364"},{"posicion":"50363676","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 3","poblacion":"Cervera de Pisuerga","provincia":"Palencia","ccaa":"Castilla y León","lat":42.8675,"lon":-4.4986,"t_grx":325,"t_svq":325,"m_grx":"avion","m_svq":"avion","ap_grx":"BIO","ap_svq":"BIO","coche_grx":531,"coche_svq":518,"poblacion_hab":2500,"j_total":1,"l_total":1,"conexiones":"CL-626. Zona montaña. Sin tren. Bus escaso","ofertadas":1,"id":"50363676"},{"posicion":"50366635","puesto":"LAJ DIRECCIÓN - SCT TI","categoria":"Letrados AJ 3","poblacion":"Negreira","provincia":"A Coruña","ccaa":"Galicia","lat":42.9051,"lon":-8.7406,"t_grx":644,"t_svq":547,"m_grx":"coche","m_svq":"coche","ap_grx":null,"ap_svq":null,"coche_grx":644,"coche_svq":547,"poblacion_hab":6800,"j_total":1,"l_total":1,"conexiones":"AC-453. Sin tren. Bus escaso desde Santiago","ofertadas":1,"id":"50366635"},{"posicion":"50360727","puesto":"LAJ DIRECCIÓN - SCT TI","categoria":"Letrados AJ 3","poblacion":"Almadén","provincia":"Ciudad Real","ccaa":"Castilla-La Mancha","lat":38.7741,"lon":-4.8324,"t_grx":173,"t_svq":153,"m_grx":"coche","m_svq":"coche","ap_grx":null,"ap_svq":null,"coche_grx":173,"coche_svq":153,"poblacion_hab":5400,"j_total":1,"l_total":1,"conexiones":"N-502. Zona minera. Bus escaso","ofertadas":1,"id":"50360727"},{"posicion":"50400057","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 2","poblacion":"Reus","provincia":"Tarragona","ccaa":"Cataluña","lat":41.1561,"lon":1.1071,"t_grx":279,"t_svq":284,"m_grx":"avion","m_svq":"avion","ap_grx":"BCN","ap_svq":"BCN","coche_grx":500,"coche_svq":617,"poblacion_hab":107000,"j_total":3,"l_total":3,"conexiones":"A-7/AP-7. Tren R14. Aeropuerto Reus propio","ofertadas":1,"id":"50400057"},{"posicion":"50365843","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 3","poblacion":"Santa Coloma de Farners","provincia":"Girona","ccaa":"Cataluña","lat":41.8606,"lon":2.668,"t_grx":276,"t_svq":281,"m_grx":"avion","m_svq":"avion","ap_grx":"BCN","ap_svq":"BCN","coche_grx":623,"coche_svq":743,"poblacion_hab":13000,"j_total":2,"l_total":2,"conexiones":"C-25. Bus desde Girona y Barcelona","ofertadas":4,"id":"50365843"},{"posicion":"50358986","puesto":"LAJ DIRECCIÓN - SCT TI","categoria":"Letrados AJ 3","poblacion":"Fregenal de la Sierra","provincia":"Badajoz","ccaa":"Extremadura","lat":38.167,"lon":-6.6539,"t_grx":242,"t_svq":87,"m_grx":"coche","m_svq":"coche","ap_grx":null,"ap_svq":null,"coche_grx":242,"coche_svq":87,"poblacion_hab":5000,"j_total":1,"l_total":1,"conexiones":"N-435. Bus escaso desde Sevilla/Badajoz. Sin tren","ofertadas":1,"id":"50358986"},{"posicion":"50363572","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 3","poblacion":"Miranda de Ebro","provincia":"Burgos","ccaa":"Castilla y León","lat":42.6862,"lon":-2.9489,"t_grx":267,"t_svq":267,"m_grx":"avion","m_svq":"avion","ap_grx":"BIO","ap_svq":"BIO","coche_grx":513,"coche_svq":536,"poblacion_hab":35000,"j_total":3,"l_total":3,"conexiones":"A-1/AP-1. Tren Madrid-País Vasco. Buenas conexiones","ofertadas":1,"id":"50363572"},{"posicion":"50366656","puesto":"LAJ DIRECCIÓN - SCT TI","categoria":"Letrados AJ 3","poblacion":"Viveiro","provincia":"Lugo","ccaa":"Galicia","lat":43.662,"lon":-7.5944,"t_grx":664,"t_svq":592,"m_grx":"coche","m_svq":"coche","ap_grx":null,"ap_svq":null,"coche_grx":664,"coche_svq":592,"poblacion_hab":15000,"j_total":2,"l_total":2,"conexiones":"LU-540/N-642. Sin tren. Bus desde Lugo","ofertadas":1,"id":"50366656"},{"posicion":"50366725","puesto":"LAJ DIRECCIÓN - SCT TI","categoria":"Letrados AJ 3","poblacion":"Calahorra","provincia":"La Rioja","ccaa":"La Rioja","lat":42.305,"lon":-1.9651,"t_grx":322,"t_svq":322,"m_grx":"avion","m_svq":"avion","ap_grx":"BIO","ap_svq":"BIO","coche_grx":489,"coche_svq":538,"poblacion_hab":24000,"j_total":3,"l_total":3,"conexiones":"AP-68/N-232. Bus desde Logroño. Sin AVE","ofertadas":2,"id":"50366725"},{"posicion":"50358995","puesto":"LAJ DIRECCIÓN - SCT TI","categoria":"Letrados AJ 3","poblacion":"Herrera del Duque","provincia":"Badajoz","ccaa":"Extremadura","lat":39.1683,"lon":-5.0584,"t_grx":213,"t_svq":178,"m_grx":"coche","m_svq":"coche","ap_grx":null,"ap_svq":null,"coche_grx":213,"coche_svq":178,"poblacion_hab":3300,"j_total":1,"l_total":1,"conexiones":"EX-116. Sin tren. Bus escaso","ofertadas":1,"id":"50358995"},{"posicion":"50363598","puesto":"LAJ DIRECCIÓN - SCT TI","categoria":"Letrados AJ 3","poblacion":"Villarcayo de Merindad de Castilla la Vieja","provincia":"Burgos","ccaa":"Castilla y León","lat":42.9398,"lon":-3.5746,"t_grx":266,"t_svq":266,"m_grx":"avion","m_svq":"avion","ap_grx":"BIO","ap_svq":"BIO","coche_grx":534,"coche_svq":542,"poblacion_hab":4400,"j_total":2,"l_total":2,"conexiones":"BU-523/N-232. Bus escaso desde Burgos","ofertadas":2,"id":"50363598"},{"posicion":"50365500","puesto":"LAJ DIRECCIÓN - SCT TI","categoria":"Letrados AJ 3","poblacion":"Cangas del Narcea","provincia":"Asturias","ccaa":"Asturias","lat":43.1791,"lon":-6.5497,"t_grx":594,"t_svq":538,"m_grx":"coche","m_svq":"coche","ap_grx":null,"ap_svq":null,"coche_grx":594,"coche_svq":538,"poblacion_hab":12000,"j_total":1,"l_total":1,"conexiones":"AS-15. Zona montaña. Sin tren. Bus desde Oviedo","ofertadas":1,"id":"50365500"},{"posicion":"50367003","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 3","poblacion":"Azpeitia","provincia":"Guipúzcoa","ccaa":"País Vasco","lat":43.1839,"lon":-2.2664,"t_grx":255,"t_svq":255,"m_grx":"avion","m_svq":"avion","ap_grx":"BIO","ap_svq":"BIO","coche_grx":564,"coche_svq":598,"poblacion_hab":15000,"j_total":2,"l_total":2,"conexiones":"N-634. Bus desde San Sebastián/Bilbao","ofertadas":2,"id":"50367003"},{"posicion":"50363743","puesto":"LAJ DIRECCIÓN - SCT TI","categoria":"Letrados AJ 3","poblacion":"Sepúlveda","provincia":"Segovia","ccaa":"Castilla y León","lat":41.2942,"lon":-3.7474,"t_grx":267,"t_svq":262,"m_grx":"avion","m_svq":"avion","ap_grx":"MAD","ap_svq":"MAD","coche_grx":382,"coche_svq":396,"poblacion_hab":1100,"j_total":null,"l_total":null,"conexiones":null,"ofertadas":1,"id":"50363743"},{"posicion":"50399908","puesto":"LAJ - SCEJ","categoria":"Letrados AJ 2","poblacion":"Manresa","provincia":"Barcelona","ccaa":"Cataluña","lat":41.7286,"lon":1.8267,"t_grx":254,"t_svq":259,"m_grx":"avion","m_svq":"avion","ap_grx":"BCN","ap_svq":"BCN","coche_grx":573,"coche_svq":687,"poblacion_hab":78000,"j_total":4,"l_total":4,"conexiones":"C-55. Tren R5/R50 FGC. Buenas conexiones","ofertadas":1,"id":"50399908"},{"posicion":"50400016","puesto":"LAJ - SCEJ","categoria":"Letrados AJ 2","poblacion":"Terrassa","provincia":"Barcelona","ccaa":"Cataluña","lat":41.5611,"lon":2.0085,"t_grx":235,"t_svq":240,"m_grx":"avion","m_svq":"avion","ap_grx":"BCN","ap_svq":"BCN","coche_grx":571,"coche_svq":690,"poblacion_hab":226000,"j_total":5,"l_total":5,"conexiones":"A-18/C-58. FGC S1/S2. Excelentes conexiones BCN","ofertadas":1,"id":"50400016"},{"posicion":"50365780","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 3","poblacion":"Mollet del Vallès","provincia":"Barcelona","ccaa":"Cataluña","lat":41.5407,"lon":2.2107,"t_grx":234,"t_svq":239,"m_grx":"avion","m_svq":"avion","ap_grx":"BCN","ap_svq":"BCN","coche_grx":580,"coche_svq":701,"poblacion_hab":52000,"j_total":null,"l_total":null,"conexiones":null,"ofertadas":1,"id":"50365780"},{"posicion":"50365551","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 3","poblacion":"Güímar","provincia":"Santa Cruz de Tenerife","ccaa":"Canarias","lat":28.321,"lon":-16.4131,"t_grx":296,"t_svq":301,"m_grx":"avion","m_svq":"avion","ap_grx":"TFN","ap_svq":"TFN","coche_grx":null,"coche_svq":null,"poblacion_hab":19000,"j_total":1,"l_total":1,"conexiones":"TF-28. Bus desde Sta. Cruz. Aeropuerto Tenerife Sur","ofertadas":2,"id":"50365551"},{"posicion":"50366639","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 3","poblacion":"Ordes","provincia":"A Coruña","ccaa":"Galicia","lat":43.0768,"lon":-8.4083,"t_grx":644,"t_svq":554,"m_grx":"coche","m_svq":"coche","ap_grx":null,"ap_svq":null,"coche_grx":644,"coche_svq":554,"poblacion_hab":12000,"j_total":null,"l_total":null,"conexiones":null,"ofertadas":1,"id":"50366639"},{"posicion":"50365856","puesto":"LAJ DIRECCIÓN - SCT TI","categoria":"Letrados AJ 3","poblacion":"Tremp","provincia":"Lleida","ccaa":"Cataluña","lat":42.1664,"lon":0.893,"t_grx":325,"t_svq":330,"m_grx":"avion","m_svq":"avion","ap_grx":"BCN","ap_svq":"BCN","coche_grx":562,"coche_svq":660,"poblacion_hab":6000,"j_total":null,"l_total":null,"conexiones":null,"ofertadas":1,"id":"50365856"},{"posicion":"50365774","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 2","poblacion":"Martorell","provincia":"Barcelona","ccaa":"Cataluña","lat":41.4744,"lon":1.9302,"t_grx":230,"t_svq":235,"m_grx":"avion","m_svq":"avion","ap_grx":"BCN","ap_svq":"BCN","coche_grx":562,"coche_svq":681,"poblacion_hab":29000,"j_total":2,"l_total":2,"conexiones":"A-2. Tren R4 FGC. Buenas conexiones BCN","ofertadas":2,"id":"50365774"},{"posicion":"50365441","puesto":"LAJ DIRECCIÓN - SCT TI","categoria":"Letrados AJ 3","poblacion":"Boltaña","provincia":"Huesca","ccaa":"Aragón","lat":42.4471,"lon":0.0648,"t_grx":553,"t_svq":636,"m_grx":"coche","m_svq":"coche","ap_grx":null,"ap_svq":null,"coche_grx":553,"coche_svq":636,"poblacion_hab":1100,"j_total":1,"l_total":1,"conexiones":"A-138. Zona Pirineo. Sin tren. Bus escaso","ofertadas":1,"id":"50365441"},{"posicion":"50365239","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 3","poblacion":"La Línea de la Concepción","provincia":"Cádiz","ccaa":"Andalucía","lat":36.1681,"lon":-5.347,"t_grx":160,"t_svq":123,"m_grx":"coche","m_svq":"coche","ap_grx":null,"ap_svq":null,"coche_grx":160,"coche_svq":123,"poblacion_hab":62000,"j_total":5,"l_total":5,"conexiones":"A-7/AP-7. Bus directo Sevilla y Málaga","ofertadas":1,"id":"50365239"},{"posicion":"50366661","puesto":"LAJ DIRECCIÓN - SCT TI","categoria":"Letrados AJ 3","poblacion":"O Barco de Valdeorras","provincia":"Ourense","ccaa":"Galicia","lat":42.4156,"lon":-7.0007,"t_grx":542,"t_svq":471,"m_grx":"coche","m_svq":"coche","ap_grx":null,"ap_svq":null,"coche_grx":542,"coche_svq":471,"poblacion_hab":13000,"j_total":2,"l_total":2,"conexiones":"N-120/A-76. Sin tren. Bus desde Orense","ofertadas":1,"id":"50366661"},{"posicion":"50365872","puesto":"LAJ DIRECCIÓN - SCT TI","categoria":"Letrados AJ 3","poblacion":"Falset","provincia":"Tarragona","ccaa":"Cataluña","lat":41.1453,"lon":0.8197,"t_grx":299,"t_svq":304,"m_grx":"avion","m_svq":"avion","ap_grx":"BCN","ap_svq":"BCN","coche_grx":486,"coche_svq":599,"poblacion_hab":2900,"j_total":1,"l_total":1,"conexiones":"N-420/C-12. Bus desde Reus/Tarragona","ofertadas":1,"id":"50365872"},{"posicion":"50365817","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 3","poblacion":"Vic","provincia":"Barcelona","ccaa":"Cataluña","lat":41.9301,"lon":2.2545,"t_grx":270,"t_svq":275,"m_grx":"avion","m_svq":"avion","ap_grx":"BCN","ap_svq":"BCN","coche_grx":607,"coche_svq":722,"poblacion_hab":49000,"j_total":3,"l_total":3,"conexiones":"C-17. Tren R3 desde Barcelona","ofertadas":3,"id":"50365817"},{"posicion":"50365570","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 3","poblacion":"Güímar","provincia":"Santa Cruz de Tenerife","ccaa":"Canarias","lat":28.321,"lon":-16.4131,"t_grx":296,"t_svq":301,"m_grx":"avion","m_svq":"avion","ap_grx":"TFN","ap_svq":"TFN","coche_grx":null,"coche_svq":null,"poblacion_hab":19000,"j_total":1,"l_total":1,"conexiones":"TF-28. Bus desde Sta. Cruz. Aeropuerto Tenerife Sur","ofertadas":2,"id":"50365570"},{"posicion":"50366649","puesto":"LAJ DIRECCIÓN - SCT TI","categoria":"Letrados AJ 3","poblacion":"Mondoñedo","provincia":"Lugo","ccaa":"Galicia","lat":43.4276,"lon":-7.3636,"t_grx":637,"t_svq":568,"m_grx":"coche","m_svq":"coche","ap_grx":null,"ap_svq":null,"coche_grx":637,"coche_svq":568,"poblacion_hab":3700,"j_total":2,"l_total":2,"conexiones":"N-634. Sin tren. Bus desde Lugo","ofertadas":2,"id":"50366649"},{"posicion":"50365790","puesto":"LAJ - SCEJ","categoria":"Letrados AJ 2","poblacion":"Rubí","provincia":"Barcelona","ccaa":"Cataluña","lat":41.4925,"lon":2.0327,"t_grx":228,"t_svq":233,"m_grx":"avion","m_svq":"avion","ap_grx":"BCN","ap_svq":"BCN","coche_grx":568,"coche_svq":688,"poblacion_hab":80000,"j_total":2,"l_total":2,"conexiones":"B-30/A-2. FGC desde Barcelona","ofertadas":1,"id":"50365790"},{"posicion":"50365454","puesto":"LAJ DIRECCIÓN - SCT TI","categoria":"Letrados AJ 3","poblacion":"Daroca","provincia":"Zaragoza","ccaa":"Aragón","lat":41.1146,"lon":-1.4128,"t_grx":397,"t_svq":476,"m_grx":"coche","m_svq":"coche","ap_grx":null,"ap_svq":null,"coche_grx":397,"coche_svq":476,"poblacion_hab":2100,"j_total":1,"l_total":1,"conexiones":"A-23. Bus desde Zaragoza. Sin tren directo","ofertadas":1,"id":"50365454"},{"posicion":"50365569","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 3","poblacion":"Granadilla de Abona","provincia":"Santa Cruz de Tenerife","ccaa":"Canarias","lat":28.1198,"lon":-16.5772,"t_grx":287,"t_svq":292,"m_grx":"avion","m_svq":"avion","ap_grx":"TFS","ap_svq":"TFS","coche_grx":null,"coche_svq":null,"poblacion_hab":53000,"j_total":1,"l_total":1,"conexiones":"TF-1. Bus desde Sta. Cruz. Cerca aeropuerto Sur","ofertadas":2,"id":"50365569"},{"posicion":"50366646","puesto":"LAJ DIRECCIÓN - SCT TI","categoria":"Letrados AJ 3","poblacion":"A Fonsagrada","provincia":"Lugo","ccaa":"Galicia","lat":43.1244,"lon":-7.0686,"t_grx":603,"t_svq":537,"m_grx":"coche","m_svq":"coche","ap_grx":null,"ap_svq":null,"coche_grx":603,"coche_svq":537,"poblacion_hab":3000,"j_total":1,"l_total":1,"conexiones":"LU-722. Zona montaña. Sin tren ni bus directo","ofertadas":1,"id":"50366646"},{"posicion":"50363538","puesto":"LAJ DIRECCIÓN - SCT TI","categoria":"Letrados AJ 3","poblacion":"Aranda de Duero","provincia":"Burgos","ccaa":"Castilla y León","lat":41.6708,"lon":-3.6889,"t_grx":301,"t_svq":296,"m_grx":"avion","m_svq":"avion","ap_grx":"MAD","ap_svq":"MAD","coche_grx":416,"coche_svq":429,"poblacion_hab":32000,"j_total":2,"l_total":2,"conexiones":"A-1. Bus directo Madrid-Burgos. Sin AVE","ofertadas":2,"id":"50363538"},{"posicion":"50363752","puesto":"LAJ DIRECCIÓN - SCT TI","categoria":"Letrados AJ 3","poblacion":"Almazán","provincia":"Soria","ccaa":"Castilla y León","lat":41.4866,"lon":-2.5301,"t_grx":309,"t_svq":304,"m_grx":"avion","m_svq":"avion","ap_grx":"MAD","ap_svq":"MAD","coche_grx":407,"coche_svq":453,"poblacion_hab":5500,"j_total":1,"l_total":1,"conexiones":"N-111/A-15. Bus escaso. Sin tren directo","ofertadas":1,"id":"50363752"},{"posicion":"50359097","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 3","poblacion":"Zafra","provincia":"Badajoz","ccaa":"Extremadura","lat":38.4239,"lon":-6.417,"t_grx":236,"t_svq":101,"m_grx":"coche","m_svq":"coche","ap_grx":null,"ap_svq":null,"coche_grx":236,"coche_svq":101,"poblacion_hab":16500,"j_total":2,"l_total":2,"conexiones":"A-66. Bus desde Sevilla/Badajoz. Sin AVE","ofertadas":1,"id":"50359097"},{"posicion":"50366667","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 3","poblacion":"Verín","provincia":"Ourense","ccaa":"Galicia","lat":41.9404,"lon":-7.4373,"t_grx":519,"t_svq":434,"m_grx":"coche","m_svq":"coche","ap_grx":null,"ap_svq":null,"coche_grx":519,"coche_svq":434,"poblacion_hab":13000,"j_total":2,"l_total":2,"conexiones":"A-52. Bus desde Orense/Vigo. Sin tren","ofertadas":1,"id":"50366667"},{"posicion":"50399580","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 2","poblacion":"Figueres","provincia":"Girona","ccaa":"Cataluña","lat":42.2683,"lon":2.9614,"t_grx":319,"t_svq":324,"m_grx":"avion","m_svq":"avion","ap_grx":"BCN","ap_svq":"BCN","coche_grx":664,"coche_svq":780,"poblacion_hab":47000,"j_total":8,"l_total":8,"conexiones":"AP-7/N-II. AVE/AVant BCN-Figueres. Gran nudo","ofertadas":5,"id":"50399580"},{"posicion":"50366650","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 3","poblacion":"Mondoñedo","provincia":"Lugo","ccaa":"Galicia","lat":43.4276,"lon":-7.3636,"t_grx":637,"t_svq":568,"m_grx":"coche","m_svq":"coche","ap_grx":null,"ap_svq":null,"coche_grx":637,"coche_svq":568,"poblacion_hab":3700,"j_total":2,"l_total":2,"conexiones":"N-634. Sin tren. Bus desde Lugo","ofertadas":2,"id":"50366650"},{"posicion":"50365332","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 3","poblacion":"Villacarrillo","provincia":"Jaén","ccaa":"Andalucía","lat":38.1147,"lon":-3.084,"t_grx":95,"t_svq":223,"m_grx":"coche","m_svq":"coche","ap_grx":null,"ap_svq":null,"coche_grx":95,"coche_svq":223,"poblacion_hab":11000,"j_total":2,"l_total":2,"conexiones":"A-32. Sin tren ni bus directo desde capitales","ofertadas":1,"id":"50365332"},{"posicion":"50359182","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 3","poblacion":"Navalmoral de la Mata","provincia":"Cáceres","ccaa":"Extremadura","lat":39.8939,"lon":-5.5388,"t_grx":288,"t_svq":234,"m_grx":"coche","m_svq":"coche","ap_grx":null,"ap_svq":null,"coche_grx":288,"coche_svq":234,"poblacion_hab":17000,"j_total":2,"l_total":2,"conexiones":"A-5. Tren Madrid-Lisboa. Bus desde Cáceres","ofertadas":1,"id":"50359182"},{"posicion":"50390311","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 2","poblacion":"Maó","provincia":"Illes Balears","ccaa":"Islas Baleares","lat":39.8885,"lon":4.2658,"t_grx":318,"t_svq":323,"m_grx":"avion","m_svq":"avion","ap_grx":"PMI","ap_svq":"PMI","coche_grx":623,"coche_svq":777,"poblacion_hab":30000,"j_total":4,"l_total":4,"conexiones":"Aeropuerto Menorca. Ferry desde Barcelona","ofertadas":1,"id":"50390311"},{"posicion":"50363539","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 3","poblacion":"Aranda de Duero","provincia":"Burgos","ccaa":"Castilla y León","lat":41.6708,"lon":-3.6889,"t_grx":301,"t_svq":296,"m_grx":"avion","m_svq":"avion","ap_grx":"MAD","ap_svq":"MAD","coche_grx":416,"coche_svq":429,"poblacion_hab":32000,"j_total":2,"l_total":2,"conexiones":"A-1. Bus directo Madrid-Burgos. Sin AVE","ofertadas":2,"id":"50363539"},{"posicion":"50366726","puesto":"LAJ - SCT TI","categoria":"Letrados AJ 3","poblacion":"Calahorra","provincia":"La Rioja","ccaa":"La Rioja","lat":42.305,"lon":-1.9651,"t_grx":322,"t_svq":322,"m_grx":"avion","m_svq":"avion","ap_grx":"BIO","ap_svq":"BIO","coche_grx":489,"coche_svq":538,"poblacion_hab":24000,"j_total":3,"l_total":3,"conexiones":"AP-68/N-232. Bus desde Logroño. Sin AVE","ofertadas":2,"id":"50366726"}];
 
-function toMins(t){
-  if(!t)return 99999;
-  const m=t.match(/(\d+)h(?:\s*(\d+)min)?/);
-  if(!m)return 99999;
-  return parseInt(m[1])*60+(m[2]?parseInt(m[2]):0);
-}
-function best(d,tab){
-  const o=d[tab];
-  return Math.min(toMins(o.car),toMins(o.ave),toMins(o.bus),toMins(o.fly));
+const T_BEST = 50, T_WORST = 700;
+const TAMANO_PUNTOS = {'XS': 0, 'S': 0.2, 'M': 0.45, 'L': 0.7, 'XL': 0.9, 'XXL': 1.0, '?': 0.3};
+
+const state = {
+  mode: 'combo',
+  q: '',
+  ccaa: '',
+  prov: '',
+  onlyFav: false,
+  sortKey: 'rank',
+  sortDir: 'asc',
+  weights: {
+    tiempo: 60,
+    laj: 25,
+    cat: 15,
+    dir: 0,
+  },
+  favs: new Set(JSON.parse(localStorage.getItem('laj_favs_v2') || '[]')),
+};
+
+// Load saved weights
+try {
+  const saved = JSON.parse(localStorage.getItem('laj_weights') || 'null');
+  if (saved) state.weights = { ...state.weights, ...saved };
+} catch(e) {}
+
+function normalize(s) {
+  return (s || '').toString().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 }
 
-let tab='sev',sort='best';
+function fmtMin(m) {
+  if (m == null) return '—';
+  if (m < 60) return m + ' min';
+  const h = Math.floor(m / 60);
+  const r = m % 60;
+  return r === 0 ? `${h} h` : `${h} h ${r}`;
+}
 
-function setTab(t,btn){
-  tab=t;
-  document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
+function tiempoMode(p) {
+  if (state.mode === 'grx') return { t: p.t_grx, m: p.m_grx, ap: p.ap_grx, km: p.km_grx, coche: p.coche_grx };
+  if (state.mode === 'svq') return { t: p.t_svq, m: p.m_svq, ap: p.ap_svq, km: p.km_svq, coche: p.coche_svq };
+  // combo: el mejor de los dos
+  const useGrx = p.t_grx <= p.t_svq;
+  return useGrx
+    ? { t: p.t_grx, m: p.m_grx, ap: p.ap_grx, km: p.km_grx, coche: p.coche_grx, dest: 'GRX' }
+    : { t: p.t_svq, m: p.m_svq, ap: p.ap_svq, km: p.km_svq, coche: p.coche_svq, dest: 'SVQ' };
+}
+
+function calcScore(p) {
+  const { t } = tiempoMode(p);
+  const w = state.weights;
+  
+  // Componente tiempo (0..1)
+  const tClamped = Math.max(T_BEST, Math.min(T_WORST, t));
+  const tScore = (T_WORST - tClamped) / (T_WORST - T_BEST);
+  const tPart = w.tiempo * tScore;
+  
+  // LAJ totales: 0 LAJ = 0, 8+ LAJ = 1.0
+  // Si no hay datos, usamos valor neutro 0.4
+  let lajScore;
+  if (p.l_total == null) {
+    lajScore = 0.4;
+  } else {
+    lajScore = Math.min(1, p.l_total / 8);
+  }
+  const lajPart = w.laj * lajScore;
+  
+  // Categoría: AJ2 = 1, AJ3 = 0.3
+  const catScore = p.categoria === 'Letrados AJ 2' ? 1 : 0.3;
+  const catPart = w.cat * catScore;
+  
+  // Dirección
+  const isDir = p.puesto.includes('DIRECCIÓN');
+  const dirPart = isDir ? w.dir : 0;
+  
+  return tPart + lajPart + catPart + dirPart;
+}
+
+function compute() {
+  // Calcular score y rank ANTES de filtrar (rank global)
+  const allWithScore = PLAZAS.map(p => ({ ...p, _score: calcScore(p) }));
+  allWithScore.sort((a, b) => b._score - a._score);
+  allWithScore.forEach((p, i) => { p._rank = i + 1; });
+  
+  // Filtrar
+  let list = allWithScore;
+  if (state.q) {
+    const q = normalize(state.q);
+    list = list.filter(p =>
+      normalize(p.poblacion).includes(q) ||
+      normalize(p.provincia).includes(q) ||
+      normalize(p.ccaa).includes(q) ||
+      p.posicion.includes(q)
+    );
+  }
+  if (state.ccaa) list = list.filter(p => p.ccaa === state.ccaa);
+  if (state.prov) list = list.filter(p => p.provincia === state.prov);
+  if (state.onlyFav) list = list.filter(p => state.favs.has(p.id));
+  
+  // Ordenar
+  const dir = state.sortDir === 'asc' ? 1 : -1;
+  list.sort((a, b) => {
+    let av, bv;
+    switch(state.sortKey) {
+      case 'rank': av = a._rank; bv = b._rank; break;
+      case 'score': av = a._score; bv = b._score; break;
+      case 't_grx': av = a.t_grx; bv = b.t_grx; break;
+      case 't_svq': av = a.t_svq; bv = b.t_svq; break;
+      case 'l_total':
+        av = a.l_total ?? -1; bv = b.l_total ?? -1;
+        break;
+      case 'ofertadas':
+        av = a.ofertadas ?? 0; bv = b.ofertadas ?? 0;
+        break;
+      default:
+        av = (a[state.sortKey] ?? '').toString();
+        bv = (b[state.sortKey] ?? '').toString();
+        return av.localeCompare(bv, 'es') * dir;
+    }
+    return (av - bv) * dir;
+  });
+  
+  return { list, total: PLAZAS.length, maxScore: allWithScore[0]?._score || 100 };
+}
+
+function methodIcon(m) {
+  if (m === 'avion') return '✈';
+  if (m === 'coche') return '🚗';
+  return '';
+}
+
+function tiempoCell(p, modo) {
+  const t = tiempoMode(p);
+  if (modo === 'detail-combo') {
+    // En modo combinado mostramos tiempo a Granada Y Sevilla
+    return `
+      <td class="col-tiempo">
+        <div><span class="t-method">${methodIcon(p.m_grx)}</span><span class="t-main">${fmtMin(p.t_grx)}</span></div>
+        <span class="t-detail">${p.m_grx === 'coche' ? (p.km_grx + ' km') : 'vía ' + p.ap_grx}</span>
+      </td>
+      <td class="col-tiempo">
+        <div><span class="t-method">${methodIcon(p.m_svq)}</span><span class="t-main">${fmtMin(p.t_svq)}</span></div>
+        <span class="t-detail">${p.m_svq === 'coche' ? (p.km_svq + ' km') : 'vía ' + p.ap_svq}</span>
+      </td>`;
+  }
+}
+
+function puestoTag(p) {
+  if (p.puesto.includes('DIRECCIÓN')) return `<span class="tag tag-direccion">Dirección</span>`;
+  if (p.puesto.includes('SCEJ')) return `<span class="tag tag-ejecucion">Ejecución</span>`;
+  return `<span class="tag">Tramitación</span>`;
+}
+
+function catTag(c) {
+  if (c === 'Letrados AJ 2') return `<span class="tag tag-aj2">AJ 2</span>`;
+  return `<span class="tag">AJ 3</span>`;
+}
+
+function lajCell(p) {
+  if (p.l_total == null) return '<span class="dash">—</span>';
+  const cls = p.l_total >= 5 ? 'laj-big' : (p.l_total >= 3 ? 'laj-mid' : 'laj-low');
+  return `<span class="laj-num ${cls}">${p.l_total}</span>`;
+}
+
+function ofertaCell(p) {
+  const n = p.ofertadas || 1;
+  return `<span class="oferta-num">${n}</span>`;
+}
+
+function render() {
+  const { list, total, maxScore } = compute();
+  const tbody = document.getElementById('tbody');
+  
+  if (list.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="13" class="empty">Ninguna plaza coincide con los filtros</td></tr>`;
+  } else {
+    tbody.innerHTML = list.map(p => {
+      const isFav = state.favs.has(p.id);
+      const rankClass = p._rank <= 10 ? 'top' : '';
+      const scorePct = Math.round((p._score / maxScore) * 100);
+      
+      return `
+      <tr class="fade-in ${isFav ? 'fav' : ''}" data-id="${p.id}">
+        <td class="col-rank ${rankClass}">${p._rank}<span class="rank-sub">de ${total}</span></td>
+        <td class="col-fav"><button class="fav-btn ${isFav ? 'active' : ''}" data-fav="${p.id}">${isFav ? '★' : '☆'}</button></td>
+        <td class="col-poblacion">${p.poblacion}<span class="pob-sub">${p.provincia}</span></td>
+        <td class="col-ccaa">${p.ccaa}</td>
+        <td>${puestoTag(p)}</td>
+        <td>${catTag(p.categoria)}</td>
+        ${tiempoCell(p, 'detail-combo')}
+        <td class="col-laj">${lajCell(p)}</td>
+        <td class="col-oferta">${ofertaCell(p)}</td>
+        <td class="col-conex">${p.conexiones ? `<span class="conex-text">${p.conexiones}</span>` : '<span class="dash">—</span>'}</td>
+        <td class="col-pos">${p.posicion}</td>
+        <td class="col-score" style="--score-pct: ${scorePct}%"><span class="score-bar"></span>${p._score.toFixed(1)}</td>
+      </tr>`;
+    }).join('');
+  }
+  
+  document.getElementById('shown').textContent = list.length;
+  document.getElementById('total').textContent = total;
+  
+  const labels = {combo: 'Mejor acceso a Granada o Sevilla', grx: 'Cercanía a Granada', svq: 'Cercanía a Sevilla'};
+  document.getElementById('ranking-label').innerHTML = ` · ranking de <strong class="accent">${labels[state.mode]}</strong>`;
+  
+  const favSum = document.getElementById('fav-summary');
+  if (state.favs.size > 0) {
+    favSum.innerHTML = ` · <strong>${state.favs.size}</strong> marcada${state.favs.size === 1 ? '' : 's'}`;
+  } else { favSum.innerHTML = ''; }
+  
+  document.querySelectorAll('thead th').forEach(th => th.classList.remove('sorted'));
+  const active = document.querySelector(`thead th[data-sort="${state.sortKey}"]`);
+  if (active) {
+    active.classList.add('sorted');
+    active.querySelector('.sort-arrow').textContent = state.sortDir === 'asc' ? '▾' : '▴';
+  }
+}
+
+function initFilters() {
+  const ccaas = [...new Set(PLAZAS.map(p => p.ccaa))].sort((a,b)=>a.localeCompare(b,'es'));
+  const provs = [...new Set(PLAZAS.map(p => p.provincia))].sort((a,b)=>a.localeCompare(b,'es'));
+  const ccaaSel = document.getElementById('ccaa');
+  ccaas.forEach(c => { const o = document.createElement('option'); o.value = c; o.textContent = c; ccaaSel.appendChild(o); });
+  const provSel = document.getElementById('prov');
+  provs.forEach(p => { const o = document.createElement('option'); o.value = p; o.textContent = p; provSel.appendChild(o); });
+}
+
+// Tabs
+document.querySelectorAll('.ranking-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.ranking-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    state.mode = tab.dataset.mode;
+    state.sortKey = 'rank'; state.sortDir = 'asc';
+    render();
+  });
+});
+
+// Filtros
+document.getElementById('q').addEventListener('input', e => { state.q = e.target.value; render(); });
+document.getElementById('ccaa').addEventListener('change', e => { state.ccaa = e.target.value; render(); });
+document.getElementById('prov').addEventListener('change', e => { state.prov = e.target.value; render(); });
+document.getElementById('only-fav').addEventListener('click', e => { state.onlyFav = !state.onlyFav; e.currentTarget.classList.toggle('active', state.onlyFav); render(); });
+
+document.getElementById('reset').addEventListener('click', () => {
+  state.q = ''; state.ccaa = ''; state.prov = ''; state.onlyFav = false;
+  state.sortKey = 'rank'; state.sortDir = 'asc';
+  document.getElementById('q').value = '';
+  document.getElementById('ccaa').value = '';
+  document.getElementById('prov').value = '';
+  document.getElementById('only-fav').classList.remove('active');
   render();
-}
-function setSort(s,btn){
-  sort=s;
-  document.querySelectorAll('.sb').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  const ths={car:'thc',ave:'tha',bus:'thb',fly:'thf'};
-  ['thc','tha','thb','thf'].forEach(id=>{
-    const el=document.getElementById(id);
-    if(el)el.classList.remove('sorted');
+});
+
+// Sliders
+['tiempo', 'laj', 'cat', 'dir'].forEach(key => {
+  const slider = document.getElementById('w-' + key);
+  const value = document.getElementById('v-' + key);
+  slider.value = state.weights[key];
+  value.textContent = state.weights[key];
+  slider.addEventListener('input', e => {
+    state.weights[key] = parseInt(e.target.value);
+    value.textContent = e.target.value;
+    localStorage.setItem('laj_weights', JSON.stringify(state.weights));
+    render();
   });
-  if(ths[s]){const el=document.getElementById(ths[s]);if(el)el.classList.add('sorted');}
-  const si=document.getElementById('si');
-  const labels={car:'Coche',ave:'AVE / Tren',bus:'Bus',fly:'Avión',best:'Mejor medio disponible'};
-  if(s==='best'){si.style.display='none';}
-  else{si.style.display='block';document.getElementById('slt').textContent=labels[s];}
+});
+
+// Sort
+document.querySelectorAll('thead th[data-sort]').forEach(th => {
+  th.addEventListener('click', () => {
+    const key = th.dataset.sort;
+    if (state.sortKey === key) state.sortDir = state.sortDir === 'asc' ? 'desc' : 'asc';
+    else { state.sortKey = key; state.sortDir = (key === 'rank' || key === 't_grx' || key === 't_svq' || key === 'posicion') ? 'asc' : 'desc'; }
+    render();
+  });
+});
+
+// Favs
+document.getElementById('tbody').addEventListener('click', e => {
+  const btn = e.target.closest('[data-fav]');
+  if (!btn) return;
+  const id = btn.dataset.fav;
+  if (state.favs.has(id)) state.favs.delete(id);
+  else state.favs.add(id);
+  localStorage.setItem('laj_favs_v2', JSON.stringify([...state.favs]));
   render();
-}
-function buildRegions(){
-  const sel=document.getElementById('fr');
-  [...new Set(data.map(d=>d.r))].sort().forEach(r=>{
-    const o=document.createElement('option');o.value=r;o.textContent=r;sel.appendChild(o);
-  });
-}
-function badge(cls,val,hi){
-  if(!val)return'<span class="none">—</span>';
-  return`<span class="badge ${cls}${hi?' hi2':''}">${val}</span>`;
-}
-function render(){
-  const q=document.getElementById('search').value.toLowerCase();
-  const reg=document.getElementById('fr').value;
-  let rows=data.filter(d=>{
-    if(q&&!d.c.toLowerCase().includes(q)&&!d.p.toLowerCase().includes(q))return false;
-    if(reg&&d.r!==reg)return false;
-    return true;
-  });
-  rows.sort((a,b)=>{
-    if(sort==='best')return best(a,tab)-best(b,tab);
-    const oa=a[tab],ob=b[tab];
-    return toMins(oa[sort])-toMins(ob[sort]);
-  });
-  document.getElementById('count').textContent=rows.length+' plazas';
-  const sc=sort;
-  document.getElementById('tbody').innerHTML=rows.map((d,i)=>{
-    const o=d[tab];
-    return`<tr>
-      <td class="rk ${i<3?'rt':''}">${i+1}</td>
-      <td><div class="cn">${d.c}</div><div class="cp">${d.p}</div></td>
-      <td><span class="rb">${d.r}</span></td>
-      <td>${badge('bc',o.car,sc==='car')}</td>
-      <td>${badge('ba',o.ave,sc==='ave')}</td>
-      <td>${badge('bb',o.bus,sc==='bus')}</td>
-      <td>${badge('bf',o.fly,sc==='fly')}</td>
-      <td class="nc nj">${d.j}</td>
-      <td class="nc nl">${d.l}</td>
-      <td class="nc np">${d.of}</td>
-      <td class="cc">${d.cn}</td>
-    </tr>`;
-  }).join('');
-}
-buildRegions();
+});
+
+initFilters();
 render();
 </script>
 </body>
