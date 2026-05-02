@@ -77,6 +77,273 @@ h1 em { font-style: italic; font-weight: 400; color: var(--accent); }
 .ranking-tab .tab-desc { font-size: 12px; color: var(--ink-mute); margin-top: 4px; }
 .ranking-tab.active .tab-desc { color: var(--paper-warm); opacity: 0.7; }
 
+/* Pestaña "Mi lista" con estilo dorado distintivo */
+.ranking-tab.tab-mylist {
+  background: linear-gradient(135deg, rgba(138, 109, 44, 0.12) 0%, rgba(138, 109, 44, 0.04) 100%);
+  border-left: 1px solid var(--gold);
+}
+.ranking-tab.tab-mylist .tab-label { color: var(--gold); }
+.ranking-tab.tab-mylist .tab-title { color: var(--gold); font-style: italic; }
+.ranking-tab.tab-mylist:hover { background: linear-gradient(135deg, rgba(138, 109, 44, 0.2) 0%, rgba(138, 109, 44, 0.08) 100%); }
+.ranking-tab.tab-mylist.active {
+  background: var(--gold);
+  color: #fff;
+}
+.ranking-tab.tab-mylist.active .tab-label { color: #f5e9c8; }
+.ranking-tab.tab-mylist.active .tab-title { color: #fff; }
+.ranking-tab.tab-mylist.active .tab-desc { color: #f5e9c8; opacity: 0.85; }
+.ranking-tab.tab-mylist .tab-counter {
+  display: inline-block;
+  background: var(--gold);
+  color: #fff;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  margin-left: 6px;
+  font-weight: 600;
+  vertical-align: middle;
+}
+.ranking-tab.tab-mylist.active .tab-counter { background: #fff; color: var(--gold); }
+
+/* Mi lista personal */
+.mylist-empty {
+  text-align: center;
+  padding: 80px 20px;
+  color: var(--ink-mute);
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 17px;
+  line-height: 1.6;
+}
+.mylist-empty strong {
+  display: block;
+  font-style: normal;
+  font-family: 'Inter Tight', sans-serif;
+  color: var(--gold);
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.mylist-row {
+  cursor: grab;
+  user-select: none;
+  background: linear-gradient(90deg, rgba(138, 109, 44, 0.04) 0%, transparent 30%);
+}
+.mylist-row.dragging { opacity: 0.4; }
+.mylist-row.drag-over { border-top: 2px solid var(--gold) !important; }
+.mylist-row:hover { background: linear-gradient(90deg, rgba(138, 109, 44, 0.1) 0%, var(--paper-warm) 30%) !important; }
+
+.col-handle {
+  width: 36px;
+  text-align: center;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--rule);
+  font-size: 16px;
+  cursor: grab;
+}
+.col-handle:active { cursor: grabbing; }
+
+td.col-mylist-rank {
+  font-family: 'Fraunces', serif;
+  font-size: 26px;
+  font-weight: 400;
+  color: var(--gold);
+  width: 56px;
+  text-align: center;
+  letter-spacing: -0.02em;
+}
+
+.btn-add-mylist {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+  color: var(--rule);
+  padding: 4px 8px;
+  transition: all .15s;
+}
+.btn-add-mylist:hover { color: var(--gold); transform: scale(1.2); }
+
+.btn-remove-mylist {
+  background: none;
+  border: 1px solid var(--rule);
+  cursor: pointer;
+  font-size: 11px;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--ink-mute);
+  padding: 4px 10px;
+  border-radius: 2px;
+  transition: all .15s;
+  letter-spacing: 0.05em;
+}
+.btn-remove-mylist:hover { color: var(--accent); border-color: var(--accent); }
+
+.mylist-toolbar {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 16px 20px;
+  background: linear-gradient(135deg, rgba(138, 109, 44, 0.08) 0%, rgba(138, 109, 44, 0.02) 100%);
+  border: 1px solid rgba(138, 109, 44, 0.3);
+  border-radius: 4px;
+  margin-bottom: 18px;
+}
+.mylist-toolbar-info {
+  flex: 1;
+  font-size: 13px;
+  color: var(--ink-soft);
+  line-height: 1.4;
+}
+.mylist-toolbar-info strong {
+  color: var(--gold);
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* Mapa */
+.map-section {
+  margin: 32px 0 28px;
+  padding: 20px;
+  background: var(--surface, #fffefb);
+  background: linear-gradient(180deg, var(--paper) 0%, rgba(255, 254, 251, 0.7) 100%);
+  border: 1px solid var(--rule-soft);
+  border-radius: 4px;
+}
+.map-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.map-title {
+  font-family: 'Fraunces', serif;
+  font-size: 20px;
+  font-weight: 400;
+  font-style: italic;
+}
+.map-title em { color: var(--accent); font-style: normal; }
+.map-info {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--ink-mute);
+  letter-spacing: 0.04em;
+}
+.map-info .accent { color: var(--accent); font-weight: 500; }
+
+.map-container {
+  position: relative;
+  width: 100%;
+  background: var(--paper-warm);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.map-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  cursor: default;
+}
+.map-region { fill: var(--paper-deep); stroke: var(--rule); stroke-width: 0.5; }
+.map-plaza-dot {
+  fill: var(--ink-mute);
+  stroke: var(--paper);
+  stroke-width: 1.5;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.map-plaza-dot:hover {
+  fill: var(--accent);
+  stroke-width: 2;
+  r: 5;
+}
+.map-plaza-dot.selected { fill: var(--accent); stroke: var(--accent); r: 7; }
+.map-plaza-dot.fav { fill: var(--accent-soft); }
+.map-plaza-dot.mylist { fill: var(--gold); stroke: var(--gold); }
+
+.map-destino {
+  fill: #1a3d6b;
+  stroke: var(--paper);
+  stroke-width: 2;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.map-destino:hover { stroke-width: 3; }
+.map-destino.active { fill: var(--accent); stroke-width: 3; }
+.map-destino-label {
+  font-family: 'Fraunces', serif;
+  font-size: 11px;
+  font-weight: 600;
+  fill: #1a3d6b;
+  pointer-events: none;
+}
+
+.map-route-line {
+  stroke: var(--accent);
+  stroke-width: 2;
+  fill: none;
+  stroke-dasharray: 4 3;
+  pointer-events: none;
+  animation: dash 30s linear infinite;
+}
+@keyframes dash {
+  to { stroke-dashoffset: -200; }
+}
+.map-route-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  fill: var(--accent);
+  font-weight: 600;
+  pointer-events: none;
+}
+.map-route-label-bg {
+  fill: var(--paper);
+  stroke: var(--accent);
+  stroke-width: 1;
+}
+
+.map-tooltip {
+  position: absolute;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 12px;
+  padding: 8px 12px;
+  border-radius: 2px;
+  pointer-events: none;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  z-index: 10;
+  display: none;
+}
+.map-tooltip strong { display: block; font-family: 'Fraunces', serif; font-size: 14px; font-weight: 500; margin-bottom: 2px; }
+.map-tooltip span { font-family: 'JetBrains Mono', monospace; font-size: 10px; opacity: 0.7; }
+
+.map-legend {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+  font-size: 11px;
+  color: var(--ink-mute);
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.04em;
+}
+.map-legend-item { display: flex; align-items: center; gap: 6px; }
+.map-legend-dot { width: 8px; height: 8px; border-radius: 50%; }
+.map-legend-dot.normal { background: var(--ink-mute); }
+.map-legend-dot.fav { background: var(--accent-soft); }
+.map-legend-dot.mylist { background: var(--gold); }
+.map-legend-dot.destino { background: #1a3d6b; border-radius: 1px; transform: rotate(45deg); }
+
 /* CONTROLS */
 .controls-row {
   display: grid; grid-template-columns: 2fr 3fr; gap: 20px; margin-bottom: 28px;
@@ -267,6 +534,11 @@ footer .accent { color: var(--accent); }
     <div class="tab-title">Sevilla</div>
     <div class="tab-desc">Tiempo a Sevilla, todo coche o coche+avión</div>
   </button>
+  <button class="ranking-tab tab-mylist" data-mode="mylist">
+    <div class="tab-label">Selección personal</div>
+    <div class="tab-title">Mi lista <span class="tab-counter" id="mylist-count">0</span></div>
+    <div class="tab-desc">Tu orden definitivo · arrastra para reordenar</div>
+  </button>
 </div>
 
 <div class="controls-row">
@@ -309,6 +581,36 @@ footer .accent { color: var(--accent); }
       <input type="range" id="w-dir" min="-15" max="15" value="0">
     </div>
   </div>
+</div>
+
+<!-- MAPA INTERACTIVO -->
+<div class="map-section" id="map-section">
+  <div class="map-header">
+    <div class="map-title">Mapa <em>interactivo</em></div>
+    <div class="map-info" id="map-info">Pincha en una plaza · luego en <span class="accent">Granada</span> o <span class="accent">Sevilla</span> para ver el trayecto</div>
+  </div>
+  <div class="map-container">
+    <svg class="map-svg" id="map-svg" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+      <!-- Contenido generado en JS -->
+    </svg>
+    <div class="map-tooltip" id="map-tooltip"></div>
+  </div>
+  <div class="map-legend">
+    <span class="map-legend-item"><span class="map-legend-dot normal"></span>Plaza disponible</span>
+    <span class="map-legend-item"><span class="map-legend-dot fav"></span>Marcada (★)</span>
+    <span class="map-legend-item"><span class="map-legend-dot mylist"></span>En Mi lista</span>
+    <span class="map-legend-item"><span class="map-legend-dot destino"></span>Destino (Granada / Sevilla)</span>
+  </div>
+</div>
+
+<!-- Toolbar específico de Mi Lista (oculto por defecto) -->
+<div class="mylist-toolbar" id="mylist-toolbar" style="display:none">
+  <div class="mylist-toolbar-info">
+    <strong>Mi lista definitiva</strong><br>
+    Arrastra las filas para reordenar. La primera plaza (1) será la más deseada. Tu lista se guarda automáticamente.
+  </div>
+  <button class="btn" id="mylist-export">📋 Copiar lista</button>
+  <button class="btn" id="mylist-clear">Vaciar lista</button>
 </div>
 
 <div class="toolbar">
@@ -374,6 +676,11 @@ const state = {
     dir: 0,
   },
   favs: new Set(JSON.parse(localStorage.getItem('laj_favs_v2') || '[]')),
+  // Mi lista personal: array ordenado de IDs (orden = preferencia)
+  myList: JSON.parse(localStorage.getItem('laj_mylist') || '[]'),
+  // Mapa: plaza seleccionada y destino activo
+  mapSelection: null,  // id de plaza o null
+  mapDestino: null,    // 'GRX' | 'SVQ' | null
 };
 
 // Load saved weights
@@ -440,8 +747,23 @@ function compute() {
   allWithScore.sort((a, b) => b._score - a._score);
   allWithScore.forEach((p, i) => { p._rank = i + 1; });
   
+  // MODO MYLIST: devuelve solo las plazas en mylist, en el orden personal
+  if (state.mode === 'mylist') {
+    const byId = new Map(allWithScore.map(p => [p.id, p]));
+    const list = state.myList
+      .map((id, idx) => {
+        const p = byId.get(id);
+        if (!p) return null;
+        return { ...p, _myRank: idx + 1 };
+      })
+      .filter(Boolean);
+    return { list, total: state.myList.length, maxScore: allWithScore[0]?._score || 100, isMyList: true };
+  }
+  
+  // En los demás modos, las plazas en mylist se EXCLUYEN de la tabla
+  let list = allWithScore.filter(p => !state.myList.includes(p.id));
+  
   // Filtrar
-  let list = allWithScore;
   if (state.q) {
     const q = normalize(state.q);
     list = list.filter(p =>
@@ -454,6 +776,9 @@ function compute() {
   if (state.ccaa) list = list.filter(p => p.ccaa === state.ccaa);
   if (state.prov) list = list.filter(p => p.provincia === state.prov);
   if (state.onlyFav) list = list.filter(p => state.favs.has(p.id));
+  
+  // Recalcular rank dentro del subconjunto mostrado (para que sea coherente)
+  list.forEach((p, i) => { /* mantenemos _rank original calculado arriba */ });
   
   // Ordenar
   const dir = state.sortDir === 'asc' ? 1 : -1;
@@ -478,7 +803,7 @@ function compute() {
     return (av - bv) * dir;
   });
   
-  return { list, total: PLAZAS.length, maxScore: allWithScore[0]?._score || 100 };
+  return { list, total: PLAZAS.length - state.myList.length, maxScore: allWithScore[0]?._score || 100, isMyList: false };
 }
 
 function methodIcon(m) {
@@ -546,12 +871,51 @@ function ofertaCell(p) {
 }
 
 function render() {
-  const { list, total, maxScore } = compute();
+  const { list, total, maxScore, isMyList } = compute();
   const tbody = document.getElementById('tbody');
   
+  // Toggle visibilidad de toolbar mylist
+  document.getElementById('mylist-toolbar').style.display = isMyList ? 'flex' : 'none';
+  
+  // Counter en la pestaña mylist
+  document.getElementById('mylist-count').textContent = state.myList.length;
+  
   if (list.length === 0) {
-    tbody.innerHTML = `<tr><td colspan="13" class="empty">Ninguna plaza coincide con los filtros</td></tr>`;
+    if (isMyList) {
+      tbody.innerHTML = `<tr><td colspan="13" class="mylist-empty">
+        <strong>Tu lista está vacía</strong>
+        Pincha en el icono <span style="color:var(--gold);font-size:18px">＋</span> de cualquier plaza<br>
+        para añadirla a tu selección personal.<br>
+        Después podrás arrastrarlas para ordenarlas como quieras.
+      </td></tr>`;
+    } else {
+      tbody.innerHTML = `<tr><td colspan="13" class="empty">Ninguna plaza coincide con los filtros</td></tr>`;
+    }
+  } else if (isMyList) {
+    // RENDER MODO MYLIST: drag-and-drop, números grandes dorados, botón quitar
+    tbody.innerHTML = list.map(p => {
+      const isFav = state.favs.has(p.id);
+      return `
+      <tr class="mylist-row fade-in ${isFav ? 'fav' : ''}" data-id="${p.id}" draggable="true">
+        <td class="col-mylist-rank">${p._myRank}</td>
+        <td class="col-handle" title="Arrastra para reordenar">⠿</td>
+        <td class="col-poblacion">${p.poblacion}<span class="pob-sub">${p.provincia}</span></td>
+        <td class="col-ccaa">${p.ccaa}</td>
+        <td>${puestoTag(p)}</td>
+        <td>${catTag(p.categoria)}</td>
+        ${tiempoCell(p, 'detail-combo')}
+        <td class="col-laj">${lajCell(p)}</td>
+        <td class="col-oferta">${ofertaCell(p)}</td>
+        <td class="col-conex">${p.conexiones ? `<span class="conex-text">${p.conexiones}</span>` : '<span class="dash">—</span>'}</td>
+        <td class="col-pos">${p.posicion}</td>
+        <td><button class="btn-remove-mylist" data-remove="${p.id}">Quitar</button></td>
+      </tr>`;
+    }).join('');
+    
+    // Activar drag and drop
+    setupDragAndDrop();
   } else {
+    // RENDER NORMAL
     tbody.innerHTML = list.map(p => {
       const isFav = state.favs.has(p.id);
       const rankClass = p._rank <= 10 ? 'top' : '';
@@ -559,8 +923,11 @@ function render() {
       
       return `
       <tr class="fade-in ${isFav ? 'fav' : ''}" data-id="${p.id}">
-        <td class="col-rank ${rankClass}">${p._rank}<span class="rank-sub">de ${total}</span></td>
-        <td class="col-fav"><button class="fav-btn ${isFav ? 'active' : ''}" data-fav="${p.id}">${isFav ? '★' : '☆'}</button></td>
+        <td class="col-rank ${rankClass}">${p._rank}<span class="rank-sub">de ${PLAZAS.length}</span></td>
+        <td class="col-fav">
+          <button class="fav-btn ${isFav ? 'active' : ''}" data-fav="${p.id}" title="Marcar">${isFav ? '★' : '☆'}</button>
+          <button class="btn-add-mylist" data-add="${p.id}" title="Añadir a mi lista">＋</button>
+        </td>
         <td class="col-poblacion">${p.poblacion}<span class="pob-sub">${p.provincia}</span></td>
         <td class="col-ccaa">${p.ccaa}</td>
         <td>${puestoTag(p)}</td>
@@ -578,11 +945,16 @@ function render() {
   document.getElementById('shown').textContent = list.length;
   document.getElementById('total').textContent = total;
   
-  const labels = {combo: 'Mejor acceso a Granada o Sevilla', grx: 'Cercanía a Granada', svq: 'Cercanía a Sevilla'};
-  document.getElementById('ranking-label').innerHTML = ` · ranking de <strong class="accent">${labels[state.mode]}</strong>`;
+  const labels = {
+    combo: 'Mejor acceso a Granada o Sevilla',
+    grx: 'Cercanía a Granada',
+    svq: 'Cercanía a Sevilla',
+    mylist: 'Mi selección personal'
+  };
+  document.getElementById('ranking-label').innerHTML = ` · ${isMyList ? '<strong class="accent">'+labels[state.mode]+'</strong>' : 'ranking de <strong class="accent">'+labels[state.mode]+'</strong>'}`;
   
   const favSum = document.getElementById('fav-summary');
-  if (state.favs.size > 0) {
+  if (state.favs.size > 0 && !isMyList) {
     favSum.innerHTML = ` · <strong>${state.favs.size}</strong> marcada${state.favs.size === 1 ? '' : 's'}`;
   } else { favSum.innerHTML = ''; }
   
@@ -592,6 +964,9 @@ function render() {
     active.classList.add('sorted');
     active.querySelector('.sort-arrow').textContent = state.sortDir === 'asc' ? '▾' : '▴';
   }
+  
+  // Renderizar mapa
+  renderMap();
 }
 
 function initFilters() {
@@ -654,16 +1029,350 @@ document.querySelectorAll('thead th[data-sort]').forEach(th => {
   });
 });
 
-// Favs
+// Favs / Add to mylist / Remove from mylist
 document.getElementById('tbody').addEventListener('click', e => {
-  const btn = e.target.closest('[data-fav]');
-  if (!btn) return;
-  const id = btn.dataset.fav;
-  if (state.favs.has(id)) state.favs.delete(id);
-  else state.favs.add(id);
-  localStorage.setItem('laj_favs_v2', JSON.stringify([...state.favs]));
-  render();
+  // Favorito
+  const favBtn = e.target.closest('[data-fav]');
+  if (favBtn) {
+    const id = favBtn.dataset.fav;
+    if (state.favs.has(id)) state.favs.delete(id);
+    else state.favs.add(id);
+    localStorage.setItem('laj_favs_v2', JSON.stringify([...state.favs]));
+    render();
+    return;
+  }
+  
+  // Añadir a mi lista
+  const addBtn = e.target.closest('[data-add]');
+  if (addBtn) {
+    const id = addBtn.dataset.add;
+    if (!state.myList.includes(id)) {
+      state.myList.push(id);
+      localStorage.setItem('laj_mylist', JSON.stringify(state.myList));
+      render();
+    }
+    return;
+  }
+  
+  // Quitar de mi lista
+  const removeBtn = e.target.closest('[data-remove]');
+  if (removeBtn) {
+    const id = removeBtn.dataset.remove;
+    state.myList = state.myList.filter(x => x !== id);
+    localStorage.setItem('laj_mylist', JSON.stringify(state.myList));
+    render();
+    return;
+  }
 });
+
+// Mylist toolbar
+document.getElementById('mylist-export').addEventListener('click', () => {
+  if (state.myList.length === 0) return;
+  const byId = new Map(PLAZAS.map(p => [p.id, p]));
+  const text = state.myList.map((id, i) => {
+    const p = byId.get(id);
+    if (!p) return null;
+    return `${i+1}. ${p.poblacion} (${p.provincia}) — Pos. ${p.posicion} — ${p.puesto.replace('LAJ ', '').replace(' - SCT TI', '').replace('-', '·')} · ${p.categoria}`;
+  }).filter(Boolean).join('\n');
+  
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.getElementById('mylist-export');
+    const orig = btn.textContent;
+    btn.textContent = '✓ Copiado';
+    setTimeout(() => { btn.textContent = orig; }, 1500);
+  }).catch(() => {
+    alert('No se pudo copiar al portapapeles');
+  });
+});
+
+document.getElementById('mylist-clear').addEventListener('click', () => {
+  if (state.myList.length === 0) return;
+  if (confirm(`¿Vaciar tu lista de ${state.myList.length} plaza(s)?`)) {
+    state.myList = [];
+    localStorage.setItem('laj_mylist', JSON.stringify(state.myList));
+    render();
+  }
+});
+
+// ===== DRAG AND DROP =====
+let dragSrcId = null;
+
+function setupDragAndDrop() {
+  const rows = document.querySelectorAll('.mylist-row');
+  rows.forEach(row => {
+    row.addEventListener('dragstart', e => {
+      dragSrcId = row.dataset.id;
+      row.classList.add('dragging');
+      e.dataTransfer.effectAllowed = 'move';
+      e.dataTransfer.setData('text/plain', row.dataset.id);
+    });
+    row.addEventListener('dragend', () => {
+      row.classList.remove('dragging');
+      document.querySelectorAll('.mylist-row').forEach(r => r.classList.remove('drag-over'));
+    });
+    row.addEventListener('dragover', e => {
+      e.preventDefault();
+      e.dataTransfer.dropEffect = 'move';
+      document.querySelectorAll('.mylist-row').forEach(r => r.classList.remove('drag-over'));
+      if (row.dataset.id !== dragSrcId) row.classList.add('drag-over');
+    });
+    row.addEventListener('dragleave', () => row.classList.remove('drag-over'));
+    row.addEventListener('drop', e => {
+      e.preventDefault();
+      const targetId = row.dataset.id;
+      if (!dragSrcId || dragSrcId === targetId) return;
+      
+      const fromIdx = state.myList.indexOf(dragSrcId);
+      const toIdx = state.myList.indexOf(targetId);
+      if (fromIdx < 0 || toIdx < 0) return;
+      
+      state.myList.splice(fromIdx, 1);
+      state.myList.splice(toIdx, 0, dragSrcId);
+      localStorage.setItem('laj_mylist', JSON.stringify(state.myList));
+      dragSrcId = null;
+      render();
+    });
+  });
+}
+
+// ===== MAPA INTERACTIVO =====
+// Mapa SVG simplificado de España (península + Baleares + recuadro Canarias)
+// Coordenadas reales lat/lon convertidas a viewBox 800x500
+
+// Bbox de la península + Baleares
+const MAP_BBOX = { minLat: 35.5, maxLat: 44.0, minLon: -10.0, maxLon: 5.0 };
+// Canarias se dibuja en un recuadro
+const CANARIAS_BBOX = { minLat: 27.5, maxLat: 29.5, minLon: -18.5, maxLon: -13.0 };
+
+const MAP_W = 800, MAP_H = 500;
+const MAIN_X = 30, MAIN_Y = 30, MAIN_W = 720, MAIN_H = 410;
+const CAN_X = 50, CAN_Y = 380, CAN_W = 200, CAN_H = 80;
+
+function projectMain(lat, lon) {
+  // Mercator simple. Y invertido (lat alto = arriba)
+  const x = MAIN_X + ((lon - MAP_BBOX.minLon) / (MAP_BBOX.maxLon - MAP_BBOX.minLon)) * MAIN_W;
+  const y = MAIN_Y + ((MAP_BBOX.maxLat - lat) / (MAP_BBOX.maxLat - MAP_BBOX.minLat)) * MAIN_H;
+  return { x, y };
+}
+
+function projectCanarias(lat, lon) {
+  const x = CAN_X + ((lon - CANARIAS_BBOX.minLon) / (CANARIAS_BBOX.maxLon - CANARIAS_BBOX.minLon)) * CAN_W;
+  const y = CAN_Y + ((CANARIAS_BBOX.maxLat - lat) / (CANARIAS_BBOX.maxLat - CANARIAS_BBOX.minLat)) * CAN_H;
+  return { x, y };
+}
+
+function project(lat, lon) {
+  // Si la coordenada cae en Canarias, usar proyección canaria
+  if (lat < 30 && lon < -12) return { ...projectCanarias(lat, lon), inset: true };
+  return { ...projectMain(lat, lon), inset: false };
+}
+
+// Destinos
+const DESTINOS = {
+  GRX: { name: 'Granada', lat: 37.1773, lon: -3.5986 },
+  SVQ: { name: 'Sevilla', lat: 37.3886, lon: -5.9823 },
+};
+
+// Contorno de España (península) simplificado pero proporcionado
+// Generado a partir de coordenadas reales del litoral, proyectadas con projectMain
+// Cada punto es lat,lon y se proyecta dinámicamente
+const SPAIN_COASTLINE = [
+  // Costa norte (de oeste a este): Galicia → País Vasco
+  [43.78, -7.86], [43.80, -7.50], [43.71, -7.10], [43.67, -7.00], [43.55, -6.50],
+  [43.55, -6.00], [43.55, -5.50], [43.45, -5.00], [43.40, -4.50], [43.45, -4.00],
+  [43.45, -3.50], [43.42, -3.00], [43.40, -2.50], [43.35, -2.00], [43.32, -1.80],
+  // Frontera con Francia (Pirineos)
+  [43.10, -1.50], [42.90, -0.70], [42.70, 0.20], [42.50, 1.00], [42.42, 1.70],
+  [42.45, 2.40], [42.43, 3.10],
+  // Costa este (Mediterráneo): Cataluña → Comunidad Valenciana → Murcia
+  [42.30, 3.18], [41.80, 3.10], [41.40, 2.20], [41.10, 1.20], [40.80, 0.70],
+  [40.50, 0.50], [40.20, 0.30], [39.80, 0.05], [39.50, -0.20], [39.00, -0.20],
+  [38.50, -0.10], [38.30, -0.50], [37.80, -0.70], [37.60, -0.90], [37.40, -1.20],
+  [37.20, -1.80], [36.85, -2.10], [36.75, -2.50], [36.70, -3.00], [36.70, -3.50],
+  [36.55, -4.00], [36.50, -4.50], [36.40, -5.00], [36.20, -5.40], [36.10, -5.50],
+  // Costa sur (Atlántico Cádiz)
+  [36.00, -5.60], [36.20, -6.20], [36.40, -6.40], [36.80, -6.40], [37.20, -7.00],
+  // Frontera con Portugal (oeste)
+  [37.20, -7.42], [37.50, -7.50], [38.00, -7.20], [38.50, -7.00], [39.00, -7.30],
+  [39.40, -7.50], [39.70, -7.20], [40.10, -7.00], [40.30, -6.95], [40.80, -6.85],
+  [41.20, -6.80], [41.50, -6.80], [41.80, -6.70], [42.00, -6.90], [42.10, -7.20],
+  [42.00, -7.80], [41.90, -8.20], [41.85, -8.80], [42.00, -9.00], [42.50, -9.05],
+  [42.80, -9.30], [43.00, -9.30], [43.30, -8.80], [43.50, -8.40], [43.78, -7.86]
+];
+
+// Contorno de Mallorca (Baleares) - versión simplificada
+const MALLORCA_COASTLINE = [
+  [39.95, 2.40], [39.90, 2.55], [39.85, 2.70], [39.80, 2.95], [39.85, 3.20],
+  [39.80, 3.40], [39.65, 3.45], [39.55, 3.40], [39.30, 3.30], [39.30, 3.10],
+  [39.40, 2.90], [39.50, 2.70], [39.55, 2.45], [39.70, 2.35], [39.80, 2.30],
+  [39.95, 2.40]
+];
+
+// Contorno de Menorca
+const MENORCA_COASTLINE = [
+  [40.05, 3.85], [40.05, 4.10], [40.00, 4.30], [39.95, 4.30], [39.85, 4.25],
+  [39.85, 3.95], [39.95, 3.85], [40.05, 3.85]
+];
+
+// Contornos Canarias (simplificados)
+const TENERIFE_COASTLINE = [
+  [28.30, -16.15], [28.40, -16.20], [28.55, -16.25], [28.55, -16.40],
+  [28.50, -16.55], [28.40, -16.75], [28.20, -16.85], [28.00, -16.70],
+  [28.00, -16.50], [28.10, -16.30], [28.20, -16.20], [28.30, -16.15]
+];
+const GRANCANARIA_COASTLINE = [
+  [28.18, -15.40], [28.18, -15.55], [28.10, -15.70], [27.95, -15.75],
+  [27.80, -15.65], [27.75, -15.50], [27.80, -15.40], [27.95, -15.35],
+  [28.10, -15.40], [28.18, -15.40]
+];
+const LAPALMA_COASTLINE = [
+  [28.85, -17.75], [28.85, -17.95], [28.55, -17.95], [28.45, -17.80],
+  [28.55, -17.70], [28.75, -17.70], [28.85, -17.75]
+];
+const LAGOMERA_COASTLINE = [
+  [28.20, -17.15], [28.18, -17.35], [28.05, -17.35], [28.00, -17.20],
+  [28.10, -17.10], [28.20, -17.15]
+];
+
+const SPAIN_PATH = ''; // No usamos string fijo, generamos en runtime
+
+function coordsToPath(coords, projector) {
+  if (coords.length === 0) return '';
+  const first = projector(coords[0][0], coords[0][1]);
+  let d = `M ${first.x.toFixed(1)} ${first.y.toFixed(1)}`;
+  for (let i = 1; i < coords.length; i++) {
+    const p = projector(coords[i][0], coords[i][1]);
+    d += ` L ${p.x.toFixed(1)} ${p.y.toFixed(1)}`;
+  }
+  d += ' Z';
+  return d;
+}
+
+function renderMap() {
+  const svg = document.getElementById('map-svg');
+  const tooltip = document.getElementById('map-tooltip');
+  
+  let html = '';
+  
+  // Península + Baleares (en proyección principal)
+  html += `<path d="${coordsToPath(SPAIN_COASTLINE, projectMain)}" class="map-region" />`;
+  html += `<path d="${coordsToPath(MALLORCA_COASTLINE, projectMain)}" class="map-region" />`;
+  html += `<path d="${coordsToPath(MENORCA_COASTLINE, projectMain)}" class="map-region" />`;
+  
+  // Recuadro Canarias
+  html += `<rect x="${CAN_X-5}" y="${CAN_Y-15}" width="${CAN_W+15}" height="${CAN_H+25}" class="map-region" rx="3" />`;
+  html += `<text x="${CAN_X}" y="${CAN_Y - 18}" font-family="JetBrains Mono" font-size="9" fill="#9e9b95" letter-spacing="0.05em">CANARIAS</text>`;
+  
+  // Islas Canarias dentro del recuadro
+  html += `<path d="${coordsToPath(TENERIFE_COASTLINE, projectCanarias)}" class="map-region" style="fill:#d8d1bd" />`;
+  html += `<path d="${coordsToPath(GRANCANARIA_COASTLINE, projectCanarias)}" class="map-region" style="fill:#d8d1bd" />`;
+  html += `<path d="${coordsToPath(LAPALMA_COASTLINE, projectCanarias)}" class="map-region" style="fill:#d8d1bd" />`;
+  html += `<path d="${coordsToPath(LAGOMERA_COASTLINE, projectCanarias)}" class="map-region" style="fill:#d8d1bd" />`;
+  
+  // Trayecto si hay selección y destino
+  let routeHtml = '';
+  if (state.mapSelection && state.mapDestino) {
+    const plaza = PLAZAS.find(p => p.id === state.mapSelection);
+    const dest = DESTINOS[state.mapDestino];
+    if (plaza && dest) {
+      const pp = project(plaza.lat, plaza.lon);
+      const dp = projectMain(dest.lat, dest.lon);
+      
+      const isCanarias = pp.inset;
+      let pathD;
+      if (isCanarias) {
+        pathD = `M ${pp.x.toFixed(1)} ${pp.y.toFixed(1)} L ${dp.x.toFixed(1)} ${dp.y.toFixed(1)}`;
+      } else {
+        const midX = (pp.x + dp.x) / 2;
+        const midY = (pp.y + dp.y) / 2 - 30;
+        pathD = `M ${pp.x.toFixed(1)} ${pp.y.toFixed(1)} Q ${midX.toFixed(1)} ${midY.toFixed(1)} ${dp.x.toFixed(1)} ${dp.y.toFixed(1)}`;
+      }
+      
+      routeHtml += `<path d="${pathD}" class="map-route-line" />`;
+      
+      const t = state.mapDestino === 'GRX' ? plaza.mejor_grx_min : plaza.mejor_svq_min;
+      const m = state.mapDestino === 'GRX' ? plaza.mejor_grx_metodo : plaza.mejor_svq_metodo;
+      const labelX = (pp.x + dp.x) / 2;
+      const labelY = (pp.y + dp.y) / 2 - (isCanarias ? 0 : 20);
+      const labelText = `${methodIcon(m)} ${fmtMin(t)}`;
+      const lblW = labelText.length * 6 + 16;
+      
+      routeHtml += `<rect x="${(labelX - lblW/2).toFixed(1)}" y="${(labelY - 11).toFixed(1)}" width="${lblW}" height="20" class="map-route-label-bg" rx="3" />`;
+      routeHtml += `<text x="${labelX.toFixed(1)}" y="${(labelY + 3).toFixed(1)}" text-anchor="middle" class="map-route-label">${labelText}</text>`;
+    }
+  }
+  
+  html += routeHtml;
+  
+  // Plazas
+  PLAZAS.forEach(p => {
+    const { x, y } = project(p.lat, p.lon);
+    let cls = 'map-plaza-dot';
+    if (state.myList.includes(p.id)) cls += ' mylist';
+    else if (state.favs.has(p.id)) cls += ' fav';
+    if (state.mapSelection === p.id) cls += ' selected';
+    const r = state.mapSelection === p.id ? 7 : (state.myList.includes(p.id) ? 5 : 4);
+    
+    html += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r}" class="${cls}" data-plaza="${p.id}" />`;
+  });
+  
+  // Destinos: Granada y Sevilla
+  Object.entries(DESTINOS).forEach(([code, d]) => {
+    const { x, y } = projectMain(d.lat, d.lon);
+    const active = state.mapDestino === code;
+    html += `<rect x="${(x-7).toFixed(1)}" y="${(y-7).toFixed(1)}" width="14" height="14" class="map-destino ${active ? 'active' : ''}" data-destino="${code}" rx="2" />`;
+    html += `<text x="${x.toFixed(1)}" y="${(y + 22).toFixed(1)}" text-anchor="middle" class="map-destino-label">${d.name}</text>`;
+  });
+  
+  svg.innerHTML = html;
+  
+  // Eventos en plazas
+  svg.querySelectorAll('[data-plaza]').forEach(el => {
+    el.addEventListener('click', () => {
+      const id = el.dataset.plaza;
+      state.mapSelection = state.mapSelection === id ? null : id;
+      render();
+    });
+    el.addEventListener('mouseenter', e => {
+      const p = PLAZAS.find(x => x.id === el.dataset.plaza);
+      if (!p) return;
+      tooltip.innerHTML = `<strong>${p.poblacion}</strong><span>${p.provincia} · ${p.ccaa}</span>`;
+      tooltip.style.display = 'block';
+    });
+    el.addEventListener('mousemove', e => {
+      const rect = document.querySelector('.map-container').getBoundingClientRect();
+      tooltip.style.left = (e.clientX - rect.left + 12) + 'px';
+      tooltip.style.top = (e.clientY - rect.top - 35) + 'px';
+    });
+    el.addEventListener('mouseleave', () => {
+      tooltip.style.display = 'none';
+    });
+  });
+  
+  // Eventos en destinos
+  svg.querySelectorAll('[data-destino]').forEach(el => {
+    el.addEventListener('click', () => {
+      const code = el.dataset.destino;
+      state.mapDestino = state.mapDestino === code ? null : code;
+      render();
+    });
+  });
+  
+  // Actualizar info del mapa
+  const mapInfo = document.getElementById('map-info');
+  if (state.mapSelection && state.mapDestino) {
+    const p = PLAZAS.find(x => x.id === state.mapSelection);
+    const d = DESTINOS[state.mapDestino];
+    const t = state.mapDestino === 'GRX' ? p.mejor_grx_min : p.mejor_svq_min;
+    const m = state.mapDestino === 'GRX' ? p.mejor_grx_metodo : p.mejor_svq_metodo;
+    mapInfo.innerHTML = `<strong>${p.poblacion}</strong> → <span class="accent">${d.name}</span> · ${methodIcon(m)} ${methodLabel(m)} · <strong>${fmtMin(t)}</strong>`;
+  } else if (state.mapSelection) {
+    const p = PLAZAS.find(x => x.id === state.mapSelection);
+    mapInfo.innerHTML = `<strong>${p.poblacion}</strong> seleccionada · pincha en <span class="accent">Granada</span> o <span class="accent">Sevilla</span>`;
+  } else {
+    mapInfo.innerHTML = `Pincha en una plaza · luego en <span class="accent">Granada</span> o <span class="accent">Sevilla</span> para ver el trayecto`;
+  }
+}
 
 initFilters();
 render();
