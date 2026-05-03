@@ -1131,6 +1131,8 @@ document.getElementById('mylist-share').addEventListener('click', () => {
     });
   }
 });
+
+document.getElementById('mylist-clear').addEventListener('click', () => {
   if (state.myList.length === 0) return;
   if (confirm(`¿Vaciar tu lista de ${state.myList.length} plaza(s)?`)) {
     state.myList = [];
