@@ -701,12 +701,7 @@ function saveState() {
 function updateURL() {
   const data = { ml: state.myList, fv: [...state.favs] };
   try {
-    // URL-safe base64: sin =, sin +, sin / — no se rompe en WhatsApp ni Telegram
-    const json = JSON.stringify(data);
-    const encoded = btoa(encodeURIComponent(json))
-      .replace(/\+/g, '-')
-      .replace(/\//g, '_')
-      .replace(/=/g, '');
+    const encoded = btoa(encodeURIComponent(JSON.stringify(data)));
     window.history.replaceState(null, '', window.location.pathname + '?lista=' + encoded);
   } catch(e) {}
 }
@@ -716,12 +711,7 @@ function loadFromURL() {
   const encoded = params.get('lista');
   if (!encoded) return false;
   try {
-    // Restaurar padding y caracteres base64 estándar
-    const b64 = encoded
-      .replace(/-/g, '+')
-      .replace(/_/g, '/')
-      .padEnd(encoded.length + (4 - encoded.length % 4) % 4, '=');
-    const data = JSON.parse(decodeURIComponent(atob(b64)));
+    const data = JSON.parse(decodeURIComponent(atob(encoded)));
     if (data.ml) state.myList = data.ml;
     if (data.fv) state.favs = new Set(data.fv);
     localStorage.setItem('laj_mylist', JSON.stringify(state.myList));
